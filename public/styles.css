@@ -1903,3 +1903,7 @@ footer strong { color: var(--acid); }
 .formal-command-number { color: var(--white); }
 .formal-command-group-formation .formal-command-number { color: var(--ink); }
 .message-slip-scale-example span { color: #5e5854; }
+
+.back-link { gap: .55em; }
+.back-link-arrow { flex: 0 0 auto; font-size: 1.35em; font-weight: 500; line-height: 1; }
+.back-link-label { min-width: 0; }
