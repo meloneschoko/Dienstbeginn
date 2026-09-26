@@ -1873,3 +1873,7 @@ footer strong { color: var(--acid); }
   .welcome-stage.is-visible .welcome-banner { animation: none !important; }
 }
 @keyframes welcome-stage-reduced { 0%, 100% { opacity: 0; } 10%, 75% { opacity: 1; } }
+
+@media (max-width: 760px), (pointer: coarse) {
+  .back-link { min-height: 56px; min-width: 160px; max-width: 100%; padding: 14px 20px; font-size: 16px; line-height: 1.4; text-align: center; color: var(--ink); background: var(--paper-2); border: 1px solid var(--line); border-radius: 12px; touch-action: manipulation; }
+}
