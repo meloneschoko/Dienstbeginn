@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 190" role="img" aria-labelledby="grid-title grid-description">
+  <title id="grid-title">Beispiel einer Nord-Süd-Gitterlinie</title>
+  <desc id="grid-description">Ein quadratisches Kartengitter. Eine senkrechte Gitterlinie ist rot hervorgehoben. Sie verläuft von S unten zu N für Gitternord oben. Ein beschrifteter Pfeil zeigt auf diese Linie.</desc>
+  <rect width="320" height="190" fill="#ede9df"/>
+  <rect x="16" y="32" width="128" height="128" fill="#fffdfa" stroke="#5b747d" stroke-width="1.5"/>
+  <path d="M48 32V160M80 32V160M112 32V160M16 64H144M16 96H144M16 128H144" fill="none" stroke="#5b747d" stroke-width="1.5"/>
+  <path d="M80 160V33" fill="none" stroke="#c51b17" stroke-width="3.5"/>
+  <path d="M80 28L74 39H86Z" fill="#c51b17"/>
+  <g fill="#17252e" font-family="Arial, sans-serif" font-weight="700">
+    <text x="80" y="22" text-anchor="middle" font-size="21">N</text>
+    <text x="80" y="182" text-anchor="middle" font-size="21">S</text>
+    <text x="171" y="77" font-size="20">Nord-Süd-</text>
+    <text x="171" y="104" font-size="20">Gitterlinie</text>
+  </g>
+  <path d="M166 124H88M95 118L88 124L95 130" fill="none" stroke="#17252e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

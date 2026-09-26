@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="shield-red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d71919"/>
+      <stop offset=".56" stop-color="#b20d0d"/>
+      <stop offset="1" stop-color="#7f0505"/>
+    </linearGradient>
+  </defs>
+  <path d="M7 9L12 4H52L57 9V30C57 45.4 47 56.4 32 61C17 56.4 7 45.4 7 30Z" fill="url(#shield-red)" stroke="#050505" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M13 11H51V30C51 41.7 43.6 50.4 32 54.9C20.4 50.4 13 41.7 13 30Z" fill="none" stroke="#370202" stroke-width="1.5" stroke-linejoin="round" opacity=".8"/>
+  <path d="M19 17H32.2C39.4 17 45 22.7 45 30C45 37.3 39.4 43 32.2 43H19V37.6C19 36.2 19.8 35.4 21.3 34.7C24.5 33.1 25.5 30.4 24.7 27.2H29.8C31.5 27.2 32.2 28.1 32.2 29.8C32.2 32.1 31.4 34.2 30.5 36H33.3C36.2 36 38.3 33.6 38.3 30C38.3 26 36 23.8 32.2 23.8H21.3C19.8 23.8 19 22.9 19 21.4Z" fill="#fff"/>
+</svg>

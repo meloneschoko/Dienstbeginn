@@ -1,0 +1,19 @@
+{
+  "name": "Dienstbeginn",
+  "short_name": "Dienstbeginn",
+  "description": "Mobiles Lern- und Informationsportal für die Basisausbildung.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0d10",
+  "theme_color": "#0d0d10",
+  "icons": [
+    {
+      "src": "icon.svg?v=90",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
