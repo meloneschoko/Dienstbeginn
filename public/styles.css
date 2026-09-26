@@ -1907,3 +1907,14 @@ footer strong { color: var(--acid); }
 .back-link { gap: .55em; }
 .back-link-arrow { flex: 0 0 auto; font-size: 1.35em; font-weight: 500; line-height: 1; }
 .back-link-label { min-width: 0; }
+
+.natural-navigation .orientation-card { min-height: 0; }
+.natural-navigation .orientation-card-number { margin-bottom: 18px; }
+.natural-navigation h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 600; line-height: 1.15; }
+.natural-navigation ol { margin: 12px 0 0; padding-left: 22px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.natural-navigation li + li { margin-top: 9px; }
+.natural-navigation li strong { color: var(--ink); }
+.natural-sources { margin-top: 18px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.55; }
+.natural-sources summary { min-height: 52px; padding: 16px 0; cursor: pointer; color: var(--ink); font-weight: 700; }
+.natural-sources a { color: #284e68; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.natural-sources ul { padding-left: 22px; }
