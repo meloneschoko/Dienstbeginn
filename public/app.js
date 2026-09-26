@@ -1193,7 +1193,7 @@ function renderKnotLesson(knot) {
   const lesson = document.querySelector("#knot-lesson");
   const number = String(knots.indexOf(knot) + 1).padStart(2, "0");
   lesson.innerHTML = `
-    <a class="back-link knot-back-link" href="#knoten"><span class="back-link-arrow" aria-hidden="true">←</span><span class="back-link-label">Alle Knoten &amp; Bunde</span></a>
+    <a class="back-link knot-back-link" href="#knoten"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Alle Knoten &amp; Bunde</span></a>
     <header class="knot-lesson-header" style="--knot-color:${knot.type === "Bund" ? "#344e68" : knot.type === "Grundlage" ? "#62652b" : "#b20d22"}">
       <div class="knot-lesson-meta">
         <span class="knot-number">${number}</span>

@@ -1905,7 +1905,7 @@ footer strong { color: var(--acid); }
 .message-slip-scale-example span { color: #5e5854; }
 
 .back-link { gap: .55em; }
-.back-link-arrow { flex: 0 0 auto; font-size: 1.1em; font-weight: inherit; line-height: 1; }
+.back-link-arrow { display: block; flex: 0 0 auto; width: 1.4em; height: 1.4em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .back-link-label { min-width: 0; }
 
 .natural-navigation .orientation-card { min-height: 0; }
