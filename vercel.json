@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "node -e \"console.log('Vercel build uses only Node.js built-ins')\"",
+  "buildCommand": "node scripts/build-vercel.mjs",
+  "outputDirectory": ".vercel/output"
+}

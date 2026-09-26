@@ -1570,7 +1570,7 @@ function installNatoLearningGame() {
 
   const setLeaderboardStatus = (message, state = "") => {
     if (!leaderboardStatus) return;
-    leaderboardStatus.textContent = message;
+    leaderboardStatus.textContent = message + (window.natoLeaderboardStorage === "local" ? " Nur auf diesem Gerät gespeichert." : "");
     leaderboardStatus.dataset.state = state;
   };
 
@@ -1612,7 +1612,7 @@ function installNatoLearningGame() {
   const loadLeaderboard = async ({ quiet = false } = {}) => {
     if (!quiet) setLeaderboardStatus("Bestenliste wird geladen …", "loading");
     try {
-      const response = await fetch("/api/nato-leaderboard", {
+      const response = await window.requestNatoLeaderboard("/api/nato-leaderboard", {
         headers: { accept: "application/json" },
         cache: "no-store"
       });
@@ -1857,7 +1857,7 @@ function installNatoLearningGame() {
     setLeaderboardStatus("Ergebnis wird gespeichert …", "loading");
 
     try {
-      const response = await fetch("/api/nato-leaderboard", {
+      const response = await window.requestNatoLeaderboard("/api/nato-leaderboard", {
         method: "POST",
         headers: {
           "content-type": "application/json",
