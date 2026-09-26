@@ -1,10 +1,12 @@
-import { cp, mkdir, copyFile, writeFile } from "node:fs/promises";
+import { cp, mkdir, copyFile, writeFile, rm } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = resolve(root, ".vercel/output");
 const fn = resolve(output, "functions/api/nato-leaderboard.func");
+// This dedicated build directory is always regenerated from project sources.
+await rm(output, { recursive: true, force: true });
 await mkdir(fn, { recursive: true });
 await cp(resolve(root, "public"), resolve(output, "static"), { recursive: true });
 await copyFile(resolve(root, "legacy/site.html"), resolve(output, "static/index.html"));

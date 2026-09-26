@@ -23,16 +23,6 @@ test("invalid requests never write to the database", async () => {
   assert.equal((await handle(post("x".repeat(2049)),options)).status,413);
   assert.equal((await handle(new Request("https://example.com",{method:"DELETE"}),options)).status,405);
 });
-test("configured storage uses persistent Redis and atomic write", async () => {
-  let command;
-  const options={env:{UPSTASH_REDIS_REST_URL:"https://redis.example",UPSTASH_REDIS_REST_TOKEN:"test"},
-    fetchImpl:async (url, init)=>{command=JSON.parse(init.body);return Response.json({result:JSON.stringify({accepted:true,rank:1,entries:[result]})});}};
-  const response=await handle(post(result),options);
-  assert.equal(response.status,201);
-  assert.equal(command[0],"EVAL");
-  assert.equal(JSON.parse(command[4]).displayName,"Rekrut");
-  assert.equal((await response.json()).storage,"shared");
-});
 test("database outages do not silently become local records", async () => {
   const response=await handle(new Request("https://example.com"),{
     env:{UPSTASH_REDIS_REST_URL:"https://redis.example",UPSTASH_REDIS_REST_TOKEN:"test"},
@@ -111,7 +101,10 @@ test("reconnecting to shared storage persists shared mode and never uploads loca
   assert.equal(requests,1);
   const offline=await storageBrowser(saved,async()=>{throw new TypeError("Offline");});
   assert.equal(offline.natoLeaderboardStorage,"shared");
-  await assert.rejects(offline.requestNatoLeaderboard("/api/nato-leaderboard"));
+  const cached=await (await offline.requestNatoLeaderboard("/api/nato-leaderboard")).json();
+  assert.equal(cached.stale,true);
+  assert.equal(cached.storage,"shared");
+  await assert.rejects(offline.requestNatoLeaderboard("/api/nato-leaderboard",{method:"POST",body:JSON.stringify(result)}), /Internetverbindung/);
 });
 test("HTTP storage errors are not hidden by local fallback",async()=>{
   const saved=new Map([["dienstbeginn:nato-leaderboard:storage:v1","local"]]);

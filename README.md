@@ -48,3 +48,15 @@ automatisch in die gemeinsame Liste übernommen.
 Die vorhandenen `app/`-, `db/`- und Vite-Dateien bleiben für den bisherigen
 Cloudflare-Weg erhalten. `pnpm dev`, `pnpm build` und `pnpm db:generate`
 gehören zu diesem Weg. Für Vercel gilt ausschließlich der oben beschriebene Build.
+
+## Geprüfte Bestenlisten-Runden
+
+Die Vercel-API erstellt kurzlebige Spielrunden in Redis. Antworten werden in der vom Server vorgegebenen Reihenfolge geprüft. Nur 26 richtige Antworten im ersten Durchlauf qualifizieren; die Zeit berechnet der Server. Eine Runde kann genau einmal eingetragen werden. Pro von Vercel übermittelter Client-IP gelten 30 Starts und 900 weitere Spielanfragen je 10 Minuten. Gespeichert wird nur ein HMAC der IP, der Redis-Zähler verfällt nach 10 Minuten. Die Vercel-Header sind unter https://vercel.com/docs/headers/request-headers dokumentiert.
+
+Die Prüfung verhindert frei erfundene Ergebniswerte und Wiederverwendung eines Ergebnisses. Sie ist kein vollständiger Schutz gegen automatisiertes Spielen. Netzwerkzeiten beeinflussen die serverseitig gemessene Dauer. Ohne Verbindung bleibt der Drill als Übung verfügbar; gemeinsame Rekorde benötigen eine online gestartete und vollständig geprüfte Runde. Die zuletzt geladene gemeinsame Liste wird offline ausdrücklich als veraltet angezeigt.
+
+### Lokales Knotenbild
+
+`public/sackstich.webp`: David J. Fred, „Overhand-loop-ABOK-1046.jpg“, https://commons.wikimedia.org/wiki/File:Overhand-loop-ABOK-1046.jpg, CC BY-SA 2.5 (https://creativecommons.org/licenses/by-sa/2.5/). Verkleinert auf 1000 Pixel Breite und nach WebP konvertiert; auch diese Fassung steht unter CC BY-SA 2.5.
+
+Prüfung: `node scripts/build-vercel.mjs` und `node --test tests/*.test.mjs`.

@@ -1874,6 +1874,32 @@ footer strong { color: var(--acid); }
 }
 @keyframes welcome-stage-reduced { 0%, 100% { opacity: 0; } 10%, 75% { opacity: 1; } }
 
-@media (max-width: 760px), (pointer: coarse) {
-  .back-link { min-height: 56px; min-width: 160px; max-width: 100%; padding: 14px 20px; font-size: 16px; line-height: 1.4; text-align: center; color: var(--ink); background: var(--paper-2); border: 1px solid var(--line); border-radius: 12px; touch-action: manipulation; }
+
+/* Shared navigation style for topic pages and generated knot lessons. */
+.back-link, .knot-back-link {
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  min-width: 180px; min-height: 56px; max-width: 100%; padding: 14px 22px;
+  color: var(--ink); background: var(--white); border: 1px solid var(--line);
+  border-top: 3px solid var(--acid-dark); border-radius: 16px;
+  font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700;
+  line-height: 1.4; box-shadow: 0 4px 12px rgba(13,13,16,.05);
+  text-decoration: none; touch-action: manipulation;
 }
+.back-link:hover { color: var(--acid-dark); background: var(--paper); border-color: var(--acid-dark); }
+.back-link:focus-visible { outline: 3px solid var(--steel); outline-offset: 4px; }
+@media (max-width: 760px), (pointer: coarse) {
+  .back-link, .knot-back-link { min-height: 60px; min-width: 190px; padding: 16px 24px; font-size: 18px; }
+}
+.dashboard-section .category-copy strong { overflow-wrap: anywhere; }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .dashboard-section .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dashboard-section .category-card { grid-column: auto; }
+}
+.source-box strong, .source-box a, .memory-note strong, footer strong { color: #ffaaa5; }
+
+.text-button.primary { color: var(--white); }
+.contact-icon { color: #ffaaa5; }
+.contact-card--emergency .contact-icon, .contact-card--service .contact-icon, .contact-card--resource .contact-icon { color: var(--white); }
+.formal-command-number { color: var(--white); }
+.formal-command-group-formation .formal-command-number { color: var(--ink); }
+.message-slip-scale-example span { color: #5e5854; }

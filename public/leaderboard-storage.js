@@ -1,5 +1,6 @@
 // Remember only a server-confirmed storage mode; shared outages never become local.
 const NATO_LOCAL_KEY = "dienstbeginn:nato-leaderboard:local:v1";
+const NATO_SHARED_CACHE_KEY = "dienstbeginn:nato-leaderboard:shared-cache:v1";
 const NATO_MODE_KEY = "dienstbeginn:nato-leaderboard:storage:v1";
 window.natoLeaderboardStorage = "shared";
 try {
@@ -20,14 +21,25 @@ window.requestNatoLeaderboard = async function(url, options = {}) {
     try {
       response = await fetch(url, options);
     } catch (error) {
-      if (window.natoLeaderboardStorage !== "local") throw error;
+      if (window.natoLeaderboardStorage !== "local") {
+        if (method === "GET") {
+          try {
+            const cached = JSON.parse(localStorage.getItem(NATO_SHARED_CACHE_KEY) || "null");
+            if (cached && Array.isArray(cached.entries)) return Response.json({...cached,storage:"shared",stale:true});
+          } catch (_) {}
+        }
+        throw new Error("Keine Verbindung zur gemeinsamen Bestenliste. Bitte prüfe deine Internetverbindung und versuche es erneut.");
+      }
       // A confirmed local leaderboard remains readable after an offline reload.
     }
     if (response) {
       const payload = await response.clone().json();
       if (response.ok && ["local", "shared"].includes(payload.storage)) {
         window.natoLeaderboardStorage = payload.storage;
-        try { localStorage.setItem(NATO_MODE_KEY, payload.storage); } catch (_) {}
+        try {
+          localStorage.setItem(NATO_MODE_KEY, payload.storage);
+          if (payload.storage === "shared" && Array.isArray(payload.entries)) localStorage.setItem(NATO_SHARED_CACHE_KEY,JSON.stringify({entries:payload.entries,savedAt:Date.now()}));
+        } catch (_) {}
       }
       if (window.natoLeaderboardStorage !== "local" || !response.ok) return response;
     }

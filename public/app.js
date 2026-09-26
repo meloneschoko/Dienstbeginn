@@ -604,7 +604,7 @@ const knots = [
     tip: "Die beiden Augen müssen gemeinsam erfasst werden; sonst entsteht nicht die doppelte Ausführung."
   },
   {
-    id: "sackstich", name: "Sackstich", type: "Knoten", video: "WVPuy2pmmt8", file: "Overhand-loop-ABOK-1046.jpg",
+    localImage: "sackstich.webp", id: "sackstich", name: "Sackstich", type: "Knoten", video: "WVPuy2pmmt8", file: "Overhand-loop-ABOK-1046.jpg",
     note: "Einfacher Grundknoten, hier als Schlaufe mit einer Seilbucht gezeigt.",
     steps: [
       ["Bucht bilden", "Das Seil doppelt nehmen und eine ausreichend große Bucht bilden."],
@@ -1176,7 +1176,7 @@ function renderKnots() {
   document.querySelector("#knot-grid").innerHTML = knots.map((knot, index) => `
     <a class="knot-card" href="#knoten/${knot.id}" data-knot-link="${knot.id}" style="--knot-color:${knot.type === "Bund" ? "#344e68" : knot.type === "Grundlage" ? "#62652b" : "#b20d22"}">
       <span class="knot-card-image">
-        ${imageWithFallback(commonsFile(knot.file), `Beispiel: ${knot.name}`)}
+        ${imageWithFallback(knot.localImage || commonsFile(knot.file), `Beispiel: ${knot.name}`)}
         <span class="knot-image-label">Beispiel</span>
       </span>
       <div class="knot-card-head">
@@ -1202,6 +1202,7 @@ function renderKnotLesson(knot) {
       <h2>${knot.name}</h2>
       <p>${knot.note}</p>
       <a class="knot-image-source" href="${commonsPage(knot.file)}" target="_blank" rel="noreferrer">Bild &amp; Lizenz: Wikimedia Commons ↗</a>
+      ${knot.localImage ? '<p class="knot-image-credit">Foto: David J. Fred · <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noreferrer">CC BY-SA 2.5</a> · verkleinert und als WebP gespeichert.</p>' : ""}
       ${knot.source ? `<a class="knot-image-source" href="${knot.source}" target="_blank" rel="noreferrer">Ausbildungsgrundlage: ${knot.sourceLabel} ↗</a>` : ""}
     </header>
     ${knot.video ? `
@@ -1499,6 +1500,20 @@ function installNatoLearningGame() {
   let pendingResult = null;
   let leaderboardEntries = [];
   let gamePageWasActive = false;
+  let roundGeneration = 0, sharedSession = null, verifiedRound = null, practiceReason = "";
+  const gameRequest = async data => {
+    let response;
+    try {
+      response = await fetch("/api/nato-leaderboard", {
+        method:"POST", headers:{"content-type":"application/json","x-dienstbeginn-game":"nato-v1"},
+        body:JSON.stringify(data), signal:AbortSignal.timeout(8000)
+      });
+    } catch (_) { throw new Error("Keine Verbindung zur gemeinsamen Bestenliste. Bitte prüfe deine Internetverbindung."); }
+    const payload = await response.json();
+    if (data.action === "start" && payload.storage === "local") return payload;
+    if (!response.ok) throw new Error(payload.error || "Die gemeinsame Bestenliste ist gerade nicht erreichbar.");
+    return payload;
+  };
 
   const clearAdvanceTimer = () => {
     window.clearTimeout(advanceTimer);
@@ -1622,6 +1637,10 @@ function installNatoLearningGame() {
       }
       leaderboardEntries = payload.entries;
       renderLeaderboard(leaderboardEntries);
+      if (payload.stale) {
+        setLeaderboardStatus("Offline – angezeigt wird die zuletzt geladene Bestenliste. Neue Ergebnisse benötigen eine Internetverbindung.", "offline");
+        return null;
+      }
       if (!quiet) {
         setLeaderboardStatus(
           leaderboardEntries.length
@@ -1670,8 +1689,14 @@ function installNatoLearningGame() {
   };
 
   const evaluateCompletedRound = async result => {
+    const generation = roundGeneration;
+    if (practiceReason || (!verifiedRound && window.natoLeaderboardStorage !== "local")) {
+      setLeaderboardStatus("Übungsrunde abgeschlossen. Für einen Bestenlisten-Eintrag starte bitte eine neue Runde mit Internetverbindung.", "ready");
+      return;
+    }
+    if (verifiedRound) result = {...result, ...verifiedRound};
     const entries = await loadLeaderboard({ quiet: true });
-    if (!entries) return;
+    if (!entries || generation !== roundGeneration) return;
     if (reachesLeaderboard(result)) {
       showRecordPanel(result);
       setLeaderboardStatus("Dein Ergebnis ist schnell genug für die Bestenliste.", "record");
@@ -1682,6 +1707,8 @@ function installNatoLearningGame() {
   };
 
   const renderStartScreen = () => {
+    roundGeneration++; sharedSession = null; verifiedRound = null; practiceReason = "";
+    restart.disabled = false;
     clearAdvanceTimer();
     cancelStopwatchStart();
     cancelStopwatchFrame();
@@ -1770,28 +1797,26 @@ function installNatoLearningGame() {
       </div>`;
   };
 
-  const startRound = () => {
-    round = shuffledCopy(natoAlphabet);
-    retryQueue = [];
-    questionIndex = 0;
-    correctAnswers = 0;
-    firstPass = true;
-    firstPassErrors = 0;
-    answered = false;
-    roundFinished = false;
-    resultEvaluated = false;
-    elapsedMs = 0;
-    roundStartedAt = 0;
-    cancelStopwatchFrame();
-    cancelStopwatchStart();
-    paintStopwatch();
-    hideRecordPanel();
-    restart.hidden = false;
-    renderQuestion();
-    positionQuestionAndStartStopwatch();
+  const startRound = async () => {
+    const generation = ++roundGeneration;
+    clearAdvanceTimer(); cancelStopwatchFrame(); cancelStopwatchStart(); hideRecordPanel();
+    verifiedRound = null; sharedSession = null; practiceReason = "";
+    restart.disabled = true;
+    board.querySelectorAll("button").forEach(button => { button.disabled = true; });
+    let session;
+    try { session = await gameRequest({action:"start"}); }
+    catch (error) { practiceReason = error.message; }
+    if (generation !== roundGeneration) return;
+    round = session?.letters ? session.letters.map(letter => natoAlphabet.find(entry => entry[0] === letter)) : shuffledCopy(natoAlphabet);
+    sharedSession = session?.sessionId || null;
+    if (!sharedSession && session?.storage !== "local" && !practiceReason) practiceReason = "Diese Runde wird nur zum Üben gespielt.";
+    retryQueue = []; questionIndex = 0; correctAnswers = 0; firstPass = true; firstPassErrors = 0;
+    answered = false; roundFinished = false; resultEvaluated = false; elapsedMs = 0; roundStartedAt = 0;
+    paintStopwatch(); restart.hidden = false; restart.disabled = false;
+    if (practiceReason) setLeaderboardStatus(practiceReason + " Du kannst weiter üben; diese Runde zählt nicht für die gemeinsame Bestenliste.", "error");
+    renderQuestion(); positionQuestionAndStartStopwatch();
   };
-
-  board.addEventListener("click", event => {
+  board.addEventListener("click", async event => {
     const startButton = event.target.closest("[data-nato-game-start]");
     if (startButton) {
       startRound();
@@ -1827,6 +1852,18 @@ function installNatoLearningGame() {
     feedback.innerHTML = isCorrect
       ? `<strong>Richtig.</strong> ${round[questionIndex][0]} wird mit ${correctWord} buchstabiert.`
       : `<strong>Falsch.</strong> Richtig ist ${correctWord}.`;
+    const generation = roundGeneration;
+    if (sharedSession && firstPass) {
+      try {
+        const verified = await gameRequest({action:"answer",sessionId:sharedSession,index:questionIndex,word:choice.dataset.natoGameChoice});
+        if (generation !== roundGeneration) return;
+        if (verified.complete && verified.verified) verifiedRound = {sessionId:sharedSession,durationMs:verified.durationMs};
+      } catch (error) {
+        if (generation !== roundGeneration) return;
+        practiceReason = error.message; sharedSession = null;
+        setLeaderboardStatus(error.message + " Du kannst die Runde als Übung fortsetzen.", "error");
+      }
+    }
     const batchIsComplete = questionIndex === round.length - 1;
     autoNote.textContent = batchIsComplete
       ? retryQueue.length
@@ -1844,6 +1881,7 @@ function installNatoLearningGame() {
         firstPass = false;
       } else if (questionIndex >= round.length) {
         stopStopwatch();
+        if (verifiedRound) { elapsedMs = verifiedRound.durationMs; paintStopwatch(); }
       }
       renderQuestion();
     }, RANK_GAME_FEEDBACK_DELAY);
@@ -1852,6 +1890,8 @@ function installNatoLearningGame() {
   recordForm?.addEventListener("submit", async event => {
     event.preventDefault();
     if (!pendingResult || !recordName) return;
+    const generation = roundGeneration;
+    const submittedResult = pendingResult;
     const submitButton = recordForm.querySelector("button[type='submit']");
     if (submitButton) submitButton.disabled = true;
     setLeaderboardStatus("Ergebnis wird gespeichert …", "loading");
@@ -1865,12 +1905,14 @@ function installNatoLearningGame() {
         },
         body: JSON.stringify({
           name: recordName.value,
-          score: pendingResult.score,
-          durationMs: pendingResult.durationMs,
+          sessionId: submittedResult.sessionId,
+          score: submittedResult.score,
+          durationMs: submittedResult.durationMs,
           firstPassPerfect: true
         })
       });
       const payload = await response.json();
+      if (generation !== roundGeneration) return;
       if (Array.isArray(payload.entries)) {
         leaderboardEntries = payload.entries;
         renderLeaderboard(leaderboardEntries);
@@ -1884,7 +1926,7 @@ function installNatoLearningGame() {
         throw new Error(payload.error || "Der Eintrag konnte nicht gespeichert werden.");
       }
 
-      const savedRank = Number(payload.rank) || candidateRank(pendingResult);
+      const savedRank = Number(payload.rank) || candidateRank(submittedResult);
       hideRecordPanel();
       setLeaderboardStatus(
         savedRank === 1
@@ -1904,6 +1946,8 @@ function installNatoLearningGame() {
     const gamePageIsActive = window.location.hash.replace(/^#/, "").split("/")[0] === "nato-drill";
     if (gamePageIsActive && !gamePageWasActive) renderStartScreen();
     if (!gamePageIsActive) {
+      roundGeneration++;
+      sharedSession = null;
       clearAdvanceTimer();
       cancelStopwatchStart();
       cancelStopwatchFrame();
@@ -1912,6 +1956,7 @@ function installNatoLearningGame() {
     gamePageWasActive = gamePageIsActive;
   };
   window.addEventListener("hashchange", handleGameRoute);
+  window.addEventListener("online", () => { void loadLeaderboard(); });
   void loadLeaderboard();
   handleGameRoute();
 }
@@ -2883,7 +2928,6 @@ function installSearch() {
     results.innerHTML = "";
     results.hidden = true;
     status.textContent = "";
-    input.setAttribute("aria-expanded", "false");
   };
 
   const renderResults = () => {
@@ -2901,7 +2945,6 @@ function installSearch() {
       results.hidden = false;
       results.innerHTML = '<p class="site-search-empty">Bitte mindestens zwei Zeichen eingeben.</p>';
       status.textContent = "Suchbegriff zu kurz";
-      input.setAttribute("aria-expanded", "true");
       return;
     }
 
@@ -2923,7 +2966,6 @@ function installSearch() {
       .slice(0, 12);
 
     results.hidden = false;
-    input.setAttribute("aria-expanded", "true");
 
     if (!currentMatches.length) {
       results.innerHTML = `<p class="site-search-empty">Kein Treffer für „${escapeSearchHtml(query)}“. Versuche einen kürzeren oder allgemeineren Begriff.</p>`;
