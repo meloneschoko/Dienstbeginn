@@ -1,13 +1,36 @@
-// Local records are used only when the server explicitly reports no shared database.
+// Remember only a server-confirmed storage mode; shared outages never become local.
+const NATO_LOCAL_KEY = "dienstbeginn:nato-leaderboard:local:v1";
+const NATO_MODE_KEY = "dienstbeginn:nato-leaderboard:storage:v1";
 window.natoLeaderboardStorage = "shared";
+try {
+  const mode = localStorage.getItem(NATO_MODE_KEY);
+  // Adopt local records created before storage-mode persistence was introduced.
+  const legacy = mode === null && localStorage.getItem(NATO_LOCAL_KEY);
+  if (mode === "local" || (legacy && Array.isArray(JSON.parse(legacy)))) {
+    window.natoLeaderboardStorage = "local";
+  }
+} catch (_) {
+  // The normal read/write path reports unavailable browser storage to the user.
+}
 window.requestNatoLeaderboard = async function(url, options = {}) {
-  const key = "dienstbeginn:nato-leaderboard:local:v1";
-  if (window.natoLeaderboardStorage !== "local" || !options.method || options.method === "GET") {
-    const response = await fetch(url, options);
-    const payload = await response.clone().json();
-    if (response.ok && payload.storage === "local") window.natoLeaderboardStorage = "local";
-    else if (response.ok && payload.storage === "shared") window.natoLeaderboardStorage = "shared";
-    if (window.natoLeaderboardStorage !== "local" || !response.ok) return response;
+  const key = NATO_LOCAL_KEY;
+  const method = options.method || "GET";
+  if (window.natoLeaderboardStorage !== "local" || method === "GET") {
+    let response;
+    try {
+      response = await fetch(url, options);
+    } catch (error) {
+      if (window.natoLeaderboardStorage !== "local") throw error;
+      // A confirmed local leaderboard remains readable after an offline reload.
+    }
+    if (response) {
+      const payload = await response.clone().json();
+      if (response.ok && ["local", "shared"].includes(payload.storage)) {
+        window.natoLeaderboardStorage = payload.storage;
+        try { localStorage.setItem(NATO_MODE_KEY, payload.storage); } catch (_) {}
+      }
+      if (window.natoLeaderboardStorage !== "local" || !response.ok) return response;
+    }
   }
   let entries;
   try {

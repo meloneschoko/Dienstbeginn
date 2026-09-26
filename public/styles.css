@@ -693,7 +693,7 @@ main { min-height: 78vh; }
 .notice strong, .placeholder-banner strong, .contact-tip strong { display: block; margin-bottom: 2px; color: var(--ink); }
 
 .page-intro { padding: 44px 0 26px; }
-.back-link { display: inline-flex; margin-bottom: 38px; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 750; }
+.back-link { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 10px 12px; margin-bottom: 24px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 750; }
 .back-link:hover { color: var(--ink); }
 .kicker { display: block; margin-bottom: 10px; color: #6c6c74; font: 800 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .15em; }
 .page-intro > .kicker {

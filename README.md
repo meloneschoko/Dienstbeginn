@@ -22,7 +22,9 @@ werden nicht in das öffentliche Ausgabeverzeichnis kopiert.
 
 Ohne Datenbank speichert die Website Ergebnisse ausschließlich im Browser auf
 dem jeweiligen Gerät und zeigt dies an. Das Löschen von Browserdaten entfernt
-diese Ergebnisse. Es gibt dann keine gemeinsame Rangliste zwischen Geräten.
+diese Ergebnisse. Nach dem ersten Online-Besuch funktioniert die lokale
+Bestenliste auch nach einem Offline-Neustart: Ergebnisse können gelesen und
+gespeichert werden. Es gibt dann keine gemeinsame Rangliste zwischen Geräten.
 
 Für eine gemeinsame, dauerhafte Bestenliste eine Upstash-Redis-Datenbank mit
 dem Vercel-Projekt verbinden und diese serverseitigen Umgebungsvariablen setzen:

@@ -70,3 +70,53 @@ test("build contains the homepage, all referenced local assets and isolated func
   const api=await import("../.vercel/output/functions/api/nato-leaderboard.func/index.mjs");
   assert.equal(typeof api.default,"function");
 });
+
+async function storageBrowser(saved, fetchImpl) {
+  const context = vm.createContext({window:{},Response,crypto:globalThis.crypto,
+    localStorage:{getItem:k=>saved.get(k)??null,setItem:(k,v)=>saved.set(k,v)},
+    fetch:fetchImpl});
+  vm.runInContext(await readFile(new URL("../public/leaderboard-storage.js",import.meta.url),"utf8"), context);
+  return context.window;
+}
+test("local records can be read and saved after an offline browser restart", async () => {
+  const saved = new Map();
+  const online = await storageBrowser(saved, async()=>Response.json({storage:"local",entries:[]}));
+  await online.requestNatoLeaderboard("/api/nato-leaderboard");
+  await online.requestNatoLeaderboard("/api/nato-leaderboard",{method:"POST",body:JSON.stringify(result)});
+  const offline = await storageBrowser(saved, async()=>{throw new TypeError("Network unavailable");});
+  assert.equal(offline.natoLeaderboardStorage,"local");
+  assert.equal((await (await offline.requestNatoLeaderboard("/api/nato-leaderboard")).json()).entries.length,1);
+  const response = await offline.requestNatoLeaderboard("/api/nato-leaderboard",{method:"POST",body:JSON.stringify({...result,name:"Offline",durationMs:4000})});
+  assert.equal(response.status,201);
+  const restarted = await storageBrowser(saved,async()=>{throw new TypeError("Network unavailable");});
+  const entries=(await (await restarted.requestNatoLeaderboard("/api/nato-leaderboard")).json()).entries;
+  assert.equal(entries.length,2);
+  assert.equal(entries[0].displayName,"Offline");
+});
+test("previous-version local records remain available without a stored mode", async()=>{
+  const saved=new Map([["dienstbeginn:nato-leaderboard:local:v1",JSON.stringify([{displayName:"Alt",score:26,durationMs:5000}])]]);
+  const browser=await storageBrowser(saved,async()=>{throw new TypeError("Offline");});
+  assert.equal((await (await browser.requestNatoLeaderboard("/api/nato-leaderboard")).json()).entries[0].displayName,"Alt");
+});
+test("reconnecting to shared storage persists shared mode and never uploads local records", async()=>{
+  const saved=new Map([["dienstbeginn:nato-leaderboard:storage:v1","local"],["dienstbeginn:nato-leaderboard:local:v1","[]"]]);
+  let requests=0;
+  const browser=await storageBrowser(saved,async(url,options)=>{
+    requests++;
+    assert.notEqual(options.method,"POST");
+    return Response.json({storage:"shared",entries:[]});
+  });
+  await browser.requestNatoLeaderboard("/api/nato-leaderboard");
+  assert.equal(browser.natoLeaderboardStorage,"shared");
+  assert.equal(requests,1);
+  const offline=await storageBrowser(saved,async()=>{throw new TypeError("Offline");});
+  assert.equal(offline.natoLeaderboardStorage,"shared");
+  await assert.rejects(offline.requestNatoLeaderboard("/api/nato-leaderboard"));
+});
+test("HTTP storage errors are not hidden by local fallback",async()=>{
+  const saved=new Map([["dienstbeginn:nato-leaderboard:storage:v1","local"]]);
+  const browser=await storageBrowser(saved,async()=>Response.json({error:"Unavailable"},{status:503}));
+  assert.equal((await browser.requestNatoLeaderboard("/api/nato-leaderboard")).status,503);
+  const unknown=await storageBrowser(new Map(),async()=>{throw new TypeError("Offline");});
+  await assert.rejects(unknown.requestNatoLeaderboard("/api/nato-leaderboard"));
+});
