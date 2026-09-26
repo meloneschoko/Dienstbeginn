@@ -33,6 +33,9 @@ dem Vercel-Projekt verbinden und diese serverseitigen Umgebungsvariablen setzen:
 - `UPSTASH_REDIS_REST_TOKEN`
 
 Alternativ werden `KV_REST_API_URL` und `KV_REST_API_TOKEN` unterstützt.
+Die Vercel-Integration darf auch das Präfix `dienstbeginn_database_` verwenden:
+`dienstbeginn_database_KV_REST_API_URL` und
+`dienstbeginn_database_KV_REST_API_TOKEN` werden ebenfalls erkannt.
 Variablen für Production und gegebenenfalls Preview konfigurieren; anschließend
 neu deployen. Der Token benötigt Lese- und Schreibrechte und darf niemals als
 öffentliche Browservariable angelegt werden. Preview sollte eine separate

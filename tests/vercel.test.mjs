@@ -120,3 +120,20 @@ test("HTTP storage errors are not hidden by local fallback",async()=>{
   const unknown=await storageBrowser(new Map(),async()=>{throw new TypeError("Offline");});
   await assert.rejects(unknown.requestNatoLeaderboard("/api/nato-leaderboard"));
 });
+
+test("Vercel integration variables with project-specific prefix activate shared storage", async () => {
+  let reads = 0;
+  const response = await handle(new Request("https://example.com/api/nato-leaderboard"), {
+    env: {dienstbeginn_database_KV_REST_API_URL:"https://redis.example",dienstbeginn_database_KV_REST_API_TOKEN:"test"},
+    fetchImpl: async (url, init) => {
+      reads++;
+      assert.equal(url,"https://redis.example");
+      assert.equal(init.headers.authorization,"Bearer test");
+      assert.equal(JSON.parse(init.body)[0],"GET");
+      return Response.json({result:null});
+    }
+  });
+  assert.equal(response.status,200);
+  assert.deepEqual(await response.json(),{storage:"shared",entries:[]});
+  assert.equal(reads,1);
+});

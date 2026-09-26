@@ -26,8 +26,8 @@ function json(value, status = 200, extra = {}) {
 }
 export async function handle(request, { env = process.env, fetchImpl = fetch } = {}) {
   if (!["GET", "POST"].includes(request.method)) return json({error: "Methode nicht erlaubt."}, 405, {allow: "GET, POST"});
-  const url = env.UPSTASH_REDIS_REST_URL || env.KV_REST_API_URL;
-  const token = env.UPSTASH_REDIS_REST_TOKEN || env.KV_REST_API_TOKEN;
+  const url = env.UPSTASH_REDIS_REST_URL || env.KV_REST_API_URL || env.dienstbeginn_database_KV_REST_API_URL;
+  const token = env.UPSTASH_REDIS_REST_TOKEN || env.KV_REST_API_TOKEN || env.dienstbeginn_database_KV_REST_API_TOKEN;
   async function redis(command) {
     if (!url || !token || new URL(url).protocol !== "https:") throw new Error("Invalid Redis configuration");
     const response = await fetchImpl(url, {
