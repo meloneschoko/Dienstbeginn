@@ -2705,6 +2705,7 @@ const pageTitles = {
   packlisten: "Verpackungsplan · Dienstbeginn",
   musterspind: "Musterspind · Dienstbeginn",
   abkuerzungen: "Abkürzungen · Dienstbeginn",
+  erscheinungsbild: "Äußeres Erscheinungsbild · Dienstbeginn",
   formaldienst: "Formaldienst · Dienstbeginn",
   "formaldienst-befehle": "Befehle & Meldungen · Dienstbeginn",
   orientierung: "Orientieren im Gelände · Dienstbeginn",
