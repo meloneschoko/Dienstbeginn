@@ -1,9 +1,10 @@
-const SHELL_CACHE = "dienstbeginn-shell-v157";
+const SHELL_CACHE = "dienstbeginn-shell-v158";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
-  "./artillery-data.js?v=157",
-  "./artillery.js?v=157",
+  "./artillery/wappen-215.png",
+  "./artillery-data.js?v=158",
+  "./artillery.js?v=158",
   "./artillery/rch155.webp",
   "./artillery/boxer.webp",
   "./artillery/pzh2000.webp",
@@ -23,13 +24,13 @@ const SHELL_FILES = [
   "./packplan/rucksack-packplan-2.webp",
   "./packplan/rucksack-packplan-3.webp",
   "./vorgesetztenverordnung-tabelle-zuschnitt.png",
-  "./styles.css?v=157",
-  "./app.js?v=157",
-  "./military-order-config.js?v=157",
-  "./leaderboard-storage.js?v=157",
-  "./manifest.webmanifest?v=157",
-  "./icon.svg?v=157",
-  "./dienstbeginn-mark.svg?v=157",
+  "./styles.css?v=158",
+  "./app.js?v=158",
+  "./military-order-config.js?v=158",
+  "./leaderboard-storage.js?v=158",
+  "./manifest.webmanifest?v=158",
+  "./icon.svg?v=158",
+  "./dienstbeginn-mark.svg?v=158",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",
