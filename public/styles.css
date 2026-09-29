@@ -1999,3 +1999,11 @@ footer strong { color: var(--acid); }
 .sg-law-text blockquote { margin: 0; padding: 16px 18px; background: var(--paper-2); border-left: 4px solid var(--acid-dark); border-radius: 0 12px 12px 0; }
 .sg-law-text blockquote p { margin: 0; }
 .sg-law-text blockquote p + p { margin-top: 16px; }
+.vorgv-table-card { margin: 0 0 24px; padding: 20px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.vorgv-table-card h3 { margin: 0; }
+.vorgv-table-open { display: block; color: var(--acid-dark); font-weight: 800; text-align: center; cursor: zoom-in; }
+.vorgv-table-open img { display: block; width: 100%; height: auto; }
+.vorgv-table-open span { display: block; padding: 14px; }
+.vorgv-table-detail summary { min-height: 52px; padding: 14px; border-radius: 10px; background: var(--ink); color: var(--white); font-weight: 700; cursor: pointer; }
+.vorgv-table-scroll { max-height: 70vh; overflow: auto; background: white; border: 1px solid var(--line); overscroll-behavior: contain; }
+.vorgv-table-scroll img { display: block; width: 1800px; max-width: none; height: auto; }
