@@ -2718,6 +2718,7 @@ const pageTitles = {
   pflichten: "Rechte und Pflichten · Dienstbeginn",
   "pflichten-sg": "Pflichten · Rechte und Pflichten · Dienstbeginn",
   "militaerische-ordnung": "Militärische Ordnung · Dienstbeginn",
+  "militaerische-ordnung-soziale-medien": "Soziale Medien · Militärische Ordnung · Dienstbeginn",
   "militaerische-ordnung-krankmeldungen": "Krankmeldungen · Militärische Ordnung · Dienstbeginn",
   meldungen: "Meldungen · Dienstbeginn",
   "meldungen-zusatzinfos": "DTG & Zusatzinfos · Dienstbeginn"
@@ -3051,6 +3052,21 @@ function renderMilitaryOrderConfig() {
     document.querySelector("[data-order-reviewer]").textContent = "Fachlich geprüft durch: " + config.medicalReviewedBy;
   }
   document.querySelector("[data-order-source-date]").textContent = dateLabel(config.sourcesCheckedOn);
+  if (config.socialReviewDate && config.socialReviewedBy) {
+    document.querySelector("[data-social-review]").textContent = dateLabel(config.socialReviewDate);
+    document.querySelector("[data-social-reviewer]").textContent = "Fachlich geprüft durch: " + config.socialReviewedBy;
+  }
+  const sourceList = document.querySelector("[data-social-sources]");
+  sourceList.replaceChildren(...(config.socialSources || []).map(source => {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = source.url;
+    link.textContent = source.label;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    item.append(link);
+    return item;
+  }));
 }
 
 function updateTopicNumbers() {
