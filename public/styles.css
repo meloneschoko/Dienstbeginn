@@ -1263,21 +1263,13 @@ main { min-height: 78vh; }
   .contact-number, .contact-resource { grid-column: 2; justify-self: stretch; min-width: 0; }
 }
 
-.packlist-placeholder, .abbreviation-search, .abbreviation-grid, .formal-grid, .formal-commands, .muster-locker-placeholder, .report-procedures,
+.abbreviation-search, .abbreviation-grid, .formal-grid, .formal-commands, .report-procedures,
 .orientation-lead, .orientation-lesson, .orientation-video, .orientation-grid, .utm-comparison, .coordinate-panel, .sketch-panel {
   width: min(1120px, calc(100% - 36px));
   margin-left: auto;
   margin-right: auto;
 }
 
-.packlist-placeholder { position: relative; min-height: 350px; padding: 42px 24px; overflow: hidden; text-align: center; background: var(--white); border: 1px dashed #8e8b84; border-radius: 22px; }
-.packlist-placeholder::after { content: ""; position: absolute; right: -85px; bottom: -110px; width: 250px; height: 250px; border: 1px solid rgba(49,90,120,.18); border-radius: 50%; box-shadow: 0 0 0 34px rgba(49,90,120,.04), 0 0 0 68px rgba(49,90,120,.025); }
-.packlist-mark { position: relative; z-index: 1; display: grid; width: 62px; height: 62px; margin: 0 auto 23px; place-items: center; color: var(--white); background: #315a78; border-radius: 17px; font-size: 29px; font-weight: 900; }
-.packlist-placeholder .kicker { position: relative; z-index: 1; margin-bottom: 9px; }
-.packlist-placeholder h2 { position: relative; z-index: 1; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(32px, 8vw, 52px); font-weight: 500; letter-spacing: -.035em; }
-.packlist-placeholder > p:not(.kicker) { position: relative; z-index: 1; max-width: 610px; margin: 14px auto 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.packlist-preview { position: relative; z-index: 1; display: grid; max-width: 430px; gap: 9px; margin: 28px auto 0; }
-.packlist-preview i { height: 12px; background: linear-gradient(90deg, #315a78 0 12px, transparent 12px 24px, #d5d1ca 24px 76%, transparent 76%); border-radius: 4px; opacity: .8; }
 
 .abbreviation-search { margin-bottom: 16px; padding: 19px; background: linear-gradient(145deg, #17171c, #2f0b09); border: 1px solid #71201c; border-radius: 18px; box-shadow: 0 12px 28px rgba(12,12,15,.1); }
 .abbreviation-search-heading .kicker { display: block; margin-bottom: 6px; color: #efaaa6; }
@@ -1332,13 +1324,6 @@ main { min-height: 78vh; }
 .formal-command-example strong { font-size: 15px; line-height: 1.4; }
 .formal-command-rule { margin: 14px 0 0; padding: 13px 14px; color: #efecea; background: rgba(225,6,0,.13); border-left: 4px solid var(--acid); border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.5; }
 .formal-command-rule strong { color: var(--white); }
-.muster-locker-placeholder { margin-bottom: 20px; overflow: hidden; background: var(--white); border: 1px dashed #8e8b84; border-radius: 20px; }
-.muster-locker-photo { display: grid; min-height: 235px; place-items: center; background: linear-gradient(145deg, #25252b, #111115); border-bottom: 4px solid var(--acid); }
-.muster-locker-photo span { padding: 12px 15px; color: var(--white); border: 1px solid rgba(255,255,255,.55); border-radius: 8px; font: 900 12px/1 ui-monospace, monospace; letter-spacing: .12em; }
-.muster-locker-placeholder figcaption { padding: 19px 20px 21px; }
-.muster-locker-placeholder figcaption .kicker { display: block; margin-bottom: 7px; }
-.muster-locker-placeholder figcaption strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 24px; line-height: 1.1; }
-.muster-locker-placeholder figcaption p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .report-procedures { display: grid; gap: 12px; margin-top: 18px; margin-bottom: 20px; }
 .procedure-card { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 17px; box-shadow: 0 8px 24px rgba(12,12,15,.06); }
 .procedure-card h2 { margin: 0; padding: 18px 20px; color: var(--white); background: linear-gradient(110deg, #17171c, #4d0a07); border-bottom: 4px solid var(--acid); font-family: Georgia, "Times New Roman", serif; font-size: 23px; font-weight: 600; }
@@ -1818,9 +1803,6 @@ footer strong { color: var(--acid); }
   .formal-command-heading { grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); align-items: end; }
   .formal-command-heading .kicker { grid-column: 1 / -1; }
   .formal-command-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
-  .muster-locker-placeholder { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); align-items: stretch; }
-  .muster-locker-photo { min-height: 270px; border-right: 4px solid var(--acid); border-bottom: 0; }
-  .muster-locker-placeholder figcaption { align-self: center; padding: 28px; }
   .report-procedures { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
   .lesson-heading { grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr); align-items: end; }
   .map-walkthrough { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2010,3 +1992,39 @@ footer strong { color: var(--acid); }
 
 .vorgv-table-card { margin-top: 24px; }
 .vorgv-table-download { margin-top: 16px; }
+
+/* Bebilderte Muster im vorhandenen Verpackungsplan. */
+.packing-subnav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.packing-subnav a { min-width: 0; overflow-wrap: anywhere; }
+.packing-content { width: min(1120px, calc(100% - 36px)); margin: 0 auto 48px; line-height: 1.6; }
+.packing-notice, .packing-card { padding: clamp(18px, 3vw, 28px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); margin-bottom: 24px; overflow-wrap: anywhere; }
+.packing-notice { border-left: 4px solid var(--acid-dark); background: var(--paper-2); }
+.packing-card h3 { margin: 0 0 20px; font-size: 1.3rem; line-height: 1.35; }
+.packing-card h4 { margin: 0 0 12px; }
+.packing-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; align-items: start; }
+.packing-grid > * { min-width: 0; }
+.packing-figure { margin: 0 auto 20px; width: 100%; max-width: 760px; }
+.packing-figure a { display: block; text-align: center; color: var(--acid-dark); font-weight: 800; }
+.packing-figure img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 8px; }
+.packing-figure a span { display: block; padding: 12px; }
+.packing-figure figcaption { font-size: .9rem; color: var(--muted); text-align: center; }
+.packing-card ol, .packing-card ul { padding-left: 1.65em; }
+.packing-card li + li { margin-top: 9px; }
+.packing-card dl { margin: 0; }
+.packing-card dt { margin-top: 14px; font-weight: 800; }
+.packing-card dt:first-child { margin-top: 0; }
+.packing-card dd { margin: 4px 0 0; }
+.packing-uniform > summary { cursor: pointer; min-height: 52px; font-size: 1.15rem; font-weight: 800; }
+.packing-source { font-size: .85rem; color: var(--muted); }
+.packing-lightbox { box-sizing: border-box; width: min(1300px, 96vw); max-width: 96vw; height: 92dvh; max-height: 92dvh; padding: 16px; border: 2px solid var(--acid-dark); border-radius: 16px; color: var(--ink); background: var(--paper); }
+.packing-lightbox[open] { display: flex; flex-direction: column; gap: 12px; }
+.packing-lightbox::backdrop { background: rgba(0,0,0,.85); }
+.packing-lightbox header, .packing-zoom-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.packing-lightbox h2 { flex: 1 1 180px; margin: 0; font-size: 1.1rem; overflow-wrap: anywhere; }
+.packing-lightbox button { min-width: 48px; min-height: 48px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--white); background: var(--ink); font: inherit; cursor: pointer; }
+.packing-lightbox button:disabled { opacity: .5; cursor: default; }
+.packing-zoom-controls output { min-width: 62px; text-align: center; }
+.packing-lightbox-scroll { min-height: 0; flex: 1; overflow: auto; background: white; overscroll-behavior: contain; }
+.packing-lightbox-scroll img { display: block; max-width: none; height: auto; }
+body:has(#packing-lightbox[open]) { overflow: hidden; }
+@media (max-width: 700px) { .packing-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .packing-subnav a { padding-inline: 5px; } }

@@ -2704,7 +2704,8 @@ const pageTitles = {
   "liedersammlung-westerwaldlied": "Westerwaldlied · Liedersammlung · Dienstbeginn",
   nummern: "Wichtige Nummern · Dienstbeginn",
   packlisten: "Verpackungsplan · Dienstbeginn",
-  musterspind: "Musterspind · Dienstbeginn",
+  "packlisten-bettenbau": "Bettenbau · Dienstbeginn",
+  "packlisten-rucksack": "Rucksack · Dienstbeginn",
   abkuerzungen: "Abkürzungen · Dienstbeginn",
   erscheinungsbild: "Äußeres Erscheinungsbild · Dienstbeginn",
   formaldienst: "Formaldienst · Dienstbeginn",
@@ -3046,6 +3047,7 @@ let scrollRestoreFrame = 0;
 
 function pageFromHash() {
   const requested = window.location.hash.replace(/^#/, "").split("/")[0] || "start";
+  if (requested === "musterspind") return "packlisten";
   if (requested === "marschlied") return "liedersammlung-westerwaldlied";
   if (requested === "liedersammlung-nationalhymne") return "liedersammlung";
   return Object.hasOwn(pageTitles, requested) ? requested : "start";
@@ -3223,3 +3225,35 @@ installOathBanner();
 installWelcomeBanner();
 installOfflineMode();
 installNavigation();
+
+(() => {
+  const dialog = document.querySelector("#packing-lightbox");
+  if (!dialog) return;
+  const viewport = dialog.querySelector(".packing-lightbox-scroll");
+  const picture = viewport.querySelector("img");
+  const minus = dialog.querySelector("[data-packing-minus]");
+  const plus = dialog.querySelector("[data-packing-plus]");
+  let zoom = 100, opener = null;
+  const update = () => {
+    picture.style.width = Math.round(viewport.clientWidth * zoom / 100) + "px";
+    dialog.querySelector("output").textContent = zoom + " %";
+    minus.disabled = zoom <= 100; plus.disabled = zoom >= 400;
+  };
+  document.querySelectorAll("[data-packing-image]").forEach(link => link.addEventListener("click", event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); opener = link;
+    const original = link.querySelector("img");
+    picture.src = link.href; picture.alt = original.alt;
+    picture.width = original.width; picture.height = original.height;
+    dialog.querySelector("h2").textContent = link.closest("figure").querySelector("figcaption").textContent;
+    zoom = 100; dialog.showModal(); update(); viewport.scrollTo(0, 0);
+    dialog.querySelector("[data-packing-close]").focus();
+  }));
+  dialog.querySelector("[data-packing-close]").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("close", () => { if (opener?.isConnected) opener.focus({preventScroll:true}); });
+  minus.addEventListener("click", () => { zoom = Math.max(100, zoom - 50); update(); });
+  plus.addEventListener("click", () => { zoom = Math.min(400, zoom + 50); update(); });
+  dialog.querySelector("[data-packing-fit]").addEventListener("click", () => { zoom = 100; update(); viewport.scrollTo(0,0); });
+  window.addEventListener("resize", () => { if (dialog.open) update(); });
+  window.addEventListener("hashchange", () => { if (dialog.open) dialog.close(); });
+})();

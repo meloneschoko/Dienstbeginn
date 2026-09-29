@@ -1,16 +1,26 @@
-const SHELL_CACHE = "dienstbeginn-shell-v146";
+const SHELL_CACHE = "dienstbeginn-shell-v147";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
   "./",
   "./sackstich.webp",
+  "./packplan/musterspind-waesche.webp",
+  "./packplan/musterspind-bekleidung.webp",
+  "./packplan/musterspind-ausruestung.webp",
+  "./packplan/musterspind-gefechtsausruestung.webp",
+  "./packplan/bettenbau-sollzustand.webp",
+  "./packplan/feldanzug-taschenbelegung.webp",
+  "./packplan/rucksack-faecher.webp",
+  "./packplan/rucksack-packplan-1.webp",
+  "./packplan/rucksack-packplan-2.webp",
+  "./packplan/rucksack-packplan-3.webp",
   "./vorgesetztenverordnung-tabelle-zuschnitt.png",
-  "./styles.css?v=146",
-  "./app.js?v=146",
-  "./leaderboard-storage.js?v=146",
-  "./manifest.webmanifest?v=146",
-  "./icon.svg?v=146",
-  "./dienstbeginn-mark.svg?v=146",
+  "./styles.css?v=147",
+  "./app.js?v=147",
+  "./leaderboard-storage.js?v=147",
+  "./manifest.webmanifest?v=147",
+  "./icon.svg?v=147",
+  "./dienstbeginn-mark.svg?v=147",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",
