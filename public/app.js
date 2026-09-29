@@ -2717,6 +2717,8 @@ const pageTitles = {
   "orientierung-uebungen": "Orientierungsübungen · Dienstbeginn",
   pflichten: "Rechte und Pflichten · Dienstbeginn",
   "pflichten-sg": "Pflichten · Rechte und Pflichten · Dienstbeginn",
+  "artilleriebataillon-215": "Artilleriebataillon 215 · Dienstbeginn",
+  "artillerie": "Artillerie · Dienstbeginn",
   "militaerische-ordnung": "Militärische Ordnung · Dienstbeginn",
   "militaerische-ordnung-soziale-medien": "Soziale Medien · Militärische Ordnung · Dienstbeginn",
   "militaerische-ordnung-krankmeldungen": "Krankmeldungen · Militärische Ordnung · Dienstbeginn",
