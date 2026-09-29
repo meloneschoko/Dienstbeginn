@@ -3112,6 +3112,20 @@ function installNavigation() {
   route();
 }
 
+
+function installOathBanner() {
+  const banner = document.querySelector(".oath-banner");
+  const button = banner?.querySelector(".oath-toggle");
+  if (!button) return;
+  button.addEventListener("click", () => {
+    const paused = banner.dataset.paused !== "true";
+    banner.dataset.paused = String(paused);
+    button.setAttribute("aria-pressed", String(paused));
+    button.setAttribute("aria-label", paused ? "Lauftext fortsetzen" : "Lauftext pausieren");
+    button.firstElementChild.textContent = paused ? "▶" : "Ⅱ";
+  });
+}
+
 function installWelcomeBanner() {
   const banner = document.querySelector("#welcome-banner");
   const open = document.querySelector("#open-welcome");
@@ -3199,6 +3213,7 @@ installQuiz();
 installOrientationPractice();
 installSearch();
 installAbbreviationSearch();
+installOathBanner();
 installWelcomeBanner();
 installOfflineMode();
 installNavigation();
