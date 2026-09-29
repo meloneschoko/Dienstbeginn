@@ -8,18 +8,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dienstbeginn</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg?v=141">
-  <link rel="manifest" href="manifest.webmanifest?v=141">
-  <link rel="stylesheet" href="styles.css?v=141">
-  <script src="leaderboard-storage.js?v=141" defer></script>
-  <script src="app.js?v=141" defer></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg?v=142">
+  <link rel="manifest" href="manifest.webmanifest?v=142">
+  <link rel="stylesheet" href="styles.css?v=142">
+  <script src="leaderboard-storage.js?v=142" defer></script>
+  <script src="app.js?v=142" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Dienstbeginn Startseite">
-      <img class="brand-mark" src="dienstbeginn-mark.svg?v=141" alt="" width="40" height="40" decoding="async">
+      <img class="brand-mark" src="dienstbeginn-mark.svg?v=142" alt="" width="40" height="40" decoding="async">
       <span><strong>DIENST</strong><small>BEGINN</small></span>
     </a>
     <div class="topbar-actions">
@@ -287,17 +287,19 @@
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page" data-page="schiesslehre" aria-labelledby="shooting-theory-title">
+    <section class="page" data-page="schiesslehre" data-parent-page="waffen" aria-labelledby="shooting-theory-title">
       <div class="page-intro">
-        <a class="back-link" href="#waffen"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zur Waffenkunde</span></a>
-        <span class="kicker">Unterbereich Waffenkunde</span>
-        <h1 id="shooting-theory-title">Schießlehre</h1>
-        <p>Grundlagen zu Kimme und Korn, Haltepunkt, optischen Visiereinrichtungen und Zielfehlern.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>1</b></span>
+        <h1 id="shooting-theory-title">Waffenkunde</h1>
+        <p>Zuerst die technischen Kerndaten von G36, P8, MG5 und Panzerfaust 3, anschließend die vier grundlegenden Sicherheitsregeln. Weitere Ausbildungsinhalte findest du im eigenen Unterbereich Schießlehre.</p>
       </div>
       <nav class="section-subnav" aria-label="Unterbereiche der Waffenkunde">
         <a href="#waffen">Technische Daten &amp; Sicherheit</a>
         <a href="#schiesslehre" aria-current="page">Schießlehre</a>
       </nav>
+      <header class="subcategory-heading"><h2>Schießlehre</h2><p>Grundlagen zu Kimme und Korn, Haltepunkt, optischen Visiereinrichtungen und Zielfehlern.</p></header>
+
       <section class="marksmanship-card" id="schiesslehre-inhalte" aria-labelledby="marksmanship-title">
         <header class="marksmanship-header">
           <span class="kicker">Grundlagen der Visierung</span>
@@ -518,13 +520,17 @@
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page rank-game-page nato-game-page" data-page="nato-drill" aria-labelledby="nato-game-title">
-      <div class="page-intro nato-game-intro">
-        <a class="back-link" href="#nato"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">NATO-Alphabet</span></a>
-        <span class="kicker">Lernspiel</span>
-        <h1 id="nato-game-title">Alphabet-Drill</h1>
-        <p>Ordne die NATO-Buchstabierwörter zu. Fehler werden wiederholt, bis alle 26 Buchstaben sicher sitzen.</p>
+    <section class="page rank-game-page nato-game-page" data-page="nato-drill" data-parent-page="nato" aria-labelledby="nato-game-title">
+      <div class="page-intro">
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>2</b></span>
+        <h1 id="nato-game-title">NATO-Alphabet</h1>
+        <p>International eindeutig buchstabieren – von Alfa bis Zulu.</p>
       </div>
+      <nav class="section-subnav" aria-label="Unterbereiche nato"><a href="#nato">NATO-Alphabet</a><a href="#nato-drill" aria-current="page">Alphabet-Drill</a></nav>
+
+      <header class="subcategory-heading"><h2>Alphabet-Drill</h2><p>Ordne die NATO-Buchstabierwörter zu. Fehler werden wiederholt, bis alle 26 Buchstaben sicher sitzen.</p></header>
+
       <section class="rank-learning-game rank-learning-game-page nato-learning-game" id="natospiel" aria-labelledby="nato-game-heading">
         <div class="rank-game-shell">
           <header class="rank-game-header">
@@ -636,13 +642,17 @@
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page rank-game-page" data-page="dienstgrad-drill" aria-labelledby="rank-game-title">
+    <section class="page rank-game-page" data-page="dienstgrad-drill" data-parent-page="dienstgrade" aria-labelledby="rank-game-title">
       <div class="page-intro">
-        <a class="back-link" href="#dienstgrade"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Dienstgrade</span></a>
-        <span class="kicker">Lernspiel</span>
-        <h1 id="rank-game-title">Dienstgrad-Drill</h1>
-        <p>Ordne Dienstgradbezeichnungen und Schulterklappen einander zu. Nach jeder Antwort siehst du kurz die Lösung; anschließend folgt automatisch die nächste Frage.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>3</b></span>
+        <h1 id="rank-game-title">Dienstgrade der Bundeswehr</h1>
+        <p>Heeresdienstgrade und Anwärter sicher erkennen. Die vollständigen eigenen Bezeichnungen des Sanitätsdienstes und der Marine stehen in zwei Unterordnern am Ende der Seite.</p>
       </div>
+      <nav class="section-subnav" aria-label="Unterbereiche dienstgrade"><a href="#dienstgrade">Dienstgrade</a><a href="#dienstgrad-drill" aria-current="page">Dienstgrad-Drill</a></nav>
+
+      <header class="subcategory-heading"><h2>Dienstgrad-Drill</h2><p>Ordne Dienstgradbezeichnungen und Schulterklappen einander zu. Nach jeder Antwort siehst du kurz die Lösung; anschließend folgt automatisch die nächste Frage.</p></header>
+
       <section class="rank-learning-game rank-learning-game-page" id="dienstgradspiel" aria-labelledby="rank-game-heading">
         <div class="rank-game-shell">
           <header class="rank-game-header">
@@ -664,13 +674,17 @@
       </section>
     </section>
 
-    <section class="page" data-page="truppengattungen" aria-labelledby="branches-title">
+    <section class="page" data-page="truppengattungen" data-parent-page="organisation" aria-labelledby="branches-title">
       <div class="page-intro">
-        <a class="back-link" href="#organisation"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Bundeswehr-Struktur</span></a>
-        <span class="kicker numbered-kicker"><span>Unterbereich Bundeswehr-Struktur</span> <b>3</b></span>
-        <h1 id="branches-title">Truppengattungen</h1>
-        <p>Barettabzeichen, Litzen- und Barettfarben sowie typische Aufgaben im Überblick.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>7</b></span>
+        <h1 id="branches-title">Bundeswehr-Struktur</h1>
+        <p>Wähle einen Unterbereich: militärische Größen, die Teilstreitkräfte oder die Truppengattungen.</p>
       </div>
+      <nav class="section-subnav" aria-label="Unterbereiche organisation"><a href="#organisation">Übersicht</a><a href="#groesseneinteilung">Größeneinteilungen</a><a href="#teilstreitkraefte">Teilstreitkräfte</a><a href="#truppengattungen" aria-current="page">Truppengattungen</a></nav>
+
+      <header class="subcategory-heading"><h2>Truppengattungen</h2><p>Barettabzeichen, Litzen- und Barettfarben sowie typische Aufgaben im Überblick.</p></header>
+
       <aside class="definition-card">
         <span class="swatch-stack" aria-hidden="true"><i></i><i></i><i></i></span>
         <p><strong>Waffenfarbe ≠ Barettfarbe</strong> Die Waffenfarbe erscheint unter anderem an Litzen und Kragenspiegeln. Die Farbe des Baretts ist ein eigenes Merkmal und stimmt nicht immer mit ihr überein. Truppenteil, multinationaler Verband oder Ausbildungsabschnitt können außerdem abweichende Barettfarben und Abzeichen vorgeben.</p>
@@ -722,13 +736,17 @@
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page" data-page="groesseneinteilung" aria-labelledby="unit-page-title">
+    <section class="page" data-page="groesseneinteilung" data-parent-page="organisation" aria-labelledby="unit-page-title">
       <div class="page-intro">
-        <a class="back-link" href="#organisation"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Bundeswehr-Struktur</span></a>
-        <span class="kicker numbered-kicker"><span>Unterbereich Bundeswehr-Struktur</span> <b>1</b></span>
-        <h1 id="unit-page-title">Größen&shy;einteilungen</h1>
-        <p>Militärische Gliederungsformen vom kleinen Trupp bis zum multinational geführten Korps.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>7</b></span>
+        <h1 id="unit-page-title">Bundeswehr-Struktur</h1>
+        <p>Wähle einen Unterbereich: militärische Größen, die Teilstreitkräfte oder die Truppengattungen.</p>
       </div>
+      <nav class="section-subnav" aria-label="Unterbereiche organisation"><a href="#organisation">Übersicht</a><a href="#groesseneinteilung" aria-current="page">Größeneinteilungen</a><a href="#teilstreitkraefte">Teilstreitkräfte</a><a href="#truppengattungen">Truppengattungen</a></nav>
+
+      <header class="subcategory-heading"><h2>Größen&shy;einteilungen</h2><p>Militärische Gliederungsformen vom kleinen Trupp bis zum multinational geführten Korps.</p></header>
+
       <section class="unit-scale" aria-labelledby="unit-scale-title">
         <header class="unit-scale-heading">
           <div>
@@ -811,13 +829,17 @@
       </div>
     </section>
 
-    <section class="page" data-page="teilstreitkraefte" aria-labelledby="services-title">
+    <section class="page" data-page="teilstreitkraefte" data-parent-page="organisation" aria-labelledby="services-title">
       <div class="page-intro">
-        <a class="back-link" href="#organisation"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Bundeswehr-Struktur</span></a>
-        <span class="kicker numbered-kicker"><span>Unterbereich Bundeswehr-Struktur</span> <b>2</b></span>
-        <h1 id="services-title">Teilstreitkräfte der Bundeswehr</h1>
-        <p>Teilstreitkräfte, Unterstützungsbereich, operative Führung und zivile Organisationsbereiche.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>7</b></span>
+        <h1 id="services-title">Bundeswehr-Struktur</h1>
+        <p>Wähle einen Unterbereich: militärische Größen, die Teilstreitkräfte oder die Truppengattungen.</p>
       </div>
+      <nav class="section-subnav" aria-label="Unterbereiche organisation"><a href="#organisation">Übersicht</a><a href="#groesseneinteilung">Größeneinteilungen</a><a href="#teilstreitkraefte" aria-current="page">Teilstreitkräfte</a><a href="#truppengattungen">Truppengattungen</a></nav>
+
+      <header class="subcategory-heading"><h2>Teilstreitkräfte der Bundeswehr</h2><p>Teilstreitkräfte, Unterstützungsbereich, operative Führung und zivile Organisationsbereiche.</p></header>
+
       <aside class="structure-lead">
         <span class="structure-count">4</span>
         <p><strong>Vier Teilstreitkräfte · Karten antippen</strong> Heer, Luftwaffe, Marine und Cyber- und Informationsraum bilden den militärischen Kern. Die aufklappbaren Karten zeigen die jeweiligen Fähigkeiten, Großverbände oder Dienststellen.</p>
@@ -933,7 +955,7 @@
       </section>
     </section>
 
-    <section class="page march-song-page" data-page="liedersammlung-westerwaldlied" aria-labelledby="march-song-title">
+    <section class="page march-song-page" data-page="liedersammlung-westerwaldlied" data-parent-page="liedersammlung" aria-labelledby="march-song-title">
       <div class="page-intro">
         <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
         <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>13</b></span>
@@ -1049,17 +1071,19 @@
       </aside>
     </section>
 
-    <section class="page" data-page="musterspind" aria-labelledby="musterspind-title">
+    <section class="page" data-page="musterspind" data-parent-page="packlisten" aria-labelledby="musterspind-title">
       <div class="page-intro">
-        <a class="back-link" href="#packlisten"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zum Verpackungsplan</span></a>
-        <span class="kicker">Unterbereich Verpackungsplan</span>
-        <h1 id="musterspind-title">Musterspind</h1>
-        <p>Der eigene Bereich für den vorgesehenen Aufbau und ein späteres beschriftetes Beispielfoto.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>14</b></span>
+        <h1 id="musterspind-title">Verpackungsplan</h1>
+        <p>Packordnung und Musterspind sind in zwei übersichtliche Unterbereiche aufgeteilt.</p>
       </div>
       <nav class="section-subnav" aria-label="Unterbereiche des Verpackungsplans">
         <a href="#packlisten">Packordnung</a>
         <a href="#musterspind" aria-current="page">Musterspind</a>
       </nav>
+      <header class="subcategory-heading"><h2>Musterspind</h2><p>Der eigene Bereich für den vorgesehenen Aufbau und ein späteres beschriftetes Beispielfoto.</p></header>
+
       <figure class="muster-locker-placeholder">
         <div class="muster-locker-photo" role="img" aria-label="Fotoplatzhalter für den Aufbau eines Musterspindes">
           <span>FOTO FOLGT</span>
@@ -1235,17 +1259,19 @@
       </aside>
     </section>
 
-    <section class="page" data-page="formaldienst-befehle" aria-labelledby="formal-command-page-title">
+    <section class="page" data-page="formaldienst-befehle" data-parent-page="formaldienst" aria-labelledby="formal-command-page-title">
       <div class="page-intro">
-        <a class="back-link" href="#formaldienst"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zum Formaldienst</span></a>
-        <span class="kicker">Unterbereich Formaldienst</span>
-        <h1 id="formal-command-page-title">Befehle &amp; Meldungen</h1>
-        <p>Stubenmeldung sowie das Vorbereiten und Antreten als getrennte Abläufe.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>11</b></span>
+        <h1 id="formal-command-page-title">Formaldienst</h1>
+        <p>Grundsätzliches für ein geordnetes und sicheres Auftreten – ohne die praktische Ausbildung zu ersetzen.</p>
       </div>
       <nav class="section-subnav" aria-label="Unterbereiche des Formaldienstes">
         <a href="#formaldienst">Grundlagen</a>
         <a href="#formaldienst-befehle" aria-current="page">Befehle &amp; Meldungen</a>
       </nav>
+      <header class="subcategory-heading"><h2>Befehle &amp; Meldungen</h2><p>Stubenmeldung sowie das Vorbereiten und Antreten als getrennte Abläufe.</p></header>
+
       <section class="formal-commands" aria-labelledby="formal-commands-title">
         <div class="formal-command-heading">
           <span class="kicker">Befehle und Meldungen im Zugalltag</span>
@@ -1430,18 +1456,20 @@
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page" data-page="orientierung-kartenkunde" aria-labelledby="orientation-map-title">
+    <section class="page" data-page="orientierung-kartenkunde" data-parent-page="orientierung" aria-labelledby="orientation-map-title">
       <div class="page-intro orientation-intro">
-        <a class="back-link" href="#orientierung"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zur Orientierung</span></a>
-        <span class="kicker">Unterbereich Orientieren im Gelände</span>
-        <h1 id="orientation-map-title">Kartenkunde &amp; UTM</h1>
-        <p>Kartenmaßstäbe, Gitternetze, Koordinaten, UTM, UTMREF und Geländeskizzen im Überblick.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>6</b></span>
+        <h1 id="orientation-map-title">Orientieren im Gelände</h1>
+        <p>Karte, Kompass und Gelände zu einem stimmigen Lagebild verbinden.</p>
       </div>
       <nav class="section-subnav orientation-subnav" aria-label="Unterbereiche der Orientierung im Gelände">
         <a href="#orientierung">Karte und Kompass</a>
         <a href="#orientierung-kartenkunde" aria-current="page">Kartenkunde &amp; UTM</a>
         <a href="#orientierung-uebungen">Übungen</a>
       </nav>
+      <header class="subcategory-heading"><h2>Kartenkunde &amp; UTM</h2><p>Kartenmaßstäbe, Gitternetze, Koordinaten, UTM, UTMREF und Geländeskizzen im Überblick.</p></header>
+
 
       <div class="orientation-grid">
         <article class="orientation-card">
@@ -1625,18 +1653,20 @@
       </div>
     </section>
 
-    <section class="page orientation-practice-page" data-page="orientierung-uebungen" aria-labelledby="orientation-practice-title">
+    <section class="page orientation-practice-page" data-page="orientierung-uebungen" data-parent-page="orientierung" aria-labelledby="orientation-practice-title">
       <div class="page-intro orientation-intro">
-        <a class="back-link" href="#orientierung"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zur Orientierung</span></a>
-        <span class="kicker">Unterbereich Orientieren im Gelände</span>
-        <h1 id="orientation-practice-title">Übungen</h1>
-        <p>Koordinaten lesen, Punkte setzen und Kartenstrecken berechnen – vom Grundsatz bis zur kombinierten Aufgabe.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>6</b></span>
+        <h1 id="orientation-practice-title">Orientieren im Gelände</h1>
+        <p>Karte, Kompass und Gelände zu einem stimmigen Lagebild verbinden.</p>
       </div>
       <nav class="section-subnav orientation-subnav" aria-label="Unterbereiche der Orientierung im Gelände">
         <a href="#orientierung">Karte und Kompass</a>
         <a href="#orientierung-kartenkunde">Kartenkunde &amp; UTM</a>
         <a href="#orientierung-uebungen" aria-current="page">Übungen</a>
       </nav>
+      <header class="subcategory-heading"><h2>Übungen</h2><p>Koordinaten lesen, Punkte setzen und Kartenstrecken berechnen – vom Grundsatz bis zur kombinierten Aufgabe.</p></header>
+
 
       <aside class="orientation-practice-brief" aria-labelledby="orientation-practice-brief-title">
         <div class="practice-brief-mark" aria-hidden="true">N</div>
@@ -1991,17 +2021,19 @@ mit dem Anspruch auf Gehorsam erteilt.“</blockquote>
       <div class="topic-challenge-wrap"><a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="page reports-page" data-page="meldungen-zusatzinfos" aria-labelledby="reports-supplement-title">
+    <section class="page reports-page" data-page="meldungen-zusatzinfos" data-parent-page="meldungen" aria-labelledby="reports-supplement-title">
       <div class="page-intro">
-        <a class="back-link" href="#meldungen"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Zu Meldungen</span></a>
-        <span class="kicker">Unterbereich Meldungen</span>
-        <h1 id="reports-supplement-title">DTG &amp; Zusatzinfos</h1>
-        <p>Date-Time Group, Zeitzonen, englische Monatskürzel und die eindeutige Aussprache von Zahlen.</p>
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>5</b></span>
+        <h1 id="reports-supplement-title">Meldungen</h1>
+        <p>Meldeblockzettel und ergänzende Angaben sind in zwei eigene Unterbereiche gegliedert.</p>
       </div>
       <nav class="section-subnav" aria-label="Unterbereiche der Meldungen">
         <a href="#meldungen">Meldeblockzettel</a>
         <a href="#meldungen-zusatzinfos" aria-current="page">DTG &amp; Zusatzinfos</a>
       </nav>
+      <header class="subcategory-heading"><h2>DTG &amp; Zusatzinfos</h2><p>Date-Time Group, Zeitzonen, englische Monatskürzel und die eindeutige Aussprache von Zahlen.</p></header>
+
       <div class="reports-content">
         <section class="dtg-card" aria-labelledby="dtg-title">
           <header class="dtg-header">

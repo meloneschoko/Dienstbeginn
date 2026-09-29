@@ -1981,3 +1981,13 @@ footer strong { color: var(--acid); }
 
 /* Center the national anthem lyrics. */
 [data-page="liedersammlung"] .march-verse p { text-align: center; }
+
+/* Shared category headers remain visible on knot detail routes, too. */
+.knot-detail-view > .page-intro { display: block; }
+.knot-detail-view { padding-top: 0; }
+.subcategory-heading { width: min(1120px, calc(100% - 36px)); margin: 0 auto 24px; }
+.subcategory-heading h2 { margin: 0 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 5vw, 38px); font-weight: 500; line-height: 1.2; overflow-wrap: anywhere; }
+.subcategory-heading p { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+
+/* Keep the badge fallback readable when its external image is unavailable. */
+.category-photo-badge .image-fallback { color: var(--ink); }

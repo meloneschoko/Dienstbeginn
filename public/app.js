@@ -2730,6 +2730,7 @@ function normalizeSearch(value) {
   return compactSearchText(value)
     .toLocaleLowerCase("de-DE")
     .normalize("NFD")
+    .replace(/\u00ad/g, "")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/ß/g, "ss");
 }
@@ -2780,7 +2781,7 @@ function buildSearchIndex() {
     .filter(section => !ignoredPages.has(section.dataset.page))
     .forEach(section => {
       const page = section.dataset.page;
-      const title = compactSearchText(section.querySelector("h1")?.textContent || pageTitles[page] || page);
+      const title = compactSearchText(section.querySelector(".subcategory-heading h2")?.textContent || section.querySelector("h1")?.textContent || pageTitles[page] || page);
       const intro = compactSearchText(section.querySelector(".page-intro p")?.textContent || "");
       const targets = new Map();
 
@@ -3032,6 +3033,7 @@ function updateTopicNumbers() {
     const section = document.querySelector(`[data-page="${card.hash.slice(1)}"]`);
     const pageNumber = section?.querySelector(".page-intro > .numbered-kicker b");
     if (pageNumber) pageNumber.textContent = number;
+    document.querySelectorAll(`[data-parent-page="${card.hash.slice(1)}"] .page-intro > .numbered-kicker b`).forEach(badge => { badge.textContent = number; });
   });
 }
 
