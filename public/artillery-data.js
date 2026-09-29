@@ -1,4 +1,4 @@
-// Public, source-checked content. Unconfirmed personnel are deliberately omitted.
+// Artillery content and personnel maintained from the supplied references.
 window.artilleryData = {
   "checkedOn": "2026-09-29",
   "navigation": {
@@ -7,7 +7,7 @@ window.artilleryData = {
   },
   "staff": {
     "battery": null,
-    "checkedOn": null,
+    "checkedOn": "2026-09-29",
     "entries": [
       {
         "role": "Bataillonskommandeur",
@@ -19,17 +19,17 @@ window.artilleryData = {
       },
       {
         "role": "Batteriechef",
-        "name": null,
+        "name": "Hauptmann Ruhrberg",
         "assignment": null,
-        "approved": false,
-        "checkedOn": null
+        "approved": true,
+        "checkedOn": "2026-09-29"
       },
       {
         "role": "Batteriefeldwebel",
-        "name": null,
+        "name": "Hauptfeldwebel Jasmund",
         "assignment": null,
-        "approved": false,
-        "checkedOn": null
+        "approved": true,
+        "checkedOn": "2026-09-29"
       }
     ]
   },
