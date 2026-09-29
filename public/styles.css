@@ -2007,3 +2007,6 @@ footer strong { color: var(--acid); }
 .vorgv-table-detail summary { min-height: 52px; padding: 14px; border-radius: 10px; background: var(--ink); color: var(--white); font-weight: 700; cursor: pointer; }
 .vorgv-table-scroll { max-height: 70vh; overflow: auto; background: white; border: 1px solid var(--line); overscroll-behavior: contain; }
 .vorgv-table-scroll img { display: block; width: 1800px; max-width: none; height: auto; }
+
+.vorgv-table-card { margin-top: 24px; }
+.vorgv-table-download { margin-top: 16px; }
