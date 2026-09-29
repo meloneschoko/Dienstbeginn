@@ -2700,6 +2700,8 @@ const pageTitles = {
   teilstreitkraefte: "Teilstreitkräfte der Bundeswehr · Dienstbeginn",
   knoten: "Knoten & Bunde · Dienstbeginn",
   krawatte: "Krawatte binden · Dienstbeginn",
+  geschichte: "Geschichte · Dienstbeginn",
+  "geschichte-nationalflagge": "Nationalflagge & Nationalfarben · Geschichte · Dienstbeginn",
   liedersammlung: "Liedersammlung · Dienstbeginn",
   "liedersammlung-westerwaldlied": "Westerwaldlied · Liedersammlung · Dienstbeginn",
   nummern: "Wichtige Nummern · Dienstbeginn",
