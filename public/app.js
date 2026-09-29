@@ -2701,7 +2701,7 @@ const pageTitles = {
   knoten: "Knoten & Bunde · Dienstbeginn",
   krawatte: "Krawatte binden · Dienstbeginn",
   liedersammlung: "Liedersammlung · Dienstbeginn",
-  "liedersammlung-nationalhymne": "Nationalhymne · Liedersammlung · Dienstbeginn",
+  "liedersammlung-westerwaldlied": "Westerwaldlied · Liedersammlung · Dienstbeginn",
   nummern: "Wichtige Nummern · Dienstbeginn",
   packlisten: "Verpackungsplan · Dienstbeginn",
   musterspind: "Musterspind · Dienstbeginn",
@@ -3043,7 +3043,8 @@ let scrollRestoreFrame = 0;
 
 function pageFromHash() {
   const requested = window.location.hash.replace(/^#/, "").split("/")[0] || "start";
-  if (requested === "marschlied") return "liedersammlung";
+  if (requested === "marschlied") return "liedersammlung-westerwaldlied";
+  if (requested === "liedersammlung-nationalhymne") return "liedersammlung";
   return Object.hasOwn(pageTitles, requested) ? requested : "start";
 }
 
