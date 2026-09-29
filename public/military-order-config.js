@@ -1,9 +1,9 @@
 // Local details require confirmation by the unit; null means not confirmed.
 window.militaryOrderConfig = Object.freeze({
   location: "Augustdorf",
-  wakeTime: null,
-  quietTime: null,
-  localTimesConfirmed: false,
+  wakeTime: "05:00",
+  quietTime: "22:00",
+  localTimesConfirmed: true,
   medicalClothing: "sauberer Dienstsportanzug",
   medicalClothingConfirmed: false,
   medicalReviewDate: null,
