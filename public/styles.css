@@ -2028,3 +2028,16 @@ footer strong { color: var(--acid); }
 .packing-lightbox-scroll img { display: block; max-width: none; height: auto; }
 body:has(#packing-lightbox[open]) { overflow: hidden; }
 @media (max-width: 700px) { .packing-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .packing-subnav a { padding-inline: 5px; } }
+
+/* Militärische Ordnung: bestehende Karten und Navigation ergänzen. */
+.order-subnav a { min-width: 0; overflow-wrap: anywhere; }
+.order-content { width: min(880px, calc(100% - 36px)); margin: 0 auto 48px; line-height: 1.6; }
+.order-card, .order-priority, .order-emergency, .order-review { padding: clamp(18px, 3vw, 26px); margin: 0 0 22px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow-wrap: anywhere; }
+.order-card h3, .order-emergency h3 { margin: 0 0 16px; font-size: 1.25rem; line-height: 1.35; }
+.order-card ul, .order-card ol { padding-left: 1.6em; }
+.order-card li + li { margin-top: 14px; }
+.order-priority, .order-review { background: var(--paper-2); border-left: 4px solid var(--acid-dark); }
+.order-emergency { border-top: 5px solid var(--acid-dark); }
+.order-emergency a, .order-phone { display: inline-block; padding: 10px 12px; min-height: 44px; color: var(--white); background: var(--acid-dark); border-radius: 8px; font-weight: 800; }
+.order-prescription { padding: 16px; margin-top: 22px; background: var(--paper-2); border-radius: 12px; }
+.order-prescription summary { min-height: 48px; cursor: pointer; font-weight: 800; }

@@ -1,4 +1,4 @@
-const SHELL_CACHE = "dienstbeginn-shell-v147";
+const SHELL_CACHE = "dienstbeginn-shell-v148";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
@@ -15,12 +15,13 @@ const SHELL_FILES = [
   "./packplan/rucksack-packplan-2.webp",
   "./packplan/rucksack-packplan-3.webp",
   "./vorgesetztenverordnung-tabelle-zuschnitt.png",
-  "./styles.css?v=147",
-  "./app.js?v=147",
-  "./leaderboard-storage.js?v=147",
-  "./manifest.webmanifest?v=147",
-  "./icon.svg?v=147",
-  "./dienstbeginn-mark.svg?v=147",
+  "./styles.css?v=148",
+  "./app.js?v=148",
+  "./military-order-config.js?v=148",
+  "./leaderboard-storage.js?v=148",
+  "./manifest.webmanifest?v=148",
+  "./icon.svg?v=148",
+  "./dienstbeginn-mark.svg?v=148",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",

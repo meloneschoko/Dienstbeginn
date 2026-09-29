@@ -2715,6 +2715,8 @@ const pageTitles = {
   "orientierung-uebungen": "Orientierungsübungen · Dienstbeginn",
   pflichten: "Rechte und Pflichten · Dienstbeginn",
   "pflichten-sg": "Pflichten · Rechte und Pflichten · Dienstbeginn",
+  "militaerische-ordnung": "Militärische Ordnung · Dienstbeginn",
+  "militaerische-ordnung-krankmeldungen": "Krankmeldungen · Militärische Ordnung · Dienstbeginn",
   meldungen: "Meldungen · Dienstbeginn",
   "meldungen-zusatzinfos": "DTG & Zusatzinfos · Dienstbeginn"
 };
@@ -3026,6 +3028,29 @@ function installSearch() {
   });
 }
 
+function renderMilitaryOrderConfig() {
+  const config = window.militaryOrderConfig;
+  if (!config) return;
+  const dateLabel = value => new Intl.DateTimeFormat("de-DE").format(new Date(value + "T12:00:00"));
+  document.querySelectorAll("[data-order-phone]").forEach(link => {
+    const isEmergency = link.dataset.orderPhone === "emergency";
+    const number = isEmergency ? config.emergencyPhone : config.readinessPhone;
+    link.href = "tel:" + number;
+    link.textContent = isEmergency ? number : config.readinessLabel;
+  });
+  if (config.localTimesConfirmed && config.wakeTime && config.quietTime) {
+    document.querySelector("[data-order-times]").textContent = "Örtliche Zeiten in " + config.location + ": Wecken um " + config.wakeTime + " Uhr; Nachtruhe ab " + config.quietTime + " Uhr. Aktuelle Befehle haben Vorrang.";
+  }
+  document.querySelector("[data-order-clothing]").textContent = config.medicalClothingConfirmed
+    ? "Örtliche Bekleidungsvorgabe in " + config.location + ": " + config.medicalClothing + ". Nicht auf andere Standorte übertragbar."
+    : "Für den beschriebenen Ablauf in " + config.location + " ist " + config.medicalClothing + " vorgesehen. Die aktuelle Gültigkeit ist örtlich zu bestätigen; vor dem Arztbesuch die befohlene Bekleidung klären.";
+  if (config.medicalReviewDate && config.medicalReviewedBy) {
+    document.querySelector("[data-order-review]").textContent = dateLabel(config.medicalReviewDate);
+    document.querySelector("[data-order-reviewer]").textContent = "Fachlich geprüft durch: " + config.medicalReviewedBy;
+  }
+  document.querySelector("[data-order-source-date]").textContent = dateLabel(config.sourcesCheckedOn);
+}
+
 function updateTopicNumbers() {
   const cards = document.querySelectorAll(".category-grid > a");
   cards.forEach((card, index) => {
@@ -3216,6 +3241,7 @@ installImageFallbacks();
 installRankFilters();
 installRankLearningGame();
 installNatoLearningGame();
+renderMilitaryOrderConfig();
 updateTopicNumbers();
 installQuiz();
 installOrientationPractice();
