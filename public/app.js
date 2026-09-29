@@ -2700,7 +2700,8 @@ const pageTitles = {
   teilstreitkraefte: "Teilstreitkräfte der Bundeswehr · Dienstbeginn",
   knoten: "Knoten & Bunde · Dienstbeginn",
   krawatte: "Krawatte binden · Dienstbeginn",
-  marschlied: "Marschlied · Dienstbeginn",
+  liedersammlung: "Liedersammlung · Dienstbeginn",
+  "liedersammlung-nationalhymne": "Nationalhymne · Liedersammlung · Dienstbeginn",
   nummern: "Wichtige Nummern · Dienstbeginn",
   packlisten: "Verpackungsplan · Dienstbeginn",
   musterspind: "Musterspind · Dienstbeginn",
@@ -3042,6 +3043,7 @@ let scrollRestoreFrame = 0;
 
 function pageFromHash() {
   const requested = window.location.hash.replace(/^#/, "").split("/")[0] || "start";
+  if (requested === "marschlied") return "liedersammlung";
   return Object.hasOwn(pageTitles, requested) ? requested : "start";
 }
 

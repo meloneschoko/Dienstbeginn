@@ -1,15 +1,15 @@
-const SHELL_CACHE = "dienstbeginn-shell-v137";
+const SHELL_CACHE = "dienstbeginn-shell-v138";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
   "./",
   "./sackstich.webp",
-  "./styles.css?v=137",
-  "./app.js?v=137",
-  "./leaderboard-storage.js?v=137",
-  "./manifest.webmanifest?v=137",
-  "./icon.svg?v=137",
-  "./dienstbeginn-mark.svg?v=137",
+  "./styles.css?v=138",
+  "./app.js?v=138",
+  "./leaderboard-storage.js?v=138",
+  "./manifest.webmanifest?v=138",
+  "./icon.svg?v=138",
+  "./dienstbeginn-mark.svg?v=138",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",

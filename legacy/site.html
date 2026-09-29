@@ -8,18 +8,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dienstbeginn</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg?v=137">
-  <link rel="manifest" href="manifest.webmanifest?v=137">
-  <link rel="stylesheet" href="styles.css?v=137">
-  <script src="leaderboard-storage.js?v=137" defer></script>
-  <script src="app.js?v=137" defer></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg?v=138">
+  <link rel="manifest" href="manifest.webmanifest?v=138">
+  <link rel="stylesheet" href="styles.css?v=138">
+  <script src="leaderboard-storage.js?v=138" defer></script>
+  <script src="app.js?v=138" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Dienstbeginn Startseite">
-      <img class="brand-mark" src="dienstbeginn-mark.svg?v=137" alt="" width="40" height="40" decoding="async">
+      <img class="brand-mark" src="dienstbeginn-mark.svg?v=138" alt="" width="40" height="40" decoding="async">
       <span><strong>DIENST</strong><small>BEGINN</small></span>
     </a>
     <div class="topbar-actions">
@@ -161,12 +161,12 @@
             <span class="category-copy"><strong>Äußeres Erscheinungs&shy;bild</strong><small>Haare · Bart · Schmuck · Accessoires</small></span>
             <span class="category-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="category-card category-march" href="#marschlied">
+          <a class="category-card category-march" href="#liedersammlung">
             <span class="category-index" aria-hidden="true"><b>13</b></span>
             <span class="category-icon category-march-symbol" aria-hidden="true">
               <svg viewBox="0 0 64 58"><path d="M24 39V14l25-5v25"/><circle cx="17" cy="43" r="8"/><circle cx="42" cy="38" r="8"/><path d="M24 23l25-5"/></svg>
             </span>
-            <span class="category-copy"><strong>Marschlied</strong><small>Westerwaldlied · Übungsvideo</small></span>
+            <span class="category-copy"><strong>Liedersammlung</strong><small>Westerwaldlied · Nationalhymne</small></span>
             <span class="category-arrow" aria-hidden="true">↗</span>
           </a>
           <a class="category-card category-pack" href="#packlisten">
@@ -933,13 +933,18 @@
       </section>
     </section>
 
-    <section class="page march-song-page" data-page="marschlied" aria-labelledby="march-song-title">
+    <section class="page march-song-page" data-page="liedersammlung" aria-labelledby="march-song-title">
       <div class="page-intro">
         <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
         <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>13</b></span>
-        <h1 id="march-song-title">Marschlied</h1>
+        <h1 id="march-song-title">Liedersammlung</h1>
         <p>Übungsseite zum Westerwaldlied mit Liedtext und Hörbeispiel.</p>
       </div>
+
+      <nav class="section-subnav" aria-label="Lieder der Liedersammlung">
+        <a href="#liedersammlung" aria-current="page">Westerwaldlied</a>
+        <a href="#liedersammlung-nationalhymne">Nationalhymne</a>
+      </nav>
 
       <section class="march-lyrics" aria-labelledby="march-lyrics-title">
         <div class="lesson-heading">
@@ -984,6 +989,26 @@
 
 
 
+    </section>
+
+
+    <section class="page march-song-page" data-page="liedersammlung-nationalhymne" aria-labelledby="anthem-title">
+      <div class="page-intro">
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker">Liedersammlung</span>
+        <h1 id="anthem-title">Nationalhymne der Bundesrepublik Deutschland</h1>
+        <p>Die Nationalhymne der Bundesrepublik Deutschland besteht aus der dritten Strophe des Deutschlandliedes.</p>
+      </div>
+      <nav class="section-subnav" aria-label="Lieder der Liedersammlung">
+        <a href="#liedersammlung">Westerwaldlied</a>
+        <a href="#liedersammlung-nationalhymne" aria-current="page">Nationalhymne</a>
+      </nav>
+
+      <section class="march-lyrics" aria-labelledby="anthem-lyrics-title">
+        <div class="lesson-heading"><div><span class="kicker">Liedtext</span><h2 id="anthem-lyrics-title">Nationalhymne</h2></div></div>
+        <div class="march-verses"><article class="march-verse"><p>Einigkeit und Recht und Freiheit<br>für das deutsche Vaterland!<br>Danach lasst uns alle streben,<br>brüderlich mit Herz und Hand!<br>Einigkeit und Recht und Freiheit<br>sind des Glückes Unterpfand:<br>Blüh im Glanze dieses Glückes,<br>blühe, deutsches Vaterland!<br>Blüh im Glanze dieses Glückes,<br>blühe, deutsches Vaterland!</p></article></div>
+      </section>
+      <aside class="source-box"><p>Amtlicher Wortlaut: <a href="https://www.bundesregierung.de/breg-de/schwerpunkte/nationalhymne-deutschland-461412" target="_blank" rel="noreferrer">Bundesregierung – Die deutsche Nationalhymne</a>.</p></aside>
     </section>
 
     <section class="page" data-page="packlisten" aria-labelledby="packlists-title">
