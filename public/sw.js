@@ -1,7 +1,9 @@
-const SHELL_CACHE = "dienstbeginn-shell-v152";
+const SHELL_CACHE = "dienstbeginn-shell-v154";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
+  "./history/luetzower-uniformen.jpg",
+  "./history/luetzower-vorposten.jpg",
   "./",
   "./sackstich.webp",
   "./packplan/musterspind-waesche.webp",

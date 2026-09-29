@@ -1940,7 +1940,7 @@ footer strong { color: var(--acid); }
 .appearance-context, .appearance-safety, .appearance-topics, .appearance-source { width: min(1120px, calc(100% - 36px)); margin-left: auto; margin-right: auto; }
 .appearance-topic-caption { font-family: Arial, Helvetica, sans-serif; font-weight: 400; }
 
-.dashboard-section .category-appearance .category-copy strong { font-size: clamp(18px, 5vw, 24px); hyphens: manual; overflow-wrap: normal; }
+.dashboard-section .category-appearance .category-copy strong { font-size: 18px; line-height: 1.2; hyphens: manual; overflow-wrap: anywhere; }
 
 /* Single-copy oath ticker, confined to the home-page hero. */
 .oath-banner { position: relative; z-index: 1; display: flex; align-items: center; min-width: 0; margin-top: 24px; color: var(--white); background: rgba(0,0,0,.28); border: 1px solid #765050; border-left: 3px solid var(--acid); border-radius: 10px; overflow: hidden; }
@@ -1965,7 +1965,7 @@ footer strong { color: var(--acid); }
 .knot-detail-view > .page-intro { display: block; }
 .knot-detail-view { padding-top: 0; }
 .subcategory-heading { width: min(1120px, calc(100% - 36px)); margin: 0 auto 24px; }
-.subcategory-heading h2 { margin: 0 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 5vw, 38px); font-weight: 500; line-height: 1.2; overflow-wrap: anywhere; }
+.subcategory-heading h2, .weapon-section-heading h2, .weapon-safety-header h2, .marksmanship-header h2 { margin: 0 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 5vw, 38px); font-weight: 500; line-height: 1.2; letter-spacing: normal; overflow-wrap: anywhere; }
 .subcategory-heading p { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
 
 /* Keep the badge fallback readable when its external image is unavailable. */
@@ -2065,3 +2065,20 @@ body:has(#packing-lightbox[open]) { overflow: hidden; }
 .social-check input { flex: 0 0 24px; width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--acid-dark); }
 .social-check input:focus-visible { outline: 3px solid var(--acid-dark); outline-offset: 3px; }
 .social-check .order-priority { margin: 22px 0 0; }
+
+@media (max-width: 360px) {
+  .alphabet-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.history-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 24px; }
+.history-gallery figure { min-width: 0; margin: 0; }
+.history-gallery figure > a { display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--paper-2); }
+.history-gallery img { display: block; width: 100%; height: auto; }
+.history-gallery figure > a span { display: block; padding: 12px; font-size: 14px; font-weight: 700; }
+.history-gallery figcaption { margin-top: 12px; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+.history-gallery a:focus-visible { outline: 3px solid var(--acid-dark); outline-offset: 3px; }
+@media (max-width: 600px) { .history-gallery { grid-template-columns: minmax(0, 1fr); } }
+
+.category-german-flag { height: 48px; padding: 0; overflow: hidden; border: 1px solid rgba(0,0,0,.2); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.category-german-flag svg { display: block; width: 100%; height: 100%; }
+.dashboard-section .category-history .category-copy strong { font-size: 18px; line-height: 1.2; }
