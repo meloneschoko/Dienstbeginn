@@ -2712,7 +2712,8 @@ const pageTitles = {
   orientierung: "Orientieren im Gelände · Dienstbeginn",
   "orientierung-kartenkunde": "Kartenkunde & UTM · Dienstbeginn",
   "orientierung-uebungen": "Orientierungsübungen · Dienstbeginn",
-  pflichten: "Pflichten & Befehle · Dienstbeginn",
+  pflichten: "Rechte und Pflichten · Dienstbeginn",
+  "pflichten-sg": "Pflichten · Rechte und Pflichten · Dienstbeginn",
   meldungen: "Meldungen · Dienstbeginn",
   "meldungen-zusatzinfos": "DTG & Zusatzinfos · Dienstbeginn"
 };

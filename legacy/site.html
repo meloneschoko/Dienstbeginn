@@ -8,18 +8,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dienstbeginn</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg?v=142">
-  <link rel="manifest" href="manifest.webmanifest?v=142">
-  <link rel="stylesheet" href="styles.css?v=142">
-  <script src="leaderboard-storage.js?v=142" defer></script>
-  <script src="app.js?v=142" defer></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg?v=143">
+  <link rel="manifest" href="manifest.webmanifest?v=143">
+  <link rel="stylesheet" href="styles.css?v=143">
+  <script src="leaderboard-storage.js?v=143" defer></script>
+  <script src="app.js?v=143" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Dienstbeginn Startseite">
-      <img class="brand-mark" src="dienstbeginn-mark.svg?v=142" alt="" width="40" height="40" decoding="async">
+      <img class="brand-mark" src="dienstbeginn-mark.svg?v=143" alt="" width="40" height="40" decoding="async">
       <span><strong>DIENST</strong><small>BEGINN</small></span>
     </a>
     <div class="topbar-actions">
@@ -100,7 +100,7 @@
           <a class="category-card category-duties" href="#pflichten">
             <span class="category-index" aria-hidden="true"><b>4</b></span>
             <span class="category-icon category-paragraph" aria-hidden="true">§</span>
-            <span class="category-copy"><strong>Pflichten &amp; Befehle</strong><small>Befehlsdefinition · Kameradschaft · VorgV §§ 1–6</small></span>
+            <span class="category-copy"><strong>Rechte und Pflichten</strong><small>Vorgesetztenverordnung · Pflichten nach dem Soldatengesetz</small></span>
             <span class="category-arrow" aria-hidden="true">↗</span>
           </a>
           <a class="category-card category-reports" href="#meldungen">
@@ -1735,8 +1735,10 @@
       <div class="page-intro">
         <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
         <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>4</b></span>
-        <h1 id="duties-title">Pflichten &amp; Befehle</h1>
+        <h1 id="duties-title">Rechte und Pflichten</h1>
+        <p>Vorgesetztenverhältnisse und grundlegende soldatische Pflichten im Überblick.</p>
       </div>
+      <nav class="section-subnav duties-subnav" aria-label="Unterbereiche der Rechte und Pflichten"><a href="#pflichten" aria-current="page">Vorgesetzten&shy;verordnung</a><a href="#pflichten-sg">Pflichten</a></nav>
       <div class="duties-content">
         <section class="command-card" aria-labelledby="command-title">
           <h2 id="command-title">Was ist ein Befehl?</h2>
@@ -1817,11 +1819,17 @@ mit dem Anspruch auf Gehorsam erteilt.“</blockquote>
             </div>
           </article>
         </div>
+        <aside class="duties-source">
+          <strong>Quelle &amp; Stand</strong>
+          <p><a href="https://www.gesetze-im-internet.de/svorgesv/" target="_blank" rel="noreferrer">Gesetze im Internet: Vorgesetztenverordnung (VorgV)</a> · Aktuelle konsolidierte Fassung, abgerufen am 29. September 2026. Letzte dort ausgewiesene Änderung: 7. Oktober 1981.</p>
+          <p>§§ 1–3 haben eigene Überschriften. Bei §§ 4–6 wird die Bezeichnung des jeweils zugehörigen Abschnitts als Kartenüberschrift verwendet. Das Vorrangschema ist eine verständliche Einordnung für konkurrierende Vorgesetztenverhältnisse; die Zahlenfolge steht nicht wörtlich im Verordnungstext. Die Erklärungen und Beispiele sind Zusammenfassungen beziehungsweise frei formulierte Veranschaulichungen. Die <a href="https://www.bundeswehr.de/de/selbstverstaendnis/begriffe-bundeswehr-glossar" target="_blank" rel="noreferrer">Bundeswehr erläutert die Offizierdienstgradgruppen in ihrem Glossar</a>.</p>
+        </aside>
+        <a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a>
         <section class="precedence-card" aria-labelledby="precedence-title">
           <header class="precedence-header">
             <span class="precedence-kicker">Vorrang bei Überschneidungen</span>
             <h3 id="precedence-title">Welche Befehlsbefugnis geht vor?</h3>
-            <p>Mehrere Vorgesetztenverhältnisse können gleichzeitig bestehen. Betreffen sie dieselbe konkrete Lage, hilft dieses in der Ausbildung gebräuchliche Merkschema:</p>
+            <p>Mehrere Vorgesetztenverhältnisse können gleichzeitig bestehen. Die folgende Zahlenfolge dient als Lernhilfe. Die VorgV enthält keine pauschale Rangfolge für jeden Befehlswiderspruch; maßgeblich ist die konkrete Befehlsbefugnis.</p>
           </header>
           <p class="precedence-formula" aria-label="Paragraph 5 vor Paragraph 3 vor Paragraph 1 vor Paragraph 2 vor Paragraph 4; Paragraph 6 ist eine Ausnahmebefugnis">
             <span>§ 5</span><b aria-hidden="true">›</b><span>§ 3</span><b aria-hidden="true">›</b><span>§ 1</span><b aria-hidden="true">›</b><span>§ 2</span><b aria-hidden="true">›</b><span>§ 4</span><b aria-hidden="true">›</b><span class="precedence-exception">§ 6</span>
@@ -1830,11 +1838,11 @@ mit dem Anspruch auf Gehorsam erteilt.“</blockquote>
           <ol class="precedence-list">
             <li>
               <span class="precedence-rank" aria-hidden="true">1</span>
-              <div><span class="precedence-paragraph">§ 5</span><strong>Besondere Anordnung</strong><p>Hat Vorrang vor §§ 3, 1, 2 und 4 – aber ausschließlich für die bestimmte, vorübergehend übertragene Aufgabe.</p></div>
+              <div><span class="precedence-paragraph">§ 5</span><strong>Besondere Anordnung</strong><p>Die besondere Unterstellung gilt ausschließlich für die bestimmte, vorübergehend übertragene Aufgabe und nur innerhalb der Befehlsbefugnis der anordnenden Person.</p></div>
             </li>
             <li>
               <span class="precedence-rank" aria-hidden="true">2</span>
-              <div><span class="precedence-paragraph">§ 3</span><strong>Besonderer Aufgabenbereich</strong><p>Hat innerhalb des zugewiesenen Aufgabenbereichs Vorrang vor §§ 1, 2 und 4.</p></div>
+              <div><span class="precedence-paragraph">§ 3</span><strong>Besonderer Aufgabenbereich</strong><p>Für den besonderen Aufgabenbereich dürfen die notwendigen Befehle erteilt werden. Ein anderer Auftrag hebt beispielsweise eine erforderliche Wachkontrolle nicht auf.</p></div>
             </li>
             <li>
               <span class="precedence-rank" aria-hidden="true">3</span>
@@ -1842,11 +1850,11 @@ mit dem Anspruch auf Gehorsam erteilt.“</blockquote>
             </li>
             <li>
               <span class="precedence-rank" aria-hidden="true">4</span>
-              <div><span class="precedence-paragraph">§ 2</span><strong>Fachvorgesetzte</strong><p>Geht im eigenen Fachdienst dem reinen Dienstgradverhältnis nach § 4 vor; die Befugnis gilt nur im Dienst und zu fachdienstlichen Zwecken.</p></div>
+              <div><span class="precedence-paragraph">§ 2</span><strong>Fachvorgesetzte</strong><p>Die Befugnis gilt im Dienst zu fachdienstlichen Zwecken. Ein höherer Dienstgrad allein ersetzt nicht die zugewiesene fachliche Leitung.</p></div>
             </li>
             <li>
               <span class="precedence-rank" aria-hidden="true">5</span>
-              <div><span class="precedence-paragraph">§ 4</span><strong>Dienstgrad</strong><p>Greift nachrangig, wenn kein spezielleres Vorgesetztenverhältnis nach §§ 5, 3, 1 oder 2 dieselbe Lage bestimmt.</p></div>
+              <div><span class="precedence-paragraph">§ 4</span><strong>Dienstgrad</strong><p>Die Befugnis aus dem Dienstgrad ist zusammen mit bestehenden Unterstellungen und besonderen Zuständigkeiten nach §§ 1–3 und 5 zu betrachten.</p></div>
             </li>
             <li class="precedence-fallback">
               <span class="precedence-rank" aria-hidden="true">6</span>
@@ -1855,33 +1863,57 @@ mit dem Anspruch auf Gehorsam erteilt.“</blockquote>
           </ol>
           <aside class="precedence-notice">
             <span aria-hidden="true">!</span>
-            <div><strong>Kein pauschales „Aushebeln“</strong><p>Der höherrangige Paragraph macht den anderen nicht allgemein unwirksam. Vorrang besteht nur dort, wo sich Zuständigkeiten in derselben konkreten Aufgabe überschneiden. Entscheidend bleiben Unterstellung, Aufgabenbereich, Zweck, Ort und Dienststatus. Bei widersprüchlichen Befehlen ist auf den bereits erhaltenen Auftrag hinzuweisen und die Lage über die Vorgesetzten zu klären.</p></div>
+            <div><strong>Kein pauschales „Aushebeln“</strong><p>Die Position im Merkschema macht andere Befugnisse nicht allgemein unwirksam. Bei Überschneidungen muss geprüft werden, wer für die konkrete Aufgabe Befehle erteilen darf. Entscheidend bleiben Unterstellung, Aufgabenbereich, Zweck, Ort und Dienststatus. Bei widersprüchlichen Befehlen ist auf den bereits erhaltenen Auftrag hinzuweisen und die Lage über die Vorgesetzten zu klären.</p></div>
           </aside>
           <aside class="law-example precedence-example"><strong>Beispiel: § 3 vor § 1</strong><p>Ein Gruppenführer hat nach § 1 einen Auftrag erteilt. An der Kaserneneinfahrt stoppt die Wache den Soldaten aufgrund ihres besonderen Aufgabenbereichs nach § 3 zur Kontrolle. Für die Zutrittskontrolle hat § 3 Vorrang; danach gilt der Auftrag des Gruppenführers weiter.</p></aside>
           <p class="precedence-source"><a href="https://www.gesetze-im-internet.de/svorgesv/BJNR004590956.html" target="_blank" rel="noreferrer">Amtlicher Wortlaut der Vorgesetztenverordnung ↗</a></p>
         </section>
-        <article class="law-card comradeship-card" id="kameradschaft" aria-labelledby="comradeship-title">
-          <header><span class="law-number" aria-hidden="true">§ 12</span><h3 id="comradeship-title">§ 12 Soldatengesetz · Pflicht zur Kameradschaft</h3></header>
-          <div class="law-body">
-            <p class="comradeship-law-text">„Der Zusammenhalt der Bundeswehr beruht wesentlich auf Kameradschaft.“</p>
-            <p><strong>Einfach erklärt:</strong> Kameradschaft ist nicht nur freiwillige Hilfsbereitschaft, sondern eine gesetzliche Pflicht für alle Soldatinnen und Soldaten. Im täglichen Dienst bedeutet das insbesondere:</p>
-            <ul>
-              <li>die Würde, die Ehre und die Rechte der Kameradinnen und Kameraden zu achten,</li>
-              <li>ihnen in Notlagen und bei Gefahren beizustehen sowie</li>
-              <li>einander anzuerkennen, Rücksicht zu nehmen und andere Anschauungen respektvoll zu behandeln.</li>
-            </ul>
-            <aside class="law-example"><strong>Veranschaulichung aus dem Dienstalltag</strong><p>Bei einem Marsch verletzt sich ein Kamerad. Die anderen sichern die Situation, leisten Hilfe, melden den Vorfall und unterstützen ihn. Gleichzeitig gehen sie respektvoll mit ihm um und stellen ihn nicht bloß.</p></aside>
-            <a class="law-source" href="https://www.gesetze-im-internet.de/sg/__12.html" target="_blank" rel="noreferrer">§ 12 Soldatengesetz bei Gesetze im Internet ↗</a>
-          </div>
-        </article>
-        <aside class="duties-source">
-          <strong>Quelle &amp; Stand</strong>
-          <p><a href="https://www.gesetze-im-internet.de/sg/__12.html" target="_blank" rel="noreferrer">Gesetze im Internet: § 12 Soldatengesetz (SG) – Kameradschaft</a> · Amtliche Fassung, abgerufen am 25. September 2026. Die Erläuterung und das Beispiel sind eine verständliche Zusammenfassung beziehungsweise Veranschaulichung.</p>
-          <p><a href="https://www.gesetze-im-internet.de/svorgesv/" target="_blank" rel="noreferrer">Gesetze im Internet: Vorgesetztenverordnung (VorgV)</a> · Aktuelle konsolidierte Fassung, abgerufen am 25. September 2026. Letzte dort ausgewiesene Änderung: 7. Oktober 1981.</p>
-          <p>§§ 1–3 haben eigene Überschriften. Bei §§ 4–6 wird die Bezeichnung des jeweils zugehörigen Abschnitts als Kartenüberschrift verwendet. Das Vorrangschema ist eine verständliche Einordnung für konkurrierende Vorgesetztenverhältnisse; die Zahlenfolge steht nicht wörtlich im Verordnungstext. Die Erklärungen und Beispiele sind Zusammenfassungen beziehungsweise frei formulierte Veranschaulichungen. Die <a href="https://www.bundeswehr.de/de/selbstverstaendnis/begriffe-bundeswehr-glossar" target="_blank" rel="noreferrer">Bundeswehr erläutert die Offizierdienstgradgruppen in ihrem Glossar</a>.</p>
-        </aside>
-        <a class="topic-challenge" href="#spiel">In der Dienstbeginn-Challenge üben <span aria-hidden="true">→</span></a>
       </div>
+    </section>
+
+    <section class="page duties-page" data-page="pflichten-sg" data-parent-page="pflichten" aria-labelledby="duties-sg-title">
+      <div class="page-intro">
+        <a class="back-link" href="#start"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Übersicht</span></a>
+        <span class="kicker numbered-kicker"><span>Themenbereich</span> <b>4</b></span>
+        <h1 id="duties-sg-title">Rechte und Pflichten</h1>
+        <p>Vorgesetztenverhältnisse und grundlegende soldatische Pflichten im Überblick.</p>
+      </div>
+      <nav class="section-subnav duties-subnav" aria-label="Unterbereiche der Rechte und Pflichten"><a href="#pflichten">Vorgesetzten&shy;verordnung</a><a href="#pflichten-sg" aria-current="page">Pflichten</a></nav>
+      <header class="subcategory-heading"><h2>Pflichten</h2><p>Vier grundlegende Vorschriften des Soldatengesetzes mit Gesetzestext und Erläuterung.</p></header>
+      <div class="duties-content"><div class="law-list">
+          <article class="law-card sg-duty" id="sg-7" aria-labelledby="sg-7-title">
+            <header><span class="law-number" aria-hidden="true">§ 7</span><div><h2 id="sg-7-title">§ 7 SG – Grundpflicht des Soldaten</h2><p class="sg-duty-subtitle">Pflicht zum treuen Dienen</p></div></header>
+            <div class="law-body">
+              <section class="sg-law-text" aria-labelledby="sg-7-text-title"><h3 id="sg-7-text-title">Gesetzestext</h3><blockquote cite="https://www.gesetze-im-internet.de/sg/__7.html"><p>Der Soldat hat die Pflicht, der Bundesrepublik Deutschland treu zu dienen und das Recht und die Freiheit des deutschen Volkes tapfer zu verteidigen.</p></blockquote></section>
+              <section class="sg-explanation" aria-labelledby="sg-7-explanation-title"><h3 id="sg-7-explanation-title">Was bedeutet das für Soldatinnen und Soldaten?</h3><p>Treues Dienen und die tapfere Verteidigung von Recht und Freiheit bilden die soldatische Grundpflicht. Im Dienst heißt das etwa, übertragene Aufgaben zuverlässig wahrzunehmen und Verantwortung auch unter schwierigen Bedingungen zu übernehmen.</p><p>Diese Pflicht verlangt keinen blinden oder grenzenlosen Gehorsam. Für Befehle gelten die Regeln und Grenzen des § 11 SG.</p></section>
+              <a class="law-source" href="https://www.gesetze-im-internet.de/sg/__7.html" target="_blank" rel="noreferrer">Amtliche Quelle: § 7 SG ↗</a>
+            </div>
+          </article>
+          <article class="law-card sg-duty" id="sg-8" aria-labelledby="sg-8-title">
+            <header><span class="law-number" aria-hidden="true">§ 8</span><div><h2 id="sg-8-title">§ 8 SG – Eintreten für die demokratische Grundordnung</h2></div></header>
+            <div class="law-body">
+              <section class="sg-law-text" aria-labelledby="sg-8-text-title"><h3 id="sg-8-text-title">Gesetzestext</h3><blockquote cite="https://www.gesetze-im-internet.de/sg/__8.html"><p>Der Soldat muss die freiheitliche demokratische Grundordnung im Sinne des Grundgesetzes anerkennen und durch sein gesamtes Verhalten für ihre Erhaltung eintreten.</p></blockquote></section>
+              <section class="sg-explanation" aria-labelledby="sg-8-explanation-title"><h3 id="sg-8-explanation-title">Was bedeutet das für Soldatinnen und Soldaten?</h3><p>Verfassungstreue betrifft das gesamte Verhalten, im Dienst und außerhalb. Dazu gehören die Achtung der Menschenwürde und der demokratischen Ordnung sowie die klare Distanz zu verfassungsfeindlichen und extremistischen Bestrebungen.</p><p>Im Alltag bedeutet das beispielsweise, menschenverachtende Aussagen nicht zu unterstützen und sich für einen respektvollen Umgang einzusetzen. Verfassungstreue verlangt nicht, jeder politischen Entscheidung zuzustimmen; sachliche Kritik bleibt möglich.</p></section>
+              <a class="law-source" href="https://www.gesetze-im-internet.de/sg/__8.html" target="_blank" rel="noreferrer">Amtliche Quelle: § 8 SG ↗</a>
+            </div>
+          </article>
+          <article class="law-card sg-duty" id="sg-11" aria-labelledby="sg-11-title">
+            <header><span class="law-number" aria-hidden="true">§ 11</span><div><h2 id="sg-11-title">§ 11 SG – Gehorsam</h2><p class="sg-duty-subtitle">Pflicht zum Gehorsam</p></div></header>
+            <div class="law-body">
+              <section class="sg-law-text" aria-labelledby="sg-11-text-title"><h3 id="sg-11-text-title">Gesetzestext</h3><blockquote cite="https://www.gesetze-im-internet.de/sg/__11.html"><p>(1) Der Soldat muss seinen Vorgesetzten gehorchen. Er hat ihre Befehle nach besten Kräften vollständig, gewissenhaft und unverzüglich auszuführen. Ungehorsam liegt nicht vor, wenn ein Befehl nicht befolgt wird, der die Menschenwürde verletzt oder der nicht zu dienstlichen Zwecken erteilt worden ist; die irrige Annahme, es handele sich um einen solchen Befehl, befreit den Soldaten nur dann von der Verantwortung, wenn er den Irrtum nicht vermeiden konnte und ihm nach den ihm bekannten Umständen nicht zuzumuten war, sich mit Rechtsbehelfen gegen den Befehl zu wehren.</p><p>(2) Ein Befehl darf nicht befolgt werden, wenn dadurch eine Straftat begangen würde. Befolgt der Untergebene den Befehl trotzdem, so trifft ihn eine Schuld nur, wenn er erkennt oder wenn es nach den ihm bekannten Umständen offensichtlich ist, dass dadurch eine Straftat begangen wird.</p><p>(3) Im Verhältnis zu Personen, die befugt sind, dienstliche Anordnungen zu erteilen, die keinen Befehl darstellen, gelten § 62 Absatz 1 und § 63 des Bundesbeamtengesetzes entsprechend.</p></blockquote></section>
+              <section class="sg-explanation" aria-labelledby="sg-11-explanation-title"><h3 id="sg-11-explanation-title">Was bedeutet das für Soldatinnen und Soldaten?</h3><ul><li><strong>Absatz 1 – Ausführung und Grenzen:</strong> Befehle sind nach besten Kräften vollständig, sorgfältig und ohne vermeidbare Verzögerung auszuführen. Wer einen menschenwürdeverletzenden oder nicht zu dienstlichen Zwecken erteilten Befehl nicht befolgt, begeht damit keinen Ungehorsam. Ein Irrtum darüber befreit nur dann von Verantwortung, wenn er unvermeidbar war und es nach den bekannten Umständen unzumutbar war, Rechtsbehelfe zu nutzen.</li><li><strong>Absatz 2 – Straftaten:</strong> Ein Befehl, dessen Ausführung eine Straftat bedeuten würde, darf nicht befolgt werden. Wer ihn dennoch ausführt, trifft nach dieser Vorschrift nur dann Schuld, wenn die Straftat erkannt wird oder nach den bekannten Umständen offensichtlich ist. Ein Befehl rechtfertigt beispielsweise keine Körperverletzung zur Bestrafung eines Kameraden.</li><li><strong>Absatz 3 – Andere dienstliche Anordnungen:</strong> Bei befugten Personen, deren Anordnungen keine militärischen Befehle sind, gelten die beamtenrechtlichen Regeln entsprechend: beraten und unterstützen, Anordnungen und Richtlinien befolgen, soweit keine gesetzliche Weisungsfreiheit besteht. Für die Rechtmäßigkeit besteht persönliche Verantwortung. Rechtliche Bedenken sind unverzüglich beim unmittelbaren und bei fortbestehenden Bedenken beim nächsthöheren Vorgesetzten vorzubringen. Eine bestätigte Anordnung ist grundsätzlich auszuführen; die Verantwortung geht insoweit über. Ausgenommen bleiben Menschenwürdeverletzungen sowie erkennbar strafbare oder ordnungswidrige Handlungen. Bei Gefahr im Verzug gelten die besonderen Regeln zur sofortigen Ausführung und Bestätigung. Die Einzelheiten stehen in <a href="https://www.gesetze-im-internet.de/bbg_2009/__62.html" target="_blank" rel="noreferrer">§ 62 Absatz 1 BBG</a> und <a href="https://www.gesetze-im-internet.de/bbg_2009/__63.html" target="_blank" rel="noreferrer">§ 63 BBG</a>.</li></ul><p>Im Dienst: Unklarheiten über den Auftrag früh ansprechen. Weder „jeder Befehl gilt immer“ noch „nur rechtmäßige Befehle müssen befolgt werden“ bildet diese differenzierten Regeln richtig ab.</p></section>
+              <a class="law-source" href="https://www.gesetze-im-internet.de/sg/__11.html" target="_blank" rel="noreferrer">Amtliche Quelle: § 11 SG ↗</a>
+            </div>
+          </article>
+          <article class="law-card sg-duty" id="kameradschaft" aria-labelledby="sg-12-title">
+            <header><span class="law-number" aria-hidden="true">§ 12</span><div><h2 id="sg-12-title">§ 12 SG – Kameradschaft</h2><p class="sg-duty-subtitle">Pflicht zur Kameradschaft</p></div></header>
+            <div class="law-body">
+              <section class="sg-law-text" aria-labelledby="sg-12-text-title"><h3 id="sg-12-text-title">Gesetzestext</h3><blockquote cite="https://www.gesetze-im-internet.de/sg/__12.html"><p>Der Zusammenhalt der Bundeswehr beruht wesentlich auf Kameradschaft. Sie verpflichtet alle Soldaten, die Würde, die Ehre und die Rechte des Kameraden zu achten und ihm in Not und Gefahr beizustehen. Das schließt gegenseitige Anerkennung, Rücksicht und Achtung fremder Anschauungen ein.</p></blockquote></section>
+              <section class="sg-explanation" aria-labelledby="sg-12-explanation-title"><h3 id="sg-12-explanation-title">Was bedeutet das für Soldatinnen und Soldaten?</h3><p>Kameradschaft ist eine gesetzliche Pflicht für alle Soldatinnen und Soldaten. Sie bedeutet, Würde, Ehre und Rechte anderer zu achten, in Not und Gefahr beizustehen sowie einander mit Anerkennung und Rücksicht zu begegnen – auch bei unterschiedlichen Anschauungen.</p><p>Im Alltag heißt das: einander unterstützen, respektvoll sprechen und niemanden ausgrenzen oder erniedrigen.</p><aside class="law-example"><strong>Veranschaulichung aus dem Dienstalltag</strong><p>Bei einem Marsch verletzt sich ein Kamerad. Die anderen sichern die Situation, leisten Hilfe, melden den Vorfall und unterstützen ihn. Gleichzeitig gehen sie respektvoll mit ihm um und stellen ihn nicht bloß.</p></aside></section>
+              <a class="law-source" href="https://www.gesetze-im-internet.de/sg/__12.html" target="_blank" rel="noreferrer">Amtliche Quelle: § 12 SG ↗</a>
+            </div>
+          </article>
+      </div></div>
     </section>
 
     <section class="page reports-page" data-page="meldungen" aria-labelledby="reports-title">

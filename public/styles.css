@@ -520,9 +520,6 @@ main { min-height: 78vh; }
 .law-example strong { display: block; color: var(--acid-dark); font-size: .875rem; line-height: 1.4; }
 .law-example p { margin: 8px 0 0; }
 .law-source { display: inline-block; padding: 10px 0; font-size: .875rem; font-weight: 700; text-underline-offset: 3px; }
-.comradeship-card { margin-top: 20px; overflow: hidden; border-top: 5px solid var(--acid-dark); box-shadow: var(--shadow); }
-.comradeship-card .law-number { background: #243b4a; }
-.comradeship-law-text { padding: 16px 18px; color: var(--white); background: #17171c; border-left: 4px solid var(--acid); border-radius: 0 12px 12px 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.55; }
 .duties-source { margin: 24px 0; padding: 20px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 16px; }
 .duties-source p { margin: 10px 0 0; }
 .topic-challenge-wrap { width: min(1120px, calc(100% - 36px)); margin: 24px auto 48px; }
@@ -1991,3 +1988,14 @@ footer strong { color: var(--acid); }
 
 /* Keep the badge fallback readable when its external image is unavailable. */
 .category-photo-badge .image-fallback { color: var(--ink); }
+
+/* Soldatengesetz: amtlichen Wortlaut und Erläuterung klar trennen. */
+.duties-subnav a { min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
+.sg-duty header > div { min-width: 0; }
+.sg-duty h2 { margin: 0; font-size: 1.2rem; line-height: 1.35; }
+.sg-duty-subtitle { margin: 6px 0 0; color: var(--muted); font-size: .9rem; }
+.sg-law-text, .sg-explanation { margin-top: 22px; }
+.sg-duty .law-body h3 { margin-bottom: 12px; font-size: 1rem; }
+.sg-law-text blockquote { margin: 0; padding: 16px 18px; background: var(--paper-2); border-left: 4px solid var(--acid-dark); border-radius: 0 12px 12px 0; }
+.sg-law-text blockquote p { margin: 0; }
+.sg-law-text blockquote p + p { margin-top: 16px; }
