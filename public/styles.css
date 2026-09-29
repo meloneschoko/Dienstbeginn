@@ -2031,6 +2031,7 @@ body:has(#packing-lightbox[open]) { overflow: hidden; }
 
 /* Militärische Ordnung: bestehende Karten und Navigation ergänzen. */
 .order-subnav a { min-width: 0; overflow-wrap: anywhere; }
+.order-subnav a:last-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - 6px) / 2); }
 .order-content { width: min(880px, calc(100% - 36px)); margin: 0 auto 48px; line-height: 1.6; }
 .order-card, .order-priority, .order-emergency, .order-review { padding: clamp(18px, 3vw, 26px); margin: 0 0 22px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow-wrap: anywhere; }
 .order-card h3, .order-emergency h3 { margin: 0 0 16px; font-size: 1.25rem; line-height: 1.35; }

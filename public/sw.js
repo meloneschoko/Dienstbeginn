@@ -1,4 +1,4 @@
-const SHELL_CACHE = "dienstbeginn-shell-v151";
+const SHELL_CACHE = "dienstbeginn-shell-v152";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
