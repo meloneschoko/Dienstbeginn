@@ -1978,3 +1978,6 @@ footer strong { color: var(--acid); }
 
 /* Prevent focus on the ticker controls from scrolling the hero sideways. */
 [data-page="start"] .hero { overflow: clip; }
+
+/* Center the national anthem lyrics. */
+[data-page="liedersammlung"] .march-verse p { text-align: center; }
