@@ -1,15 +1,15 @@
-const SHELL_CACHE = "dienstbeginn-shell-v162";
+const SHELL_CACHE = "dienstbeginn-shell-v163";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
-  "./formal-reports-data.js?v=162",
-  "./formal-reports.js?v=162",
+  "./formal-reports-data.js?v=163",
+  "./formal-reports.js?v=163",
   "./formal-reports/grundstellung-vorn.webp",
   "./formal-reports/ruehrt-euch-hinten.webp",
   "./formal-reports/gruss.webp",
   "./artillery/wappen-215.png",
-  "./artillery-data.js?v=162",
-  "./artillery.js?v=162",
+  "./artillery-data.js?v=163",
+  "./artillery.js?v=163",
   "./artillery/rch155.webp",
   "./artillery/boxer.webp",
   "./artillery/pzh2000.webp",
@@ -29,13 +29,13 @@ const SHELL_FILES = [
   "./packplan/rucksack-packplan-2.webp",
   "./packplan/rucksack-packplan-3.webp",
   "./vorgesetztenverordnung-tabelle-zuschnitt.png",
-  "./styles.css?v=162",
-  "./app.js?v=162",
-  "./military-order-config.js?v=162",
-  "./leaderboard-storage.js?v=162",
-  "./manifest.webmanifest?v=162",
-  "./icon.svg?v=162",
-  "./dienstbeginn-mark.svg?v=162",
+  "./styles.css?v=163",
+  "./app.js?v=163",
+  "./military-order-config.js?v=163",
+  "./leaderboard-storage.js?v=163",
+  "./manifest.webmanifest?v=163",
+  "./icon.svg?v=163",
+  "./dienstbeginn-mark.svg?v=163",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",
@@ -67,7 +67,7 @@ async function networkFirst(request) {
     const response = await fetch(request);
     if (response.ok) await cache.put(request, response.clone());
     return response;
-  } catch (_) {
+  } catch {
     return (await cache.match(request)) || cache.match("./");
   }
 }
@@ -123,7 +123,7 @@ async function cacheRemoteMedia(urls) {
       } else {
         failed += 1;
       }
-    } catch (_) {
+    } catch {
       failed += 1;
     }
   }

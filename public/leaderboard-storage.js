@@ -10,7 +10,7 @@ try {
   if (mode === "local" || (legacy && Array.isArray(JSON.parse(legacy)))) {
     window.natoLeaderboardStorage = "local";
   }
-} catch (_) {
+} catch {
   // The normal read/write path reports unavailable browser storage to the user.
 }
 window.requestNatoLeaderboard = async function(url, options = {}) {
@@ -20,13 +20,13 @@ window.requestNatoLeaderboard = async function(url, options = {}) {
     let response;
     try {
       response = await fetch(url, options);
-    } catch (error) {
+    } catch {
       if (window.natoLeaderboardStorage !== "local") {
         if (method === "GET") {
           try {
             const cached = JSON.parse(localStorage.getItem(NATO_SHARED_CACHE_KEY) || "null");
             if (cached && Array.isArray(cached.entries)) return Response.json({...cached,storage:"shared",stale:true});
-          } catch (_) {}
+          } catch {}
         }
         throw new Error("Keine Verbindung zur gemeinsamen Bestenliste. Bitte prüfe deine Internetverbindung und versuche es erneut.");
       }
@@ -39,7 +39,7 @@ window.requestNatoLeaderboard = async function(url, options = {}) {
         try {
           localStorage.setItem(NATO_MODE_KEY, payload.storage);
           if (payload.storage === "shared" && Array.isArray(payload.entries)) localStorage.setItem(NATO_SHARED_CACHE_KEY,JSON.stringify({entries:payload.entries,savedAt:Date.now()}));
-        } catch (_) {}
+        } catch {}
       }
       if (window.natoLeaderboardStorage !== "local" || !response.ok) return response;
     }
@@ -49,7 +49,7 @@ window.requestNatoLeaderboard = async function(url, options = {}) {
     entries = JSON.parse(localStorage.getItem(key) || "[]");
     if (!Array.isArray(entries)) entries = [];
     entries = entries.filter(e => e && typeof e.displayName === "string" && e.score === 26 && Number.isInteger(e.durationMs) && e.durationMs >= 3000 && e.durationMs <= 3600000);
-  } catch (_) {
+  } catch {
     throw new Error("Die lokale Bestenliste kann nicht gelesen werden. Bitte erlaube den Browserspeicher.");
   }
   entries.sort((a, b) => a.durationMs - b.durationMs || String(a.createdAt).localeCompare(String(b.createdAt)));
@@ -68,6 +68,6 @@ window.requestNatoLeaderboard = async function(url, options = {}) {
   entries.sort((a, b) => a.durationMs - b.durationMs || String(a.createdAt).localeCompare(String(b.createdAt)));
   entries = entries.slice(0, 10);
   try { localStorage.setItem(key, JSON.stringify(entries)); }
-  catch (_) { throw new Error("Das Ergebnis konnte auf diesem Gerät nicht gespeichert werden."); }
+  catch { throw new Error("Das Ergebnis konnte auf diesem Gerät nicht gespeichert werden."); }
   return Response.json({accepted: true, rank: entries.findIndex(e => e.id === entry.id) + 1, entries, storage: "local"}, {status: 201});
 };

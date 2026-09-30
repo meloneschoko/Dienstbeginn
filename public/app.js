@@ -1508,7 +1508,7 @@ function installNatoLearningGame() {
         method:"POST", headers:{"content-type":"application/json","x-dienstbeginn-game":"nato-v1"},
         body:JSON.stringify(data), signal:AbortSignal.timeout(8000)
       });
-    } catch (_) { throw new Error("Keine Verbindung zur gemeinsamen Bestenliste. Bitte prüfe deine Internetverbindung."); }
+    } catch { throw new Error("Keine Verbindung zur gemeinsamen Bestenliste. Bitte prüfe deine Internetverbindung."); }
     const payload = await response.json();
     if (data.action === "start" && payload.storage === "local") return payload;
     if (!response.ok) throw new Error(payload.error || "Die gemeinsame Bestenliste ist gerade nicht erreichbar.");
@@ -2046,12 +2046,12 @@ function loadQuizState() {
       quizState = { answered: saved.answered, roundIds: saved.roundIds };
       return;
     }
-  } catch (_) { /* Start a fresh round when browser storage is unavailable or invalid. */ }
+  } catch { /* Start a fresh round when browser storage is unavailable or invalid. */ }
   startFreshQuizRound();
 }
 
 function saveQuizState() {
-  try { sessionStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(quizState)); } catch (_) { /* The game still works for the current page view. */ }
+  try { sessionStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(quizState)); } catch { /* The game still works for the current page view. */ }
 }
 
 function currentQuizScore() {
@@ -2423,7 +2423,7 @@ function saveOrientationPracticeState() {
       completed: orientationPracticeState.completed,
       round: orientationPracticeState.round
     }));
-  } catch (_) { /* Die Übung bleibt auch ohne lokalen Speicher nutzbar. */ }
+  } catch { /* Die Übung bleibt auch ohne lokalen Speicher nutzbar. */ }
 }
 
 function loadOrientationPracticeState() {
@@ -2439,7 +2439,7 @@ function loadOrientationPracticeState() {
       round: Number.isInteger(saved.round) && saved.round >= 0 ? saved.round : 0,
       plotSelection: null
     };
-  } catch (_) { /* Ungültige gespeicherte Daten werden ignoriert. */ }
+  } catch { /* Ungültige gespeicherte Daten werden ignoriert. */ }
 }
 
 function renderOrientationPracticeMap() {
@@ -3244,7 +3244,7 @@ function installOfflineMode() {
         .map(image => image.currentSrc || image.src)
         .filter(src => ["commons.wikimedia.org", "www.bundeswehr.de"].includes(new URL(src).hostname));
       (registration.active || navigator.serviceWorker.controller)?.postMessage({ type: "CACHE_REMOTE_MEDIA", urls: [...new Set(remoteImages)] });
-    } catch (_) {
+    } catch {
       setStatus("Offline-Modus konnte nicht vorbereitet werden", "unavailable");
     }
   });
