@@ -2269,13 +2269,6 @@ function practiceOverviewGridSvg(mode, variant) {
 
   let overlay = "";
   let title = "Fiktives Kartengitter mit Ostwerten unten, Nordwerten links und Gitternord oben.";
-  if (mode === "order") {
-    overlay = `
-      <path class='practice-map-arrow' d='M112 417H314m-14-10 14 10-14 10'/>
-      <text class='practice-map-axis' x='213' y='409' text-anchor='middle'>zuerst Ostwert</text>
-      <path class='practice-map-arrow' d='M19 326V126m-10 14 10-14 10 14'/>
-      <text class='practice-map-axis' x='31' y='225' text-anchor='middle' transform='rotate(-90 31 225)'>danach Nordwert</text>`;
-  }
   if (mode === "square") {
     const x = left + (variant.easting - 34) * step;
     const y = bottom - (variant.northing - 61 + 1) * step;
