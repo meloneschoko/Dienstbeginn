@@ -897,23 +897,23 @@ const quizQuestionBank = [
   { id: "r400", category: "Dienstgrade", short: "Dienstgrade", label: "Bild 4", value: 400, question: "Welcher Dienstgrad ist auf dem Bild dargestellt?", options: ["Hauptmann", "Major", "Oberst"], answer: 1, image: commonsFile("Dienstgrad_Bundeswehr_Heer_251_Major.svg"), imageAlt: "Dienstgradabzeichen des Heeres zur Bestimmung", imageSource: commonsPage("Dienstgrad_Bundeswehr_Heer_251_Major.svg") },
   { id: "r500", category: "Dienstgrade", short: "Dienstgrade", label: "Bild 5", value: 500, question: "Welcher Dienstgrad ist auf dem Bild dargestellt?", options: ["Brigadegeneral", "Generalmajor", "Generalleutnant"], answer: 0, image: commonsFile("Dienstgrad_Bundeswehr_Heer_311_Brigadegeneral.svg"), imageAlt: "Dienstgradabzeichen des Heeres zur Bestimmung", imageSource: commonsPage("Dienstgrad_Bundeswehr_Heer_311_Brigadegeneral.svg") },
 
-  { id: "pflichten-definition", category: "Pflichten & Befehle", short: "Pflichten & Befehle", label: "Definition", value: 100,
+  { id: "pflichten-definition", category: "Rechte und Pflichten", short: "Rechte und Pflichten", label: "Definition", value: 100,
     question: "Mit welchem Anspruch wird ein Befehl nach der Definition erteilt?",
     options: ["Mit dem Anspruch auf Zustimmung", "Mit dem Anspruch auf Gehorsam", "Mit dem Anspruch auf einen Vorschlag"], answer: 1,
     explanation: "Die vorgegebene Befehlsdefinition nennt ausdrücklich den Anspruch auf Gehorsam." },
-  { id: "pflichten-1", category: "Pflichten & Befehle", short: "Pflichten & Befehle", label: "§ 1", value: 200,
+  { id: "pflichten-1", category: "Rechte und Pflichten", short: "Rechte und Pflichten", label: "§ 1", value: 200,
     question: "Wann darf eine Zugführerin ihrem unterstellten Zug nach § 1 Befehle erteilen?",
     options: ["Grundsätzlich im Dienst und außerhalb des Dienstes", "Nur während einer Ausbildung", "Nur innerhalb der Kaserne"], answer: 0,
     explanation: "Die Befugnis folgt aus der Führung der unterstellten Teileinheit und gilt im Dienst sowie außerhalb des Dienstes. In einen von Fachvorgesetzten geleiteten und beaufsichtigten Fachdienst soll sie nicht eingreifen." },
-  { id: "pflichten-3", category: "Pflichten & Befehle", short: "Pflichten & Befehle", label: "§ 3", value: 300,
+  { id: "pflichten-3", category: "Rechte und Pflichten", short: "Rechte und Pflichten", label: "§ 3", value: 300,
     question: "Darf ein eingesetzter Wachposten einen dienstfreien Soldaten zur Zutrittskontrolle anhalten?",
     options: ["Nein, Dienstfreie sind von § 3 immer ausgenommen", "Ja, wenn dies zur Erfüllung seines zugewiesenen Wachauftrags notwendig ist", "Ja, aber nur bei höherem Dienstgrad"], answer: 1,
     explanation: "§ 3 begrenzt die Befehle auf den besonderen Aufgabenbereich. Soweit dieser es erfordert, können sie auch an dienstfreie Soldatinnen und Soldaten gerichtet werden." },
-  { id: "pflichten-4", category: "Pflichten & Befehle", short: "Pflichten & Befehle", label: "§ 4", value: 400,
+  { id: "pflichten-4", category: "Rechte und Pflichten", short: "Rechte und Pflichten", label: "§ 4", value: 400,
     question: "Wer darf innerhalb umschlossener militärischer Anlagen nach § 4 Absatz 3 Hauptleuten und Leutnanten Befehle erteilen?",
     options: ["Stabsoffiziere", "Alle Mannschaftsdienstgrade", "Nur zivile Beschäftigte"], answer: 0,
     explanation: "Innerhalb umschlossener militärischer Anlagen sind Stabsoffiziere gegenüber Angehörigen der Dienstgradgruppen Hauptleute und Leutnante im Dienst und außerhalb des Dienstes befehlsbefugt." },
-  { id: "pflichten-6", category: "Pflichten & Befehle", short: "Pflichten & Befehle", label: "§ 6", value: 500,
+  { id: "pflichten-6", category: "Rechte und Pflichten", short: "Rechte und Pflichten", label: "§ 6", value: 500,
     question: "Ein Feldwebel trifft während einer Zugfahrt auf randalierende Mannschaftssoldaten. Wann darf er sich nach § 6 ihnen gegenüber zum Vorgesetzten erklären?",
     options: ["Sobald ihn das Verhalten persönlich stört", "Wenn ein sofortiges Eingreifen zur Wiederherstellung der Disziplin unerlässlich ist und die Betroffenen nicht schon nach §§ 1–3 oder 5 über ihn befehlsbefugt sind", "Nur wenn alle derselben Einheit angehören und gerade Dienst haben"], answer: 1,
     explanation: "§ 6 erlaubt die eigene Erklärung auch außerhalb des Dienstes, wenn ein sofortiges Eingreifen zur Aufrechterhaltung der Disziplin unerlässlich ist. Der Feldwebel darf den betroffenen Mannschaftssoldaten die zur Beendigung der Randale erforderlichen Befehle erteilen." },
@@ -932,6 +932,12 @@ const quizQuestionBank = [
 ];
 
 quizQuestionBank.push(
+  {"id": "pflichten-sg-7", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Welche Grundpflicht beschreibt § 7 SG?", "options": ["Der Bundesrepublik Deutschland treu dienen und Recht und Freiheit des deutschen Volkes tapfer verteidigen", "Nur die Interessen der eigenen Einheit vertreten", "Befehle unabhängig von ihrem Inhalt befolgen"], "answer": 0, "explanation": "§ 7 SG verbindet treues Dienen mit der Verteidigung von Recht und Freiheit."},
+  {"id": "pflichten-sg-8", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Wann gilt die Pflicht zum Eintreten für die freiheitliche demokratische Grundordnung?", "options": ["Nur während der Dienstzeit", "Im gesamten Verhalten, auch außerhalb des Dienstes", "Nur bei offiziellen Veranstaltungen"], "answer": 1, "explanation": "§ 8 SG verlangt Verfassungstreue im gesamten Verhalten."},
+  {"id": "pflichten-sg-8-kritik", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Welche Aussage zur Verfassungstreue ist richtig?", "options": ["Jede politische Entscheidung muss befürwortet werden", "Sachliche politische Kritik ist verboten", "Sachliche Kritik ist möglich; die demokratische Grundordnung ist anzuerkennen"], "answer": 2, "explanation": "Verfassungstreue verlangt keine Zustimmung zu jeder politischen Entscheidung."},
+  {"id": "pflichten-sg-11-ausfuehrung", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Wie sind dienstliche Befehle im Rahmen des § 11 SG auszuführen?", "options": ["Vollständig, gewissenhaft, unverzüglich und nach besten Kräften", "Erst nach persönlicher Zustimmung", "Nur soweit sie angenehm sind"], "answer": 0, "explanation": "§ 11 SG regelt die Ausführung von Befehlen und zugleich die Grenzen des Gehorsams."},
+  {"id": "pflichten-sg-11-straftat", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Ein Befehl würde zur Begehung einer Straftat führen. Was gilt?", "options": ["Er muss auf schriftliche Bestätigung hin befolgt werden", "Er darf nicht befolgt werden", "Die Verantwortung trägt ausschließlich der Vorgesetzte"], "answer": 1, "explanation": "§ 11 Absatz 2 SG verbietet das Befolgen eines Befehls, durch den eine Straftat begangen würde."},
+  {"id": "pflichten-sg-11-grenze", "category": "Rechte und Pflichten", "short": "Rechte und Pflichten", "topic": "soldatenpflichten", "question": "Bei welchem Befehl liegt nach § 11 Absatz 1 SG kein Ungehorsam vor, wenn er nicht befolgt wird?", "options": ["Bei jedem unangenehmen Befehl", "Bei jedem Befehl außerhalb der Dienstzeit", "Bei einem Befehl, der die Menschenwürde verletzt oder nicht zu dienstlichen Zwecken erteilt wurde"], "answer": 2, "explanation": "§ 11 Absatz 1 SG benennt diese Grenzen; für Irrtümer gelten besondere Voraussetzungen."},
   { id: "w-caliber-g36", category: "Waffen", short: "Waffen", question: "Welches Kaliber nutzt das G36?", options: ["5,56 × 45 mm NATO", "7,62 × 51 mm NATO", "9 × 19 mm"], answer: 0 },
   { id: "w-mag-p8", category: "Waffen", short: "Waffen", question: "Wie viele Patronen fasst das in der Übersicht angegebene Magazin der P8?", options: ["8", "15", "30"], answer: 1 },
   { id: "w-feed-mg5", category: "Waffen", short: "Waffen", question: "Wie wird dem MG5 die Munition zugeführt?", options: ["Über einen Munitionsgurt", "Über ein 15-Schuss-Pistolenmagazin", "Über ein vorgefülltes Rohr"], answer: 0 },
@@ -972,11 +978,11 @@ quizQuestionBank.push(
   { id: "r-oberstleutnant", category: "Dienstgrade", short: "Dienstgrade", question: "Welcher Dienstgrad ist auf dem Bild dargestellt?", options: ["Oberstleutnant", "Major", "Oberst"], answer: 0, image: commonsFile("Dienstgrad_Bundeswehr_Heer_261_Oberstleutnant.svg"), imageAlt: "Dienstgradabzeichen des Heeres zur Bestimmung", imageSource: commonsPage("Dienstgrad_Bundeswehr_Heer_261_Oberstleutnant.svg") },
   { id: "r-generalmajor", category: "Dienstgrade", short: "Dienstgrade", question: "Welcher Dienstgrad ist auf dem Bild dargestellt?", options: ["Generalmajor", "Brigadegeneral", "Generalleutnant"], answer: 0, image: commonsFile("Dienstgrad_Bundeswehr_Heer_321_Generalmajor.svg"), imageAlt: "Dienstgradabzeichen des Heeres zur Bestimmung", imageSource: commonsPage("Dienstgrad_Bundeswehr_Heer_321_Generalmajor.svg") },
 
-  { id: "pflichten-form", category: "Pflichten & Befehle", short: "Pflichten & Befehle", question: "In welcher Form kann ein Befehl nach der Definition erteilt werden?", options: ["Schriftlich, mündlich oder in anderer Weise", "Nur schriftlich", "Nur mündlich vor Zeugen"], answer: 0, explanation: "Die vorgegebene Definition nennt schriftliche, mündliche und andere Formen." },
-  { id: "pflichten-2", category: "Pflichten & Befehle", short: "Pflichten & Befehle", question: "Worauf ist die Befehlsbefugnis eines Fachvorgesetzten nach § 2 begrenzt?", options: ["Auf seinen Fachbereich", "Auf alle privaten Angelegenheiten", "Nur auf sportliche Ausbildung"], answer: 0, explanation: "Fachvorgesetzte erteilen Befehle innerhalb des ihnen übertragenen Fachdienstes." },
-  { id: "pflichten-5", category: "Pflichten & Befehle", short: "Pflichten & Befehle", question: "Wodurch entsteht das Vorgesetztenverhältnis nach § 5?", options: ["Durch eine besondere Anordnung", "Allein durch höheres Lebensalter", "Durch längere Zugehörigkeit zur Bundeswehr"], answer: 0, explanation: "§ 5 regelt das Vorgesetztenverhältnis aufgrund besonderer Anordnung." },
-  { id: "pflichten-12", category: "Pflichten & Befehle", short: "Pflichten & Befehle", question: "Was verlangt § 12 Soldatengesetz von Soldatinnen und Soldaten?", options: ["Kameradschaft", "Die Wahl einer bestimmten Laufbahn", "Die private Unterbringung in der Kaserne"], answer: 0, explanation: "§ 12 Soldatengesetz regelt die Pflicht zur Kameradschaft." },
-  { id: "pflichten-example", category: "Pflichten & Befehle", short: "Pflichten & Befehle", question: "Welche Handlung entspricht der Pflicht zur Kameradschaft?", options: ["Eine Kameradin in einer schwierigen Lage unterstützen", "Fehler anderer absichtlich verschweigen, obwohl Gefahr besteht", "Kameraden wegen Herkunft abwerten"], answer: 0, explanation: "Kameradschaft umfasst gegenseitige Achtung, Hilfe und das Eintreten füreinander." },
+  { id: "pflichten-form", category: "Rechte und Pflichten", short: "Rechte und Pflichten", question: "In welcher Form kann ein Befehl nach der Definition erteilt werden?", options: ["Schriftlich, mündlich oder in anderer Weise", "Nur schriftlich", "Nur mündlich vor Zeugen"], answer: 0, explanation: "Die vorgegebene Definition nennt schriftliche, mündliche und andere Formen." },
+  { id: "pflichten-2", category: "Rechte und Pflichten", short: "Rechte und Pflichten", question: "Worauf ist die Befehlsbefugnis eines Fachvorgesetzten nach § 2 begrenzt?", options: ["Auf seinen Fachbereich", "Auf alle privaten Angelegenheiten", "Nur auf sportliche Ausbildung"], answer: 0, explanation: "Fachvorgesetzte erteilen Befehle innerhalb des ihnen übertragenen Fachdienstes." },
+  { id: "pflichten-5", category: "Rechte und Pflichten", short: "Rechte und Pflichten", question: "Wodurch entsteht das Vorgesetztenverhältnis nach § 5?", options: ["Durch eine besondere Anordnung", "Allein durch höheres Lebensalter", "Durch längere Zugehörigkeit zur Bundeswehr"], answer: 0, explanation: "§ 5 regelt das Vorgesetztenverhältnis aufgrund besonderer Anordnung." },
+  { id: "pflichten-12", topic: "soldatenpflichten", category: "Rechte und Pflichten", short: "Rechte und Pflichten", question: "Was verlangt § 12 Soldatengesetz von Soldatinnen und Soldaten?", options: ["Kameradschaft", "Die Wahl einer bestimmten Laufbahn", "Die private Unterbringung in der Kaserne"], answer: 0, explanation: "§ 12 Soldatengesetz regelt die Pflicht zur Kameradschaft." },
+  { id: "pflichten-example", topic: "soldatenpflichten", category: "Rechte und Pflichten", short: "Rechte und Pflichten", question: "Welche Handlung entspricht der Pflicht zur Kameradschaft?", options: ["Eine Kameradin in einer schwierigen Lage unterstützen", "Fehler anderer absichtlich verschweigen, obwohl Gefahr besteht", "Kameraden wegen Herkunft abwerten"], answer: 0, explanation: "Kameradschaft umfasst gegenseitige Achtung, Hilfe und das Eintreten füreinander." },
 
   { id: "m-dtg-punctuation", category: "Meldungen", short: "Meldungen", question: "Wie wird eine Date-Time Group geschrieben?", options: ["Ohne Punkte", "Mit Punkten zwischen allen Bestandteilen", "Nur mit Schrägstrichen"], answer: 0 },
   { id: "m-slip-number", category: "Meldungen", short: "Meldungen", question: "Was wird im Feld „Meldung Nr.“ eingetragen?", options: ["Die laufende Nummer der Meldung", "Die Personalnummer des Empfängers", "Der Kartenmaßstab"], answer: 0 },
@@ -1973,7 +1979,7 @@ const quizCategoryConfig = [
   { category: "Abkürzungen", count: 5 },
   { category: "NATO-Alphabet", count: 5 },
   { category: "Dienstgrade", count: 5, imageCount: 5 },
-  { category: "Pflichten & Befehle", count: 5 },
+  { category: "Rechte und Pflichten", count: 5, dutyCount: 2 },
   { category: "Meldungen", count: 5 },
   { category: "Orientieren im Gelände", count: 5 }
 ];
@@ -1998,7 +2004,11 @@ function selectQuizCategoryQuestions(config, previousIds = []) {
     selected = pool.slice(0, config.count);
   } else {
     for (let attempt = 0; attempt < 16; attempt += 1) {
-      if (config.imageCount) {
+      if (config.dutyCount) {
+        const duties = shuffledCopy(pool.filter(question => question.topic === "soldatenpflichten")).slice(0, config.dutyCount);
+        const orders = shuffledCopy(pool.filter(question => question.topic !== "soldatenpflichten")).slice(0, config.count - duties.length);
+        selected = shuffledCopy([...duties, ...orders]);
+      } else if (config.imageCount) {
         const withImage = shuffledCopy(pool.filter(question => question.image)).slice(0, config.imageCount);
         const withoutImage = shuffledCopy(pool.filter(question => !question.image)).slice(0, config.count - withImage.length);
         selected = shuffledCopy([...withImage, ...withoutImage]);
@@ -2027,6 +2037,7 @@ function hydrateQuizRound(roundIds) {
   for (const config of quizCategoryConfig) {
     const categoryQuestions = questions.filter(question => question.category === config.category);
     if (categoryQuestions.length !== config.count) return null;
+    if (config.dutyCount && categoryQuestions.filter(question => question.topic === "soldatenpflichten").length !== config.dutyCount) return null;
     hydrated.push(...categoryQuestions.map((question, index) => prepareQuizQuestion(question, (index + 1) * 100)));
   }
   return hydrated;
