@@ -819,28 +819,12 @@ const knots = [
   }
 ];
 
-const serviceContacts = [
-  { icon: "CH", name: "Batteriechef (BttrChef)", note: "Dienstliche Telefonnummer", number: "0151 57950253", href: "tel:+4915157950253", tone: "service" },
-  { icon: "FW", name: "Batteriefeldwebel (BttrFw) · „Spieß“", note: "Dienstliche Telefonnummer", number: "0151 57947349", href: "tel:+4915157947349", tone: "service" }
-];
-
 const civilianEmergencyContacts = [
   { icon: "110", name: "Polizei", note: "Ziviler Notruf", number: "110", href: "tel:110", tone: "emergency" },
   { icon: "112", name: "Feuerwehr und Rettungsdienst", note: "Ziviler Notruf", number: "112", href: "tel:112", tone: "emergency" }
 ];
 
-const contacts = [
-  { icon: "⌂", name: "Geschäftszimmer (GeZi)", note: "Organisation, Meldungen und allgemeine Anliegen" },
-  { icon: "✚", name: "Sanitätsbereich (San)", note: "Krankmeldung und medizinische Anliegen" },
-  { icon: "FJ", name: "Feldjäger-Notruf", note: "Militärpolizeiliche Hilfe und besondere Lagen" },
-  { icon: "U", name: "UvD / GvD", note: "Ansprechstelle außerhalb der regulären Dienstzeit" },
-  { icon: "W", name: "Kasernenwache", note: "Zutritt, Sicherheit und Meldungen an der Wache" },
-  {
-    icon: "S",
-    name: "Sozialdienst der Bundeswehr",
-    note: "Beratung und Betreuung bei sozialen sowie persönlichen Anliegen",
-    href: "https://www.bundeswehr.de/de/selbstverstaendnis/betreuung-fuersorge/sozialdienst-bundeswehr"
-  },
+const chaplaincyContacts = [
   {
     icon: "K",
     name: "Katholische Militärseelsorge Augustdorf",
@@ -852,6 +836,15 @@ const contacts = [
     name: "Evangelische Militärseelsorge Augustdorf",
     note: "Offizielle Kontaktseite des Militärpfarramts",
     href: "https://www.bundeswehr.de/de/organisation/militaerseelsorge/evangelische-militaerseelsorge/dienststellen/militaerpfarraemter/evangelisches-militaerpfarramt-augustdorf-i"
+  }
+];
+
+const supportContacts = [
+  {
+    icon: "S",
+    name: "Sozialdienst der Bundeswehr",
+    note: "Beratung und Betreuung bei sozialen sowie persönlichen Anliegen",
+    href: "https://www.bundeswehr.de/de/selbstverstaendnis/betreuung-fuersorge/sozialdienst-bundeswehr"
   }
 ];
 
@@ -1252,16 +1245,17 @@ function renderContacts() {
       </article>`).join("");
   };
 
-  renderNumberCards("#service-contact-list", serviceContacts);
   renderNumberCards("#civilian-emergency-list", civilianEmergencyContacts);
-  document.querySelector("#contact-list").innerHTML = contacts.map(({ icon, name, note, href }) => `
-    <article class="contact-card${href ? " contact-card--resource" : ""}">
+  const renderResourceCards = (selector, items) => {
+    document.querySelector(selector).innerHTML = items.map(({ icon, name, note, href }) => `
+    <article class="contact-card contact-card--resource">
       <span class="contact-icon" aria-hidden="true">${icon}</span>
       <span class="contact-copy"><strong>${name}</strong><small>${note}</small></span>
-      ${href
-        ? `<a class="contact-resource" href="${href}" target="_blank" rel="noreferrer" aria-label="Offizielle Kontaktseite für ${name} öffnen"><span>Kontakt öffnen</span><b aria-hidden="true">↗</b></a>`
-        : `<span class="number-placeholder">folgt</span>`}
+      <a class="contact-resource" href="${href}" target="_blank" rel="noreferrer" aria-label="Offizielle Kontaktseite für ${name} öffnen"><span>Kontakt öffnen</span><b aria-hidden="true">↗</b></a>
     </article>`).join("");
+  };
+  renderResourceCards("#chaplaincy-contact-list", chaplaincyContacts);
+  renderResourceCards("#support-contact-list", supportContacts);
 }
 
 function installImageFallbacks(root = document) {

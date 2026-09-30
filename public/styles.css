@@ -1222,8 +1222,9 @@ main { min-height: 78vh; }
 .contact-group-heading h2 { margin: 5px 0 6px; font: 800 clamp(25px, 7vw, 38px)/1.08 Georgia, serif; }
 .contact-group-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .contact-list { display: grid; gap: 10px; }
+.contact-list > .contact-card:only-child { grid-column: 1 / -1; }
 .contact-card { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 13px; padding: 15px; background: var(--white); border: 1px solid var(--line); border-radius: 16px; }
-.contact-card--service { border-color: #b6aaa2; box-shadow: inset 4px 0 0 #17171c; }
+
 .contact-card--emergency { border-color: #cb7f7b; box-shadow: inset 4px 0 0 var(--acid); }
 .contact-card--resource { border-color: #c9b6b2; box-shadow: inset 4px 0 0 #8e0b08; }
 .contact-icon { display: grid; width: 44px; height: 44px; place-items: center; color: var(--acid); background: var(--ink); border-radius: 12px; font-weight: 900; }
@@ -1248,13 +1249,10 @@ main { min-height: 78vh; }
 .contact-resource:hover { transform: translateY(-1px); background: linear-gradient(145deg, #bb100a, #820906); box-shadow: 0 9px 20px rgba(91, 7, 4, .24); }
 .contact-resource:active { transform: translateY(0); }
 .contact-resource:focus-visible { outline: 3px solid #f3aaa7; outline-offset: 3px; }
-.number-placeholder { padding: 7px 8px; color: #710b08; background: #eee4e2; border-radius: 7px; font: 800 10px/1 ui-monospace, monospace; text-transform: uppercase; letter-spacing: .05em; }
-.contact-service-note, .contact-emergency-note { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 12px; align-items: start; margin-top: 11px; padding: 14px 16px; border-radius: 13px; }
-.contact-service-note { color: #27231f; background: #f1eeea; border: 1px solid #c9c0b8; }
-.contact-service-note > span, .contact-emergency-note > span { display: grid; width: 36px; height: 36px; place-items: center; color: var(--white); border-radius: 9px; font-weight: 900; }
-.contact-service-note > span { background: #2a2a30; }
-.contact-service-note p, .contact-emergency-note p { margin: 0; font-size: 13px; line-height: 1.5; }
-.contact-service-note strong, .contact-emergency-note strong { display: block; margin-bottom: 2px; }
+.contact-emergency-note { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 12px; align-items: start; margin-top: 11px; padding: 14px 16px; border-radius: 13px; }
+.contact-emergency-note > span { display: grid; width: 36px; height: 36px; place-items: center; color: var(--white); border-radius: 9px; font-weight: 900; }
+.contact-emergency-note p { margin: 0; font-size: 13px; line-height: 1.5; }
+.contact-emergency-note strong { display: block; margin-bottom: 2px; }
 .contact-emergency-note { color: #4a0806; background: #f8e6e4; border: 1px solid #dca19d; }
 .contact-emergency-note > span { background: var(--acid); }
 

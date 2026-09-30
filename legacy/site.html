@@ -8,23 +8,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dienstbeginn</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg?v=178">
-  <link rel="manifest" href="manifest.webmanifest?v=178">
-  <link rel="stylesheet" href="styles.css?v=178">
-  <script src="leaderboard-storage.js?v=178" defer></script>
-  <script src="military-order-config.js?v=178" defer></script>
-  <script src="artillery-data.js?v=178" defer></script>
-  <script src="artillery.js?v=178" defer></script>
-  <script src="formal-reports-data.js?v=178" defer></script>
-  <script src="formal-reports.js?v=178" defer></script>
-  <script src="app.js?v=178" defer></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg?v=179">
+  <link rel="manifest" href="manifest.webmanifest?v=179">
+  <link rel="stylesheet" href="styles.css?v=179">
+  <script src="leaderboard-storage.js?v=179" defer></script>
+  <script src="military-order-config.js?v=179" defer></script>
+  <script src="artillery-data.js?v=179" defer></script>
+  <script src="artillery.js?v=179" defer></script>
+  <script src="formal-reports-data.js?v=179" defer></script>
+  <script src="formal-reports.js?v=179" defer></script>
+  <script src="app.js?v=179" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Dienstbeginn Startseite">
-      <img class="brand-mark" src="dienstbeginn-mark.svg?v=178" alt="" width="40" height="40" decoding="async">
+      <img class="brand-mark" src="dienstbeginn-mark.svg?v=179" alt="" width="40" height="40" decoding="async">
       <span><strong>DIENST</strong><small>BEGINN</small></span>
     </a>
     <div class="topbar-actions">
@@ -200,7 +200,7 @@
             <span class="category-icon category-phone-symbol" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.15.38 2.35.57 3.56.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.19 2.41.57 3.56a1 1 0 0 1-.24 1.02z"/></svg>
             </span>
-            <span class="category-copy"><strong>Wichtige Nummern</strong><small>Anlaufstellen im Dienstalltag</small></span>
+            <span class="category-copy"><strong>Wichtige Nummern</strong><small>Notruf · Militärseelsorge · Sozialdienst</small></span>
             <span class="category-arrow" aria-hidden="true">↗</span>
           </a>
         </nav>
@@ -943,33 +943,23 @@
         <h1 id="contacts-title">Wichtige Nummern</h1>
         <p>Direkte Anlaufstellen für Ausbildung, Alltag und besondere Lagen.</p>
       </div>
-      <section class="contact-group" aria-labelledby="service-contacts-title">
-        <div class="contact-group-heading">
-          <span class="kicker">Erreichbarkeit der Batterie</span>
-          <h2 id="service-contacts-title">Dienstliche Telefonnummern</h2>
-          <p>Direkte Erreichbarkeit von Batteriechef und Batteriefeldwebel.</p>
-        </div>
-        <div class="contact-list" id="service-contact-list"></div>
-        <aside class="contact-service-note"><span aria-hidden="true">!</span><p><strong>Missbrauch ist untersagt</strong> Die Rufnummern von Batteriechef und Batteriefeldwebel („Spieß“) sind ausschließlich für begründete dienstliche Anliegen bestimmt; Test- und Scherzanrufe sind zu unterlassen. Nutze grundsätzlich den vorgesehenen Dienst- und Meldeweg. In dringenden Lagen darfst du die Nummern ohne Zögern verwenden.</p></aside>
-      </section>
-
       <section class="contact-group contact-group--emergency" aria-labelledby="civilian-emergency-title">
         <div class="contact-group-heading">
           <span class="kicker">Akute Gefahr</span>
-          <h2 id="civilian-emergency-title">Zivile Notrufnummern</h2>
+          <h2 id="civilian-emergency-title">Zivile Notruf- und Rettungsnummern</h2>
           <p>Für Polizei, Feuerwehr und Rettungsdienst in Deutschland.</p>
         </div>
         <div class="contact-list" id="civilian-emergency-list"></div>
         <aside class="contact-emergency-note"><span aria-hidden="true">!</span><p><strong>Nur für Notfälle:</strong> Wähle 110 und 112 nur bei akuter Gefahr. Dienstlich vorgegebene Meldewege sind zusätzlich zu beachten, soweit die Lage dies zulässt.</p></aside>
       </section>
 
-      <section class="contact-group contact-group--more" aria-labelledby="more-contacts-title">
-        <div class="contact-group-heading">
-          <span class="kicker">Weitere Kontakte</span>
-          <h2 id="more-contacts-title">Weitere Anlaufstellen</h2>
-        </div>
-        <aside class="placeholder-banner"><span aria-hidden="true">i</span><p><strong>Offizielle Kontaktseiten ergänzt</strong> Sozialdienst sowie katholische und evangelische Militärseelsorge in Augustdorf sind direkt verlinkt. Bei den weiterhin mit „folgt“ gekennzeichneten Anlaufstellen liegen noch keine bestätigten Rufnummern vor.</p></aside>
-        <div class="contact-list" id="contact-list"></div>
+      <section class="contact-group" aria-labelledby="chaplaincy-contacts-title">
+        <div class="contact-group-heading"><h2 id="chaplaincy-contacts-title">Militärseelsorge</h2></div>
+        <div class="contact-list" id="chaplaincy-contact-list"></div>
+      </section>
+      <section class="contact-group contact-group--more" aria-labelledby="support-contacts-title">
+        <div class="contact-group-heading"><h2 id="support-contacts-title">Beratung und Unterstützung</h2></div>
+        <div class="contact-list" id="support-contact-list"></div>
       </section>
     </section>
 
