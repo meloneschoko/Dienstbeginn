@@ -212,8 +212,8 @@ window.artilleryData = {
     ],
     [
       "30.09.2026",
-      "Neuaufstellung der 1., 4. und 5. Batterie",
-      "Am 30.09.2026 wurde die 5. Batterie des Artilleriebataillons 215 gemeinsam mit der 1. und 4. Batterie des Verbandes neu aufgestellt."
+      "Neuaufstellung der 1./, 4./ und 5./ Batterie",
+      "Am 30.09.2026 wurde die 5./ Batterie des Artilleriebataillons 215 gemeinsam mit der 1./ und 4./ Batterie des Verbandes neu aufgestellt."
     ],
     [
       "Ausblick",
@@ -232,7 +232,7 @@ window.artilleryData = {
     ],
     [
       "Aufklärung und Wirkung",
-      "Informationen aus der Aufklärung werden mit Führung und Wirkung verknüpft. Unbemannte Systeme sollen den Verbund perspektivisch ergänzen."
+      "Informationen aus der Aufklärung werden mit Führung und Wirkung verknüpft. Unbemannte Systeme in Form von Loitering Munition Systems (LMS) werden den Verband perspektivisch ergänzen."
     ]
   ],
   "systems": [
