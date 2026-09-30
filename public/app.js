@@ -3184,14 +3184,47 @@ function installNavigation() {
 function installOathBanner() {
   const banner = document.querySelector(".oath-banner");
   const button = banner?.querySelector(".oath-toggle");
-  if (!button) return;
-  button.addEventListener("click", () => {
-    const paused = banner.dataset.paused !== "true";
+  const viewport = banner?.querySelector(".oath-viewport");
+  const text = banner?.querySelector(".oath-text");
+  if (!button || !viewport || !text) return;
+  let drag = null;
+  const setPaused = paused => {
     banner.dataset.paused = String(paused);
     button.setAttribute("aria-pressed", String(paused));
     button.setAttribute("aria-label", paused ? "Lauftext fortsetzen" : "Lauftext pausieren");
     button.firstElementChild.textContent = paused ? "▶" : "Ⅱ";
+  };
+  button.addEventListener("click", () => setPaused(banner.dataset.paused !== "true"));
+  viewport.addEventListener("pointerdown", event => {
+    if (!event.isPrimary || event.button !== 0 || drag) return;
+    const animation = text.getAnimations()[0];
+    drag = { id: event.pointerId, x: event.clientX, time: Number(animation?.currentTime || 0), scroll: viewport.scrollLeft, animation };
+    if (animation) setPaused(true);
+    viewport.classList.add("is-dragging");
+    viewport.setPointerCapture(event.pointerId);
   });
+  viewport.addEventListener("pointermove", event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const delta = event.clientX - drag.x;
+    if (drag.animation) {
+      const duration = Number(drag.animation.effect.getTiming().duration);
+      const distance = text.getBoundingClientRect().width;
+      if (distance > 0) drag.animation.currentTime = ((drag.time - delta / distance * duration) % duration + duration) % duration;
+    } else {
+      viewport.scrollLeft = drag.scroll - delta;
+    }
+  });
+  const endDrag = event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const animated = Boolean(drag.animation);
+    drag = null;
+    viewport.classList.remove("is-dragging");
+    if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    if (animated) setPaused(false);
+  };
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("lostpointercapture", endDrag);
 }
 
 function installWelcomeBanner() {

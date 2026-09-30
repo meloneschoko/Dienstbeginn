@@ -1913,8 +1913,9 @@ footer strong { color: var(--acid); }
 
 /* Single-copy oath ticker, confined to the home-page hero. */
 .oath-banner { position: relative; z-index: 1; display: flex; align-items: center; min-width: 0; margin-top: 24px; color: var(--white); background: rgba(0,0,0,.28); border: 1px solid #765050; border-left: 3px solid var(--acid); border-radius: 10px; overflow: hidden; }
-.oath-viewport { flex: 1; min-width: 0; overflow: hidden; }
-.oath-text { display: inline-block; width: max-content; max-width: none; margin: 0; padding: 12px 0 12px 100%; white-space: nowrap; font: 400 16px/1.5 Arial, Helvetica, sans-serif; animation: oath-scroll 60s linear infinite; }
+.oath-viewport { flex: 1; min-width: 0; overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; }
+.oath-viewport.is-dragging { cursor: grabbing; }
+.oath-text { display: inline-block; width: max-content; max-width: none; margin: 0; padding: 12px 0 12px 100%; white-space: nowrap; font: 400 16px/1.5 Arial, Helvetica, sans-serif; animation: oath-scroll 40s linear infinite; }
 .oath-toggle { flex: 0 0 48px; align-self: stretch; min-height: 48px; padding: 8px; border: 0; border-left: 1px solid #765050; color: var(--white); background: var(--ink); font-size: 20px; cursor: pointer; touch-action: manipulation; }
 .oath-banner[data-paused="true"] .oath-text { animation-play-state: paused; }
 @keyframes oath-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
