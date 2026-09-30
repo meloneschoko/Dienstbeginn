@@ -12,7 +12,7 @@ window.artilleryData = {
       {
         "role": "Bataillonskommandeur",
         "name": "Oberstleutnant Fabian Kolbe",
-        "assignment": "Artilleriebataillon 215",
+        "assignment": null,
         "source": "unit",
         "approved": true,
         "checkedOn": "2026-09-29"
