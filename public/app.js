@@ -3050,12 +3050,10 @@ function renderMilitaryOrderConfig() {
     ? "Örtliche Bekleidungsvorgabe in " + config.location + ": " + config.medicalClothing + ". Nicht auf andere Standorte übertragbar."
     : "Für den beschriebenen Ablauf in " + config.location + " ist " + config.medicalClothing + " vorgesehen. Die aktuelle Gültigkeit ist örtlich zu bestätigen; vor dem Arztbesuch die befohlene Bekleidung klären.";
   if (config.medicalReviewDate && config.medicalReviewedBy) {
-    document.querySelector("[data-order-review]").textContent = dateLabel(config.medicalReviewDate);
     document.querySelector("[data-order-reviewer]").textContent = "Fachlich geprüft durch: " + config.medicalReviewedBy;
   }
   document.querySelector("[data-order-source-date]").textContent = dateLabel(config.sourcesCheckedOn);
   if (config.socialReviewDate && config.socialReviewedBy) {
-    document.querySelector("[data-social-review]").textContent = dateLabel(config.socialReviewDate);
     document.querySelector("[data-social-reviewer]").textContent = "Fachlich geprüft durch: " + config.socialReviewedBy;
   }
   const sourceList = document.querySelector("[data-social-sources]");
