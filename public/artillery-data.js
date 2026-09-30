@@ -211,6 +211,11 @@ window.artilleryData = {
       "Die Nummer 215 stellt einen Traditionsbezug her. Der neue radmobile Verband hat einen anderen strukturellen und technischen Ansatz."
     ],
     [
+      "30.09.2026",
+      "Neuaufstellung der 1., 4. und 5. Batterie",
+      "Am 30.09.2026 wurde die 5. Batterie des Artilleriebataillons 215 gemeinsam mit der 1. und 4. Batterie des Verbandes neu aufgestellt."
+    ],
+    [
       "Ausblick",
       "Vorgesehen und perspektivisch",
       "Die RCH 155 ist als künftiges Hauptwaffensystem vorgesehen; unbemannte Aufklärungs- und Wirksysteme sind ein Zukunftsvorhaben."
