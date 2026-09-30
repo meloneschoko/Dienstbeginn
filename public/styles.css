@@ -2145,3 +2145,6 @@ body:has(#packing-lightbox[open]) { overflow: hidden; }
 .social-photo-notice figcaption strong { display: block; margin-bottom: 6px; color: var(--acid-dark); }
 .social-photo-notice > a:focus-visible { outline: 3px solid var(--acid-dark); outline-offset: 4px; }
 @media (max-width: 650px) { .social-photo-notice { padding: 14px; } }
+
+.category-photo-history { position: relative; overflow: hidden; }
+.category-photo-history img { position: absolute; width: 100%; height: 100%; max-width: none; inset: 0; object-fit: cover; object-position: 65% 25%; }
