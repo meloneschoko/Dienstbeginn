@@ -97,6 +97,14 @@ window.artilleryData = {
     "build455": [
       "Brigade Litauen: personeller Aufbau",
       "https://www.bundeswehr.de/de/auftrag/verteidigung/aufgaben/bundeswehr-litauen-grosse-schritte-deutsche-kampfbrigade/brigade-litauen-verpflichtende-massnahmen-6151408"
+    ],
+    "b95": [
+      "Panzerartillerielehrbataillon 95: Aufbau erster Teile",
+      "https://www.bundeswehr.de/de/organisation/heer/struktur/1-panzerdivision/artillerielehrbataillon-325"
+    ],
+    "b455": [
+      "Brigade Litauen: personeller Aufbau",
+      "https://www.bundeswehr.de/de/auftrag/verteidigung/aufgaben/bundeswehr-litauen-grosse-schritte-deutsche-kampfbrigade/brigade-litauen-verpflichtende-massnahmen-6151408"
     ]
   },
   "images": {
@@ -155,6 +163,146 @@ window.artilleryData = {
       "changes": "Verkleinert und in WebP umgewandelt; ohne inhaltliche Bearbeitung.",
       "alt": "MARS II mit angehobenem Werfer in einer überdachten Ausstellung.",
       "caption": "Raketenwerfer MARS II bei einer öffentlichen Präsentation in Prenzlau, 2025."
+    },
+    "cobra": {
+      "id": "cobra",
+      "path": "artillery/cobra.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Artillerieortungsradar_COBRA.jpg",
+      "artist": "Radar4587",
+      "license": "CC BY-SA 2.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+      "retrieved": "2026-09-30",
+      "width": 2272,
+      "height": 1704,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Artillerieortungsradar COBRA mit aufgerichteter Radarantenne.",
+      "caption": "Artillerieortungsradar COBRA mit aufgerichteter Radarantenne."
+    },
+    "abra": {
+      "id": "abra",
+      "path": "artillery/abra.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dynamic_Front_25_-_M113A1_GE_ABRA_-_RATAC-S_radar_-_Bundeswehr_(cropped).webp",
+      "artist": "Pfc. Sar Paw",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Dynamic_Front_25_-_M113A1_GE_ABRA_-_RATAC-S_radar_-_Bundeswehr_(cropped).webp",
+      "retrieved": "2026-09-30",
+      "width": 782,
+      "height": 553,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "ABRA: RATAC-S-Radarkopf bei der Übung Dynamic Front 25.",
+      "caption": "ABRA: RATAC-S-Radarkopf bei der Übung Dynamic Front 25."
+    },
+    "crest-b131": {
+      "id": "crest-b131",
+      "path": "artillery/wappen-131.png",
+      "source": "https://commons.wikimedia.org/wiki/File:ArtBtl_131.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:ArtBtl_131.png",
+      "retrieved": "2026-09-30",
+      "width": 1469,
+      "height": 1788,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Wappen des Panzerartilleriebataillons 131.",
+      "caption": "Wappen des Panzerartilleriebataillons 131."
+    },
+    "crest-b295": {
+      "id": "crest-b295",
+      "path": "artillery/wappen-295.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Wappen-ArtBtl-295.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Wappen-ArtBtl-295.png",
+      "retrieved": "2026-09-30",
+      "width": 430,
+      "height": 553,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Wappen des Artilleriebataillons 295.",
+      "caption": "Wappen des Artilleriebataillons 295."
+    },
+    "crest-b325": {
+      "id": "crest-b325",
+      "path": "artillery/wappen-325.png",
+      "source": "https://commons.wikimedia.org/wiki/File:ArtLehrBtl_325.png",
+      "artist": "Urheber nicht angegeben; Bundeswehr-Wappen",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:ArtLehrBtl_325.png",
+      "retrieved": "2026-09-30",
+      "width": 1187,
+      "height": 1484,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Wappen des Artillerielehrbataillons 325.",
+      "caption": "Wappen des Artillerielehrbataillons 325."
+    },
+    "crest-b345": {
+      "id": "crest-b345",
+      "path": "artillery/wappen-345.png",
+      "source": "https://commons.wikimedia.org/wiki/File:ArtLehrBtl_345.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:ArtLehrBtl_345.png",
+      "retrieved": "2026-09-30",
+      "width": 250,
+      "height": 341,
+      "changes": "Verkleinerte Wikimedia-Vorschaudatei; ohne inhaltliche Bearbeitung.",
+      "alt": "Wappen des Artillerielehrbataillons 345.",
+      "caption": "Wappen des Artillerielehrbataillons 345."
+    },
+    "crest-b375": {
+      "id": "crest-b375",
+      "path": "artillery/wappen-375.png",
+      "source": "https://commons.wikimedia.org/wiki/File:PzArtBtl_375.PNG",
+      "artist": "Urheber nicht angegeben; Bundeswehr-Wappen",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:PzArtBtl_375.PNG",
+      "retrieved": "2026-09-30",
+      "width": 1237,
+      "height": 1687,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Wappen des Panzerartilleriebataillons 375.",
+      "caption": "Wappen des Panzerartilleriebataillons 375."
+    },
+    "crest-school": {
+      "id": "crest-school",
+      "path": "artillery/wappen-schule.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Wappen_ArtS.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Wappen_ArtS.png",
+      "retrieved": "2026-09-30",
+      "width": 250,
+      "height": 342,
+      "changes": "Verkleinerte Wikimedia-Vorschaudatei; ohne inhaltliche Bearbeitung.",
+      "alt": "Wappen der Artillerieschule.",
+      "caption": "Wappen der Artillerieschule."
+    },
+    "crest-b95": {
+      "id": "crest-b95",
+      "path": "artillery/wappen-95-historisch.png",
+      "source": "https://commons.wikimedia.org/wiki/File:PzArtLehrBtl_95.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:PzArtLehrBtl_95.png",
+      "retrieved": "2026-09-30",
+      "width": 120,
+      "height": 141,
+      "changes": "Verkleinerte Wikimedia-Vorschaudatei; ohne inhaltliche Bearbeitung.",
+      "alt": "Historisches Wappen des Panzerartillerielehrbataillons 95; keine Bestätigung für den neu aufzustellenden Verband.",
+      "caption": "Historisches Wappen des Panzerartillerielehrbataillons 95; keine Bestätigung für den neu aufzustellenden Verband."
+    },
+    "crest-unit": {
+      "id": "crest-unit",
+      "path": "artillery/wappen-215.png",
+      "source": "https://commons.wikimedia.org/wiki/File:German_Army_-_Panzerartilleriebataillon_215_coat_of_arms.png",
+      "artist": "Bundeswehr",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:German_Army_-_Panzerartilleriebataillon_215_coat_of_arms.png",
+      "retrieved": "2026-09-30",
+      "width": 138,
+      "height": 162,
+      "changes": "Originaldatei unverändert übernommen.",
+      "alt": "Wappen des Artilleriebataillons 215.",
+      "caption": "Wappen des Artilleriebataillons 215."
     }
   },
   "profile": [
@@ -261,12 +409,20 @@ window.artilleryData = {
       "source": "unit"
     },
     {
-      "id": null,
-      "title": "COBRA und ABRA",
-      "type": "Aufklärungs- und Beobachtungsradare",
-      "task": "COBRA ortet gegnerische Artilleriestellungen anhand erfasster Geschossflugbahnen. ABRA dient der Gefechtsfeldbeobachtung und der Gewinnung von Zieldaten. Diese Systeme klären auf; sie sind keine Artilleriegeschütze.",
+      "id": "cobra",
+      "title": "COBRA",
+      "type": "Artillerieortungsradar",
+      "task": "COBRA ortet gegnerische Artilleriestellungen anhand erfasster Geschossflugbahnen. Das System dient der Aufklärung und ist kein Artilleriegeschütz.",
       "status": "Aktuell eingeführt",
       "source": "cobra"
+    },
+    {
+      "id": "abra",
+      "title": "ABRA",
+      "type": "Artilleriebeobachtungsradar",
+      "task": "ABRA dient der Gefechtsfeldbeobachtung und der Gewinnung von Zieldaten. Das System dient der Aufklärung und ist kein Artilleriegeschütz.",
+      "status": "Aktuell eingeführt",
+      "source": "abra"
     }
   ],
   "locations": [
@@ -274,43 +430,73 @@ window.artilleryData = {
       "Panzerartilleriebataillon 131",
       "Weiden in der Oberpfalz",
       "Panzerhaubitze 2000",
-      "b131"
+      "b131",
+      "crest-b131",
+      null
     ],
     [
       "Artilleriebataillon 295",
       "Stetten am kalten Markt",
       "Panzerhaubitze 2000",
-      "b295"
+      "b295",
+      "crest-b295",
+      null
     ],
     [
       "Artillerielehrbataillon 325",
       "Munster",
       "Panzerhaubitze 2000, MARS II und Aufklärungssysteme",
-      "b325"
+      "b325",
+      "crest-b325",
+      null
     ],
     [
       "Artillerielehrbataillon 345",
       "Idar-Oberstein",
       "Panzerhaubitze 2000, MARS II und Aufklärungssysteme",
-      "b345"
+      "b345",
+      "crest-b345",
+      null
     ],
     [
       "Panzerartilleriebataillon 375",
       "Weiden in der Oberpfalz",
       "Panzerhaubitze 2000",
-      "b375"
+      "b375",
+      "crest-b375",
+      null
     ],
     [
       "Artilleriebataillon 215",
       "Augustdorf",
       "RCH 155 · vorgesehen / in Einführung",
-      "unit"
+      "unit",
+      "crest-unit",
+      null
+    ],
+    [
+      "Panzerartillerielehrbataillon 95",
+      "Raum Munster",
+      "Aufbau des Verbandes; die 4./ Batterie wurde am 1. April 2026 in Dienst gestellt.",
+      "b95",
+      "crest-b95",
+      "Geplant / im Aufbau"
+    ],
+    [
+      "Panzerartilleriebataillon 455",
+      "Litauen (Zielstationierung)",
+      "Aufstellung zunächst in Deutschland; für die Panzerbrigade 45 vorgesehen.",
+      "b455",
+      null,
+      "Im Aufbau / Verlegung nach Litauen vorgesehen"
     ],
     [
       "Artillerieschule",
       "Idar-Oberstein",
       "Zentrale Ausbildungseinrichtung; kein Artilleriebataillon",
-      "school"
+      "school",
+      "crest-school",
+      null
     ]
   ]
 };
