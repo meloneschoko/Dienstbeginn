@@ -709,7 +709,7 @@ const knots = [
   },
   {
     id: "doppelter-schotstek", name: "Doppelter Schotstek", type: "Knoten", video: "U-33BbpJ_ug", file: "Doppelter Schotstek.jpg",
-    note: "Verbindet zwei Seile, besonders bei unterschiedlicher Stärke oder Beschaffenheit.",
+    note: "Verbindet zwei Leinen unterschiedlicher Stärke oder Beschaffenheit.",
     steps: [
       ["Bucht legen", "Mit dem stärkeren oder steiferen Seil eine offene Bucht bilden."],
       ["Von unten durchführen", "Die lose Part des dünneren Seils von unten durch die Bucht führen."],
