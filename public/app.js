@@ -3069,6 +3069,19 @@ function renderMilitaryOrderConfig() {
   }));
 }
 
+function positionTopicChallengeLinks() {
+  document.querySelectorAll('.page:not([data-page="start"]) a.topic-challenge[href="#spiel"]').forEach(link => {
+    const page = link.closest(".page");
+    let wrapper = link.closest(".topic-challenge-wrap");
+    if (!wrapper) {
+      wrapper = document.createElement("div");
+      wrapper.className = "topic-challenge-wrap";
+      wrapper.append(link);
+    }
+    page.append(wrapper);
+  });
+}
+
 function updateTopicNumbers() {
   const cards = document.querySelectorAll(".category-grid > a");
   cards.forEach((card, index) => {
@@ -3263,6 +3276,7 @@ renderMilitaryOrderConfig();
 updateTopicNumbers();
 installQuiz();
 installOrientationPractice();
+positionTopicChallengeLinks();
 installSearch();
 installAbbreviationSearch();
 installOathBanner();
