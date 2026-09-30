@@ -2136,3 +2136,11 @@ body:has(#packing-lightbox[open]) { overflow: hidden; }
 .topic-challenge-wrap > a.topic-challenge[href="#spiel"] .challenge-link-arrow { display: block; width: 22px; height: 22px; flex: 0 0 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .topic-challenge-wrap > a.topic-challenge[href="#spiel"]:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { .topic-challenge-wrap > a.topic-challenge[href="#spiel"] { transition: none; transform: none; } }
+
+.social-photo-notice { margin: 0 0 24px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); }
+.social-photo-notice > a { display: block; max-width: 620px; margin-inline: auto; }
+.social-photo-notice img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.social-photo-notice figcaption { margin-top: 16px; line-height: 1.6; }
+.social-photo-notice figcaption strong { display: block; margin-bottom: 6px; color: var(--acid-dark); }
+.social-photo-notice > a:focus-visible { outline: 3px solid var(--acid-dark); outline-offset: 4px; }
+@media (max-width: 650px) { .social-photo-notice { padding: 14px; } }
