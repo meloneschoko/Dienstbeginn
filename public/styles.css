@@ -2146,3 +2146,25 @@ body:has(#packing-lightbox[open]) { overflow: hidden; }
 
 .category-photo-history { position: relative; overflow: hidden; }
 .category-photo-history img { position: absolute; width: 100%; height: 100%; max-width: none; inset: 0; object-fit: cover; object-position: 65% 25%; }
+
+.knot-card-image-paketknoten img { position: absolute; inset: 0; object-fit: contain; object-position: center; }
+
+/* Knotengruppen: bestehende Karten, einzeln erreichbare Ausführungen. */
+.knot-variant-links { display: grid; gap: 8px; margin-top: auto; padding-top: 18px; }
+.knot-variant-links a, .knot-lesson-variants a, .knot-video-direct { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 12px 14px; color: #8e0b08; background: #f7f4f0; border: 1px solid #d1cbc2; border-radius: 10px; font-size: 15px; font-weight: 800; line-height: 1.4; text-decoration: none; overflow-wrap: anywhere; }
+.knot-variant-links a:hover, .knot-lesson-variants a:hover, .knot-video-direct:hover { border-color: #a30d19; background: #f1e6e4; }
+.knot-variant-links a:focus-visible, .knot-lesson-variants a:focus-visible, .knot-video-direct:focus-visible { outline: 3px solid #a30d19; outline-offset: 3px; }
+.knot-lesson-variants { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px; background: #fff; border: 1px solid var(--line); }
+.knot-lesson-variants a[aria-current] { color: #fff; background: #930b14; border-color: #930b14; }
+.knot-material { padding: 20px; background: #fff; border: 1px solid var(--line); }
+.knot-material h3, .knot-check h3 { margin-top: 0; font-size: 20px; }
+.knot-material p, .knot-check p, .knot-errors li { line-height: 1.6; }
+.knot-video-block { min-width: 0; }
+.knot-video-direct { margin-top: 12px; }
+.knot-check { padding: 18px; margin-top: 24px; border-left: 4px solid #930b14; background: #f7f4f0; }
+.knot-errors { margin-top: 18px; border: 1px solid var(--line); border-radius: 10px; }
+.knot-errors summary { padding: 16px; min-height: 48px; font-weight: 800; cursor: pointer; }
+.knot-errors ul { padding: 0 22px 12px 38px; }
+.knot-lesson-header h2, .knot-card h2 { overflow-wrap: anywhere; }
+.knot-lesson .knot-safety { margin: 0; border-radius: 0; }
+@media (max-width: 480px) { .knot-lesson-variants a { width: 100%; } .knot-video-card { padding: 14px; } }

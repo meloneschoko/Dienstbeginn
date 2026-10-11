@@ -604,7 +604,7 @@ const knots = [
     tip: "Die beiden Augen müssen gemeinsam erfasst werden; sonst entsteht nicht die doppelte Ausführung."
   },
   {
-    localImage: "sackstich.webp", id: "sackstich", name: "Sackstich", type: "Knoten", video: "WVPuy2pmmt8", file: "Overhand-loop-ABOK-1046.jpg",
+    id: "sackstich", name: "Sackstich", type: "Knoten", video: "WVPuy2pmmt8", file: "Overhand-loop-ABOK-1046.jpg",
     note: "Einfacher Grundknoten, hier als Schlaufe mit einer Seilbucht gezeigt.",
     steps: [
       ["Bucht bilden", "Das Seil doppelt nehmen und eine ausreichend große Bucht bilden."],
@@ -709,7 +709,7 @@ const knots = [
   },
   {
     id: "doppelter-schotstek", name: "Doppelter Schotstek", type: "Knoten", video: "U-33BbpJ_ug", file: "Doppelter Schotstek.jpg",
-    note: "Verbindet zwei Leinen unterschiedlicher Stärke oder Beschaffenheit.",
+    note: "Verbindet zwei Seile, besonders bei unterschiedlicher Stärke oder Beschaffenheit.",
     steps: [
       ["Bucht legen", "Mit dem stärkeren oder steiferen Seil eine offene Bucht bilden."],
       ["Von unten durchführen", "Die lose Part des dünneren Seils von unten durch die Bucht führen."],
@@ -818,6 +818,554 @@ const knots = [
     tip: "Die ersten Wicklungen brauchen genug Spiel, damit sich die Stangen anschließend öffnen lassen."
   }
 ];
+
+
+// Bestehende Routen und Anleitungen bleiben erhalten; Varianten ergänzen die Gruppen.
+const knotUpdates = {
+  "doppelter-bulinknoten": {
+    "name": "Palstek mit doppeltem Törn (Double Bowline)",
+    "group": "Palstek",
+    "variant": "Double Bowline",
+    "terminology": "Der bisher als Doppelter Bulinknoten geführte Eintrag zeigt einen Palstek mit doppeltem Törn. Die alpinen Ausführungen des doppelten Bulins stehen in einer eigenen Gruppe."
+  },
+  "palstek": {
+    "group": "Palstek",
+    "variant": "Einfacher Palstek"
+  },
+  "sackstich": {
+    "name": "Sackstichknoten – gelegt",
+    "group": "Sackstichknoten",
+    "variant": "gelegt",
+    "aliases": "Sackstichschlaufe, Überhandschlaufe",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "video": "z2bG2odDRVI",
+    "videoStart": 83,
+    "videoPublisher": "Österreichischer Alpenverein",
+    "source": "https://www.alpenverein.at/portal/news/2022/2022_04_22_knoten-videos.php",
+    "sourceLabel": "Österreichischer Alpenverein: Sackstich",
+    "check": "Die geschlossene Bucht bildet eine feste Schlaufe. Beide Stränge liegen parallel; der Knoten ist an allen Strängen festgezogen.",
+    "errors": [
+      "Bucht nicht vollständig durchziehen.",
+      "Stränge überkreuzen oder den Knoten nur locker anlegen."
+    ]
+  },
+  "mastwurf": {
+    "name": "Mastwurf – gesteckt",
+    "group": "Mastwurf",
+    "variant": "gesteckt",
+    "aliases": "Webeleinenstek",
+    "material": "Übungsseil und geeigneter Pfosten, Ring oder Anschlagpunkt.",
+    "video": "CPhvHYHqM8k",
+    "videoStart": 78,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=CPhvHYHqM8k",
+    "sourceLabel": "Bundesheer: Mastwurf",
+    "check": "Zwei vollständige Umschlingungen und eine diagonale Kreuzung. Bei einer Ausführung am Seilende ist die vorgeschriebene Endsicherung nötig (im Video ab 1:50).",
+    "errors": [
+      "Nur einen Umlauf legen.",
+      "Arbeitsende nicht unter der Kreuzung durchführen.",
+      "Endsicherung bei entsprechender Anwendung weglassen."
+    ]
+  },
+  "achterknoten": {
+    "name": "Achterknoten – einfacher Stopperknoten",
+    "group": "Achterknoten",
+    "variant": "Einfacher Stopperknoten"
+  },
+  "doppelter-ankerstich": {
+    "name": "Ankerstich",
+    "group": "Ankerstich",
+    "variant": "Grundform",
+    "aliases": "Doppelter Ankerstich (Feuerwehr), Lerchenkopf",
+    "material": "Übungsseil beziehungsweise geeignete Rund- oder Bandschlinge und passender Anschlagpunkt.",
+    "video": "es-GaoSAvks",
+    "videoStart": 8,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "terminology": "Der vorhandene Feuerwehr-Eintrag „Doppelter Ankerstich“ wird hier unter Ankerstich weitergeführt. Die bisherige Anleitung und ihre Quelle bleiben erhalten.",
+    "check": "Beide Schenkel laufen nebeneinander auf derselben Seite aus. Auf passende Belastung beider Stränge und zulässige Umlenkradien achten.",
+    "errors": [
+      "Nur einen Schenkel belasten.",
+      "Verdrehte Schlinge oder scharfe Kante am Anschlagpunkt."
+    ]
+  }
+};
+for (const knot of knots) Object.assign(knot, knotUpdates[knot.id] || {});
+knots.push(...[
+  {
+    "id": "bulin-gelegt",
+    "file": "Doppelter Palstek.jpg",
+    "localImage": "images/knots/doppelter-bulin.jpg",
+    "photoCredit": "Markus Bärlocher · gemeinfrei",
+    "name": "Doppelter Bulin – gelegt",
+    "group": "Doppelter Bulin",
+    "variant": "gelegt",
+    "type": "Knoten",
+    "video": "fvMhKR8H2Cw",
+    "videoStart": 9,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=fvMhKR8H2Cw",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Doppelte feste Schlaufe für entsprechend ausgebildete Anwendungen. Hier wird der Bulin aus einer Seilbucht gelegt.",
+    "steps": [
+      [
+        "Seil doppelt nehmen",
+        "Eine ausreichend lange Bucht bilden und die beiden Stränge gemeinsam führen."
+      ],
+      [
+        "Überhandknoten vorbereiten",
+        "Die Bucht zu einem Auge drehen und das geschlossene Ende durch dieses Auge führen. Den Knoten noch nicht festziehen."
+      ],
+      [
+        "Bucht umstülpen",
+        "Die herausragende Bucht öffnen und über den gesamten Knoten einschließlich der beiden entstehenden Schlaufen nach hinten legen."
+      ],
+      [
+        "Schlaufen herausziehen",
+        "Die beiden Schlaufen herausziehen, während die umgestülpte Bucht den Knotenkörper umschließt."
+      ],
+      [
+        "Ordnen und festziehen",
+        "Beide Schlaufen einstellen. Alle Stränge einzeln nachziehen und den gesamten Seilverlauf kontrollieren."
+      ]
+    ],
+    "check": "Zwei Schlaufen, eine vollständig umgestülpte Bucht und ein sauberer, paralleler Seilverlauf. Kein einfacher Palstek und kein nur halb fertiggestellter Überhandknoten.",
+    "errors": [
+      "Bucht nur über eine der beiden Schlaufen legen.",
+      "Falsche Stränge herausziehen oder den Knoten vor dem Umstülpen zuziehen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Doppelter Bulinknoten; Bulin in der Bucht",
+    "terminology": "Diese Ausführung ist der doppelte Bulin mit zurückgeführtem Seilverlauf. Der ebenfalls vorhandene Palstek mit doppeltem Törn (Double Bowline) ist eine andere Ausführung."
+  },
+  {
+    "id": "bulin-gesteckt",
+    "name": "Doppelter Bulin – gesteckt",
+    "group": "Doppelter Bulin",
+    "variant": "gesteckt",
+    "type": "Knoten",
+    "video": "fvMhKR8H2Cw",
+    "videoStart": 55,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=fvMhKR8H2Cw",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Durch einen geschlossenen Anschlagpunkt gefädelte Ausführung des doppelten Bulins.",
+    "steps": [
+      [
+        "Anschlagpunkt einfädeln",
+        "Ein ausreichend langes Seilende durch den vorgesehenen Anschlagpunkt führen."
+      ],
+      [
+        "Einfachen Bulin vorbereiten",
+        "In der langen Part ein Auge bilden. Das Arbeitsende durch das Auge, um die lange Part und zurück durch das Auge führen. Den Seilverlauf noch locker halten."
+      ],
+      [
+        "Zweiten Verlauf fädeln",
+        "Das Arbeitsende erneut durch den Anschlagpunkt führen. Anschließend dem bereits liegenden Seilverlauf rückwärts durch den gesamten Knoten folgen."
+      ],
+      [
+        "Knotenbild herstellen",
+        "Beide Verläufe nebeneinander ausrichten. Das Auge, durch das die ein- und auslaufenden Stränge führen, bleibt einfach."
+      ],
+      [
+        "Festziehen",
+        "Alle Stränge einzeln nachziehen und die Schlaufe passend einstellen. Freies Ende nach Ausbildungsvorgabe bemessen."
+      ]
+    ],
+    "check": "Der Verlauf ist vollständig zurückgefädelt; nur das umschließende Auge bleibt einfach. Anschlagpunkt, Endlänge und alle Stränge im Partnercheck prüfen.",
+    "errors": [
+      "Nur den einfachen Bulin fertigen.",
+      "Beim Zurückfädeln einen Umlauf auslassen.",
+      "Double Bowline mit dieser Ausführung verwechseln."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Doppelter Bulinknoten, zurückgefädelt"
+  },
+  {
+    "id": "paketknoten",
+    "file": "Paketknoten-dav.jpg",
+    "localImage": "images/knots/paketknoten.jpg",
+    "photoCredit": "Martink77 · CC BY-SA 3.0",
+    "photoLicense": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "name": "Paketknoten",
+    "group": "Paketknoten",
+    "variant": "Seilverbindung",
+    "type": "Knoten",
+    "video": "J2vk--sxvcU",
+    "videoStart": 0,
+    "videoPublisher": "Bergsport Life · Christian",
+    "source": "https://bergsport.life/ausbildung/grundlagen-klettern/knoten/paketknoten/",
+    "sourceLabel": "Bergsport.Life: Paketknoten",
+    "material": "Zwei zueinander passende Reepschnurenden; Material und Verwendung müssen für die Verbindung freigegeben sein.",
+    "note": "Verbindung zweier geeigneter Reepschnurenden in Tropfenform. Gemeint ist die alpine Seilverbindung, nicht ein Verpackungsknoten.",
+    "steps": [
+      [
+        "Enden parallel legen",
+        "Die beiden zu verbindenden Enden gleichgerichtet nebeneinanderlegen und genügend Arbeitslänge lassen."
+      ],
+      [
+        "Auge bilden",
+        "Mit beiden Strängen gemeinsam ein Auge wie für einen Sackstich vorbereiten."
+      ],
+      [
+        "Zusätzliche Wicklung",
+        "Die beiden Enden zusammen noch einmal außen um die Stränge führen."
+      ],
+      [
+        "Durchstecken",
+        "Beide Enden gemeinsam durch die entstandenen Windungen und das Auge zurückführen."
+      ],
+      [
+        "Ordnen und anziehen",
+        "Die Doppelstränge parallel ausrichten. Alle vier austretenden Stränge einzeln festziehen."
+      ]
+    ],
+    "check": "Zwei geordnete Wicklungen; beide freien Enden treten gemeinsam in derselben Richtung aus. Materialeignung und Endüberstände nach der jeweiligen Ausbildung prüfen.",
+    "errors": [
+      "Zusätzliche Wicklung auslassen: Dann entsteht ein Sackstich.",
+      "Ringform statt Tropfenform knüpfen.",
+      "Unpassende Schnüre oder zu kurze Enden verwenden."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Alpiner Paketknoten in Tropfenform"
+  },
+  {
+    "id": "prusik-gelegt",
+    "file": "Prusik.jpg",
+    "localImage": "images/knots/prusik.jpg",
+    "photoCredit": "Agneta · CC BY-SA 3.0",
+    "photoLicense": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "name": "Prusikknoten – gelegt",
+    "group": "Prusikknoten",
+    "variant": "gelegt",
+    "type": "Knoten",
+    "video": "7SvH58wtfII",
+    "videoStart": 9,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=7SvH58wtfII",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein Tragseil und eine dafür geeignete dünnere Reepschnur; Durchmesser, Zustand und Windungszahl nach Ausbildung und Herstellerangaben.",
+    "note": "Klemmknoten mit einer doppelt geführten Reepschnur um ein Tragseil; unbelastet verschiebbar.",
+    "steps": [
+      [
+        "Bucht bilden",
+        "Eine Bucht in der Reepschnur bilden."
+      ],
+      [
+        "Ankerstich legen",
+        "Die Bucht um das Tragseil legen und beide Reepschnurstränge durch die Bucht führen."
+      ],
+      [
+        "Zweiten Umlauf legen",
+        "Beide Stränge noch einmal um das Tragseil und durch die Bucht führen."
+      ],
+      [
+        "Wicklungen ordnen",
+        "Alle Wicklungen dicht nebeneinanderlegen. Keine Wicklung darf eine andere überkreuzen."
+      ],
+      [
+        "Klemmung prüfen",
+        "Beide austretenden Stränge zusammen langsam belasten. Unbelastet muss sich der Knoten verschieben lassen."
+      ]
+    ],
+    "check": "Saubere parallele Wicklungen und zuverlässige Klemmung mit der konkreten Seil-/Schnurkombination. Die nötige Windungszahl ist material- und anwendungsabhängig.",
+    "errors": [
+      "Überkreuzte Wicklungen.",
+      "Unpassendes Verhältnis der Seil- und Schnurdurchmesser.",
+      "Klemmung ohne Funktionsprüfung voraussetzen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Prusik, Klemmknoten"
+  },
+  {
+    "id": "prusik-gesteckt",
+    "name": "Prusikknoten – gesteckt",
+    "group": "Prusikknoten",
+    "variant": "gesteckt",
+    "type": "Knoten",
+    "video": "7SvH58wtfII",
+    "videoStart": 42,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=7SvH58wtfII",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein Tragseil und eine dafür geeignete dünnere Reepschnur mit zugänglichem Ende.",
+    "note": "Mit dem freien Schnurende gefädelter Prusik. Die gezeigte Endausführung enthält eine zusätzliche Sicherung für einseitige Belastung.",
+    "steps": [
+      [
+        "Sicherung vorbereiten",
+        "Bei der gezeigten Ausführung am Schnurende zunächst einen lockeren Überhandknoten (Kreuzschlag) in der einlaufenden Schnur vorbereiten."
+      ],
+      [
+        "Erste Wicklungen",
+        "Mit dem freien Ende zwei geordnete Umläufe um das Tragseil legen."
+      ],
+      [
+        "Gegenläufig zurückführen",
+        "In der Mitte kreuzen und auf der anderen Seite zwei gegenläufige Umläufe um das Tragseil zurückführen."
+      ],
+      [
+        "Ende herausführen",
+        "Das freie Ende parallel zur einlaufenden Schnur herausführen. Die Wicklungen dürfen sich nicht überkreuzen."
+      ],
+      [
+        "Endausführung sichern",
+        "Das freie Ende durch den vorbereiteten Überhandknoten führen und einen weiteren Schlag um den einlaufenden Strang legen, wie im Video gezeigt. Festziehen und die Klemmung unbelastet beziehungsweise mit Handzug prüfen."
+      ]
+    ],
+    "check": "Symmetrisches Klemmbild; vollständige Endsicherung bei der hier beschriebenen einseitig belasteten Endausführung. Klemmwirkung mit dem konkreten Material prüfen.",
+    "errors": [
+      "Die Endsicherung bei einseitiger Belastung weglassen.",
+      "Wicklungen kreuzen oder beide Wicklungsgruppen in derselben Richtung führen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Gefädelter Prusik"
+  },
+  {
+    "id": "sackstich-gesteckt",
+    "name": "Sackstichknoten – gesteckt",
+    "group": "Sackstichknoten",
+    "variant": "gesteckt",
+    "type": "Knoten",
+    "video": "bff2mfgT0rc",
+    "videoStart": 11,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=bff2mfgT0rc",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Eine feste Schlaufe in Tropfenform um einen geschlossenen Anschlagpunkt herstellen.",
+    "steps": [
+      [
+        "Überhandknoten vorbereiten",
+        "Einen lockeren Überhandknoten in das Seil legen und ausreichend freies Ende lassen."
+      ],
+      [
+        "Anschlagpunkt umfassen",
+        "Das freie Ende durch den vorgesehenen Anschlagpunkt beziehungsweise um ihn herum führen."
+      ],
+      [
+        "Zurückfädeln",
+        "Vom freien Ende des vorbereiteten Knotens aus dessen gesamten Verlauf rückwärts und parallel nachfahren."
+      ],
+      [
+        "Ordnen und festziehen",
+        "Die entstandene Schlaufe einstellen und alle Stränge einzeln festziehen."
+      ]
+    ],
+    "check": "Die Schlaufe ist geschlossen; der gesamte Überhandknoten liegt doppelt und ohne unnötige Kreuzungen. Ausreichenden Endüberstand kontrollieren.",
+    "errors": [
+      "Den Knoten nur teilweise nachfahren.",
+      "Ringförmige Seilverbindung und feste Schlaufe verwechseln."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Sackstichschlaufe, Tropfenform gesteckt"
+  },
+  {
+    "id": "sackstich-ringform",
+    "name": "Sackstichknoten – in Ringform gesteckt",
+    "group": "Sackstichknoten",
+    "variant": "in Ringform gesteckt",
+    "type": "Knoten",
+    "video": "DscduczoHuQ",
+    "videoStart": 11,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=DscduczoHuQ",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Zwei zueinander passende Seilenden gleichen Durchmessers. Keine pauschale Freigabe für beliebiges Bandmaterial.",
+    "note": "Gegenläufig nachgefädelter Überhandknoten zum Verbinden passender Seilenden. Die Enden treten an gegenüberliegenden Seiten aus.",
+    "steps": [
+      [
+        "Ersten Knoten vorbereiten",
+        "In ein Ende einen lockeren Überhandknoten legen."
+      ],
+      [
+        "Gegenläufig beginnen",
+        "Das zweite Ende von der entgegengesetzten Seite neben das erste freie Ende einführen."
+      ],
+      [
+        "Verlauf nachfahren",
+        "Mit dem zweiten Ende den gesamten Überhandknoten gegenläufig zurückfädeln."
+      ],
+      [
+        "Ordnen und festziehen",
+        "Die parallelen Verläufe ordnen und jeden austretenden Strang einzeln festziehen."
+      ]
+    ],
+    "check": "Die beiden Enden treten gegenläufig aus; der Knoten ist vollständig doppelt nachgefahren. Nur passende, gleich starke Seile verbinden und die Überstände kontrollieren.",
+    "errors": [
+      "Ungleiche Seildurchmesser verbinden.",
+      "Beide Enden gleichgerichtet einführen.",
+      "Mit einer Sackstichschlaufe verwechseln."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Gegenläufig gesteckter Sackstich"
+  },
+  {
+    "id": "mastwurf-gelegt",
+    "name": "Mastwurf – gelegt",
+    "group": "Mastwurf",
+    "variant": "gelegt",
+    "type": "Knoten",
+    "video": "CPhvHYHqM8k",
+    "videoStart": 12,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=CPhvHYHqM8k",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Übungsseil und geeigneter Anschlagpunkt oder geeigneter Verschlusskarabiner.",
+    "note": "Aus zwei Augen gelegte Befestigung, die über einen zugänglichen Anschlagpunkt gelegt oder in einen geeigneten Karabiner eingehängt wird.",
+    "steps": [
+      [
+        "Zwei Augen bilden",
+        "Zwei benachbarte Seilaugen so legen, dass die Kreuzung des einen vor und die des anderen hinter der Seilebene liegt."
+      ],
+      [
+        "Augen übereinanderlegen",
+        "Die Augen über Kreuz zusammenführen. Der verbindende Seilabschnitt liegt zwischen ihnen."
+      ],
+      [
+        "Anschlagen",
+        "Beide Augen gemeinsam über den zugänglichen Gegenstand legen oder in den geeigneten Karabiner einhängen."
+      ],
+      [
+        "Festziehen",
+        "Beide Seilstränge anziehen und das typische Knotenbild mit zwei Umschlingungen und einer diagonalen Kreuzung prüfen."
+      ]
+    ],
+    "check": "Beide Augen sind erfasst. Am Karabiner Verschluss, Belastungsrichtung und vollständigen Sitz kontrollieren; am Seilende die vorgeschriebene Endsicherung anbringen.",
+    "errors": [
+      "Augen in falscher Reihenfolge übereinanderlegen.",
+      "Nur ein Auge einhängen.",
+      "Den Karabinerverschluss ungeprüft lassen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Webeleinenstek, gelegt"
+  },
+  {
+    "id": "achter-gelegt",
+    "name": "Achterknoten – gelegt",
+    "group": "Achterknoten",
+    "variant": "gelegt",
+    "type": "Knoten",
+    "video": "qmap3zQJlMU",
+    "videoStart": 10,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=qmap3zQJlMU",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Feste Achterschlaufe aus einer Seilbucht. Sie unterscheidet sich vom einfachen Achter als Stopperknoten.",
+    "steps": [
+      [
+        "Bucht bilden",
+        "Das Seil doppelt nehmen und genügend Länge für Knoten und Schlaufe bereitstellen."
+      ],
+      [
+        "Acht vorbereiten",
+        "Mit der doppelten Part ein Auge bilden; die Bucht hinter den beiden langen Strängen herumführen."
+      ],
+      [
+        "Bucht durchstecken",
+        "Die geschlossene Bucht durch das ursprüngliche Auge führen."
+      ],
+      [
+        "Ordnen und festziehen",
+        "Die beiden Seilverläufe parallel zur Acht ordnen. Alle Stränge einzeln festziehen und die Schlaufengröße anpassen."
+      ]
+    ],
+    "check": "Eine feste Schlaufe, ein vollständig doppelt verlaufendes Achterbild und keine unnötigen Kreuzungen. Freies Ende und Anschlag nach praktischer Einweisung prüfen.",
+    "errors": [
+      "Nur einen Überhandknoten legen.",
+      "Den zusätzlichen Umlauf auslassen.",
+      "Den einfachen Stopperachter als fertige Anseilschlaufe ansehen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Achterschlaufe, in der Bucht gelegt"
+  },
+  {
+    "id": "achter-gesteckt",
+    "name": "Achterknoten – gesteckt",
+    "group": "Achterknoten",
+    "variant": "gesteckt",
+    "type": "Knoten",
+    "video": "GSWm3V-BAv0",
+    "videoStart": 10,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=GSWm3V-BAv0",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Durch einen geschlossenen Anschlagpunkt gefädelte Achterschlaufe.",
+    "steps": [
+      [
+        "Einfachen Achter legen",
+        "Mit genügend Abstand zum Seilende einen lockeren einfachen Achter knüpfen: Auge bilden, die lange Part umrunden und das Ende durch das Auge stecken."
+      ],
+      [
+        "Anschlagpunkt einfädeln",
+        "Das Arbeitsende durch den vorgesehenen Anseil- beziehungsweise Anschlagpunkt führen."
+      ],
+      [
+        "Achter nachfahren",
+        "Mit dem freien Ende den gesamten Achter rückwärts nachfädeln. Beide Verläufe liegen direkt nebeneinander."
+      ],
+      [
+        "Festziehen und prüfen",
+        "Schlaufe einstellen und alle Stränge einzeln anziehen. Den vollständigen Verlauf vom Eintritt bis zum Austritt verfolgen."
+      ]
+    ],
+    "check": "Achter vollständig nachgefahren, richtiger Anschlagpunkt und ausreichender Endüberstand. Keine ausgelassene Windung; Partnercheck vor Verwendung.",
+    "errors": [
+      "Eine Windung beim Nachfädeln überspringen.",
+      "Falschen Anseilpunkt verwenden.",
+      "Zu kurzes freies Ende stehen lassen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Zurückgefädelte Achterschlaufe, gesteckter Achter"
+  },
+  {
+    "id": "doppelter-achterknoten",
+    "name": "Doppelter Achterknoten",
+    "group": "Achterknoten",
+    "variant": "doppelter Achterknoten",
+    "type": "Knoten",
+    "video": "RUFB2W1i4Nc",
+    "videoStart": 8,
+    "videoPublisher": "Österreichs Bundesheer · Heeresbergführer",
+    "source": "https://www.youtube.com/watch?v=RUFB2W1i4Nc",
+    "sourceLabel": "Bundesheer: Fit mit dem Seil",
+    "material": "Ein geeignetes Übungsseil; zum Üben ohne Personenlast. Für den praktischen Einsatz ausschließlich dafür freigegebene Ausrüstung verwenden.",
+    "note": "Achterknoten mit zwei Schlaufen, beispielsweise für ausgebildete Anwendungen beim Bau von Verankerungen.",
+    "steps": [
+      [
+        "Lange Bucht bilden",
+        "Das Seil doppelt nehmen und ausreichend Länge für zwei Schlaufen bereitstellen."
+      ],
+      [
+        "Achter vorbereiten",
+        "Mit der doppelten Part den Achterverlauf legen."
+      ],
+      [
+        "Bucht teilweise durchführen",
+        "Die große Bucht nicht ganz durch das entstandene Auge ziehen; dadurch entstehen zwei nebeneinanderliegende Schlaufen."
+      ],
+      [
+        "Restbucht umstülpen",
+        "Das zurückgebliebene Buchtende über beide Schlaufen und den Knotenkörper nach unten legen."
+      ],
+      [
+        "Ordnen und festziehen",
+        "Beide Schlaufen herausziehen, auf die benötigte Länge einstellen und alle Stränge festziehen."
+      ]
+    ],
+    "check": "Zwei Schlaufen; die umgestülpte Bucht umfasst beide vollständig. Das Achterbild bleibt geordnet und ohne unnötige Kreuzungen.",
+    "errors": [
+      "Die Restbucht nur über eine Schlaufe legen.",
+      "Die Bucht vollständig durchziehen: Dann entsteht die einfache Achterschlaufe.",
+      "Schlaufen unkontrolliert verstellen."
+    ],
+    "tip": "Zunächst unbelastet üben und das fertige Knotenbild mit der praktischen Einweisung abgleichen.",
+    "aliases": "Achterknoten mit zwei Schlaufen, Hasenohren",
+    "terminology": "Hier bezeichnet „doppelt“ zwei Schlaufen, entsprechend der Bundesheer-Ausbildung. Die gelegte und gesteckte Achterschlaufe mit nur einer Schlaufe sind eigene Varianten."
+  }
+]);
 
 const civilianEmergencyContacts = [
   { icon: "110", name: "Polizei", note: "Ziviler Notruf", number: "110", href: "tel:110", tone: "emergency" },
@@ -1171,68 +1719,70 @@ function renderOrganizations() {
     </section>`).join("");
 }
 
+function knotGroups() {
+  const groups = new Map();
+  for (const knot of knots) {
+    const name = knot.group || knot.name;
+    if (!groups.has(name)) groups.set(name, []);
+    groups.get(name).push(knot);
+  }
+  return [...groups.entries()];
+}
+
+function knotVideoUrl(knot) {
+  return 'https://www.youtube.com/watch?v=' + knot.video + (knot.videoStart ? '&t=' + knot.videoStart + 's' : '');
+}
+
 function renderKnots() {
-  document.querySelector("#knot-grid").innerHTML = knots.map((knot, index) => `
-    <a class="knot-card" href="#knoten/${knot.id}" data-knot-link="${knot.id}" style="--knot-color:${knot.type === "Bund" ? "#344e68" : knot.type === "Grundlage" ? "#62652b" : "#b20d22"}">
-      <span class="knot-card-image">
-        ${imageWithFallback(knot.localImage || commonsFile(knot.file), `Beispiel: ${knot.name}`)}
-        <span class="knot-image-label">Beispiel</span>
-      </span>
-      <div class="knot-card-head">
-        <span class="knot-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="knot-type">${knot.type}</span>
-      </div>
-      <h2>${knot.name}</h2>
-      <p>${knot.note}</p>
-      <span class="knot-card-action">Anleitung öffnen <span aria-hidden="true">→</span></span>
-    </a>`).join("");
+  document.querySelector('#knot-grid').innerHTML = knotGroups().map(([name, variants], index) => {
+    const knot = variants[0];
+    const picture = variants.find(item => item.file);
+    const preview = variants.find(item => item.video);
+    const grouped = variants.length > 1;
+    return `<article class="knot-card" style="--knot-color:${knot.type === 'Bund' ? '#344e68' : knot.type === 'Grundlage' ? '#62652b' : '#b20d22'}">
+      ${picture ? `<span class="knot-card-image${picture.id === 'paketknoten' ? ' knot-card-image-paketknoten' : ''}">${imageWithFallback(picture.localImage || commonsFile(picture.file), 'Beispiel: ' + picture.name)}<span class="knot-image-label">Beispiel${grouped ? ' · ' + (picture.variant || picture.name) : ''}</span></span>` : preview ? `<a class="knot-card-image knot-card-video-preview" href="#knoten/${preview.id}" data-knot-link="${preview.id}" aria-label="${escapeSearchHtml(preview.name)}: Videoanleitung öffnen">${imageWithFallback('https://i.ytimg.com/vi/' + preview.video + '/hqdefault.jpg', 'Videovorschau: ' + preview.name)}<span class="knot-preview-play" aria-hidden="true">▶</span><span class="knot-image-label">Videovorschau${grouped ? ' · ' + (preview.variant || preview.name) : ''}</span></a>` : ''}
+      <div class="knot-card-head"><span class="knot-number">${String(index + 1).padStart(2,'0')}</span><span class="knot-type">${knot.type}</span></div>
+      <h2>${name}</h2>
+      <p>${grouped ? variants.length + ' Ausführungen – wähle die passende Anleitung.' : knot.note}</p>
+      <nav class="knot-variant-links" aria-label="Anleitungen: ${escapeSearchHtml(name)}">
+        ${variants.map(item => `<a href="#knoten/${item.id}" data-knot-link="${item.id}" aria-label="${escapeSearchHtml(item.name)}: Anleitung öffnen">${grouped ? item.variant || item.name : 'Anleitung öffnen'} <span aria-hidden="true">→</span></a>`).join('')}
+      </nav>
+    </article>`;
+  }).join('');
 }
 
 function renderKnotLesson(knot) {
-  const lesson = document.querySelector("#knot-lesson");
-  const number = String(knots.indexOf(knot) + 1).padStart(2, "0");
+  const lesson = document.querySelector('#knot-lesson');
+  const groups = knotGroups();
+  const groupIndex = groups.findIndex(([, variants]) => variants.includes(knot));
+  const variants = groups[groupIndex][1];
+  const number = String(groupIndex + 1).padStart(2, '0');
   lesson.innerHTML = `
-    <a class="back-link knot-back-link" href="#knoten"><svg class="back-link-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m8-8-8 8 8 8"/></svg><span class="back-link-label">Alle Knoten &amp; Bunde</span></a>
-    <header class="knot-lesson-header" style="--knot-color:${knot.type === "Bund" ? "#344e68" : knot.type === "Grundlage" ? "#62652b" : "#b20d22"}">
-      <div class="knot-lesson-meta">
-        <span class="knot-number">${number}</span>
-        <span class="knot-type">${knot.type}</span>
-      </div>
-      <h2>${knot.name}</h2>
-      <p>${knot.note}</p>
-      <a class="knot-image-source" href="${commonsPage(knot.file)}" target="_blank" rel="noreferrer">Bild &amp; Lizenz: Wikimedia Commons ↗</a>
-      ${knot.localImage ? '<p class="knot-image-credit">Foto: David J. Fred · <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noreferrer">CC BY-SA 2.5</a> · verkleinert und als WebP gespeichert.</p>' : ""}
-      ${knot.source ? `<a class="knot-image-source" href="${knot.source}" target="_blank" rel="noreferrer">Ausbildungsgrundlage: ${knot.sourceLabel} ↗</a>` : ""}
+    <a class="back-link knot-back-link" href="#knoten">← Alle Knoten &amp; Bunde</a>
+    <header class="knot-lesson-header" style="--knot-color:${knot.type === 'Bund' ? '#344e68' : knot.type === 'Grundlage' ? '#62652b' : '#b20d22'}">
+      <div class="knot-lesson-meta"><span class="knot-number">${number}</span><span class="knot-type">${knot.type}</span></div>
+      <h2 id="knot-lesson-title">${knot.name}</h2><p>${knot.note}</p>
+      ${knot.aliases ? `<p><strong>Auch bezeichnet als:</strong> ${knot.aliases}</p>` : ''}
+      ${knot.terminology ? `<p class="knot-terminology">${knot.terminology}</p>` : ''}
+      ${knot.file ? `<a class="knot-image-source" href="${commonsPage(knot.file)}" target="_blank" rel="noreferrer">Bild &amp; Lizenz: Wikimedia Commons ↗</a>` : ''}
+      ${knot.photoCredit ? `<p class="knot-image-source">Foto: ${escapeSearchHtml(knot.photoCredit)} · unverändert${knot.photoLicense ? ` · <a href="${knot.photoLicense}" target="_blank" rel="noreferrer">Lizenz ↗</a>` : ''}</p>` : ''}
+      ${knot.source ? `<a class="knot-image-source" href="${knot.source}" target="_blank" rel="noreferrer">Ausbildungsgrundlage: ${knot.sourceLabel} ↗</a>` : ''}
     </header>
-    ${knot.video ? `
-      <div class="knot-video-card">
-        <div class="knot-video-copy">
-          <span class="kicker">Beispielvideo</span>
-          <h3>Bewegungsablauf ansehen</h3>
-          <p>Das externe Video ergänzt die Einzelschritte. Es benötigt eine Internetverbindung; die Textanleitung bleibt offline verfügbar.</p>
-        </div>
-        <div class="knot-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/${knot.video}" title="Beispielvideo: ${knot.name}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>` : ""}
-    <section class="knot-steps" aria-labelledby="knot-steps-title">
-      <div class="knot-steps-heading">
-        <span class="kicker">Schritt für Schritt</span>
-        <h3 id="knot-steps-title">${knot.name} anfertigen</h3>
-      </div>
-      <ol class="knot-step-list">
-        ${knot.steps.map(([title, copy], index) => `
-          <li>
-            <span class="knot-step-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
-            <div><strong>${title}</strong><p>${copy}</p></div>
-          </li>`).join("")}
-      </ol>
-      <p class="knot-tip"><strong>Merke:</strong> ${knot.tip}</p>
-    </section>
-    <aside class="knot-safety">
-      <strong>Übungshinweis</strong>
-      <p>Diese Anleitung ist eine Lernhilfe und ersetzt nicht die praktische Einweisung. Für Personensicherung, Klettern, Rettung oder andere sicherheitskritische Lasten gelten ausschließlich die dafür freigegebene Ausbildung, Ausrüstung und aktuelle Vorschriften.</p>
-    </aside>`;
+    ${variants.length > 1 ? `<nav class="knot-lesson-variants" aria-label="Weitere Ausführungen von ${escapeSearchHtml(knot.group)}">${variants.map(item => `<a href="#knoten/${item.id}" ${item === knot ? 'aria-current="page"' : ''}>${item.variant || item.name}</a>`).join('')}</nav>` : ''}
+    ${knot.material ? `<section class="knot-material"><h3>Material</h3><p>${knot.material}</p></section>` : ''}
+    <aside class="knot-safety"><strong>Sicherheitshinweis:</strong><p>Diese Anleitung und das Video dienen nur als Lernunterstützung. Sicherheitsrelevante Knoten müssen praktisch unter fachkundiger Anleitung geübt und vor jeder Verwendung kontrolliert werden.</p><p>Für Personensicherung, Klettern, Rettung oder andere sicherheitskritische Lasten gelten ausschließlich die dafür freigegebene Ausbildung, Ausrüstung und aktuellen Vorschriften.</p></aside>
+    ${knot.video ? `<div class="knot-video-card">
+      <div class="knot-video-copy"><span class="kicker">Anleitungsvideo</span><h3>Bewegungsablauf ansehen</h3>
+      ${knot.videoPublisher ? `<p><strong>${knot.videoPublisher}</strong></p>` : ''}
+      <p>Das Video ergänzt die Einzelschritte und benötigt Internet. Die Textanleitung bleibt offline verfügbar.</p></div>
+      <div class="knot-video-block"><div class="knot-video"><iframe src="https://www.youtube-nocookie.com/embed/${knot.video}${knot.videoStart ? '?start=' + knot.videoStart : ''}" title="Anleitungsvideo: ${escapeSearchHtml(knot.name)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <a class="knot-video-direct" href="${knotVideoUrl(knot)}" target="_blank" rel="noreferrer">Video direkt auf YouTube öffnen <span aria-hidden="true">↗</span></a></div>
+    </div>` : ''}
+    <section class="knot-steps" aria-labelledby="knot-steps-title"><div class="knot-steps-heading"><span class="kicker">Schritt für Schritt</span><h3 id="knot-steps-title">${knot.name} anfertigen</h3></div>
+    <ol class="knot-step-list">${knot.steps.map(([title,copy],index) => `<li><span class="knot-step-number" aria-hidden="true">${String(index+1).padStart(2,'0')}</span><div><strong>${title}</strong><p>${copy}</p></div></li>`).join('')}</ol>
+    ${knot.check ? `<div class="knot-check"><h3>Abschließende Sicherheitskontrolle</h3><p>${knot.check}</p></div>` : ''}
+    ${knot.errors ? `<details class="knot-errors"><summary>Typische Fehler</summary><ul>${knot.errors.map(error=>`<li>${error}</li>`).join('')}</ul></details>` : ''}
+    <p class="knot-tip"><strong>Merke:</strong> ${knot.tip}</p></section>`;
 }
 
 function renderContacts() {
@@ -2805,7 +3355,7 @@ function buildSearchIndex() {
       });
 
       [...section.querySelectorAll(selector)].forEach((element, index) => {
-        if (element.closest("[data-search-ignore]")) return;
+        if (element.closest("[data-search-ignore], #knot-grid, #knot-lesson")) return;
         const target = searchTargetFor(element, section);
         if (target === section) return;
         const text = compactSearchText(target.textContent);
@@ -2831,6 +3381,14 @@ function buildSearchIndex() {
       });
     });
 
+  // Detailseiten werden erst beim Öffnen gerendert: alle Varianten aus den Daten indexieren.
+  for (const knot of knots) {
+    const text = [knot.name, knot.group, knot.aliases, knot.note, knot.material, knot.terminology,
+      ...knot.steps.flat(), knot.check, ...(knot.errors || []), knot.tip].filter(Boolean).join(' ');
+    entries.push({page:'knoten', route:'knoten/' + knot.id, title:knot.name, label:'Knoten und Bunde',
+      intro:knot.note, targetId:'knot-lesson-title', normalizedKey:normalizeSearch(knot.name),
+      normalizedTitle:normalizeSearch(knot.name), normalizedText:normalizeSearch(text), isPage:false});
+  }
   return entries;
 }
 
@@ -2984,7 +3542,7 @@ function installSearch() {
     }
 
     results.innerHTML = currentMatches.map(match => `
-      <a class="search-result" href="#${match.page}" role="listitem" data-search-page="${match.page}" data-search-target="${escapeSearchHtml(match.targetId)}">
+      <a class="search-result" href="#${match.route || match.page}" role="listitem" data-search-page="${match.page}" data-search-target="${escapeSearchHtml(match.targetId)}">
         <span class="search-result-copy">
           <span>${escapeSearchHtml(match.label)}</span>
           <strong>${escapeSearchHtml(match.title)}</strong>
