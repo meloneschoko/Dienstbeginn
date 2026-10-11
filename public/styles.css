@@ -1624,6 +1624,11 @@ main { min-height: 78vh; }
 .quiz-scorebar strong i { font-style: normal; }
 .quiz-scorebar button { align-self: center; min-height: 44px; padding: 10px 13px; color: var(--white); background: #8f0b07; border: 1px solid #c52a24; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: 850; }
 .quiz-scorebar button:hover, .quiz-scorebar button:focus-visible { background: #b3110b; }
+.quiz-swipe-hint { display: none; }
+@media (max-width: 1020px), (pointer: coarse) {
+  .quiz-swipe-hint { display: flex; align-items: center; gap: 10px; width: min(1120px, calc(100% - 36px)); margin: 0 auto 12px; padding: 10px 14px; color: var(--ink); background: #f5e9e7; border-left: 3px solid #a50d08; border-radius: 8px; font-size: 14px; line-height: 1.5; }
+  .quiz-swipe-hint > span { flex: 0 0 auto; color: #a50d08; font-size: 24px; line-height: 1; }
+}
 .quiz-board-wrap { overflow-x: auto; padding: 2px 0 17px; scrollbar-color: #a50d08 #d2cec7; }
 .quiz-board { display: grid; grid-auto-flow: column; grid-auto-columns: 132px; gap: 8px; min-width: max-content; align-items: start; }
 .quiz-column { display: grid; grid-template-rows: minmax(64px, auto); grid-auto-rows: 96px; gap: 8px; }

@@ -8,23 +8,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dienstbeginn</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg?v=180">
-  <link rel="manifest" href="manifest.webmanifest?v=180">
-  <link rel="stylesheet" href="styles.css?v=180">
-  <script src="leaderboard-storage.js?v=180" defer></script>
-  <script src="military-order-config.js?v=180" defer></script>
-  <script src="artillery-data.js?v=180" defer></script>
-  <script src="artillery.js?v=180" defer></script>
-  <script src="formal-reports-data.js?v=180" defer></script>
-  <script src="formal-reports.js?v=180" defer></script>
-  <script src="app.js?v=180" defer></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg?v=181">
+  <link rel="manifest" href="manifest.webmanifest?v=181">
+  <link rel="stylesheet" href="styles.css?v=181">
+  <script src="leaderboard-storage.js?v=181" defer></script>
+  <script src="military-order-config.js?v=181" defer></script>
+  <script src="artillery-data.js?v=181" defer></script>
+  <script src="artillery.js?v=181" defer></script>
+  <script src="formal-reports-data.js?v=181" defer></script>
+  <script src="formal-reports.js?v=181" defer></script>
+  <script src="app.js?v=181" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Dienstbeginn Startseite">
-      <img class="brand-mark" src="dienstbeginn-mark.svg?v=180" alt="" width="40" height="40" decoding="async">
+      <img class="brand-mark" src="dienstbeginn-mark.svg?v=181" alt="" width="40" height="40" decoding="async">
       <span><strong>DIENST</strong><small>BEGINN</small></span>
     </a>
     <div class="topbar-actions">
@@ -228,7 +228,8 @@
         <div><span>Beantwortet</span><strong><i id="quiz-progress">0</i>/<i id="quiz-total">49</i></strong></div>
         <button id="quiz-reset" type="button">Neu starten</button>
       </div>
-      <div class="quiz-board-wrap" aria-label="Fragenfeld; auf kleinen Bildschirmen horizontal verschiebbar">
+      <p class="quiz-swipe-hint" id="quiz-swipe-hint"><span aria-hidden="true">↔</span> Nach links oder rechts wischen, um weitere Themen zu sehen.</p>
+      <div class="quiz-board-wrap" aria-label="Fragenfeld; auf kleinen Bildschirmen horizontal verschiebbar" aria-describedby="quiz-swipe-hint">
         <div class="quiz-board" id="quiz-board"></div>
       </div>
       <div class="quiz-finish" id="quiz-finish" hidden>
