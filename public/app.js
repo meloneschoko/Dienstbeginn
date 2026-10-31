@@ -150,7 +150,7 @@ const natoDistractors = {
 };
 
 const ranks = [
-  { name: "Soldat / Schütze", group: "Mannschaften", code: "M", file: "Dienstgrad_Bundeswehr_Heer_001_Soldat.svg", note: "Niedrigster Dienstgrad; die Bezeichnung richtet sich nach der Truppengattung." },
+  { name: "Soldat / Kanonier", group: "Mannschaften", code: "M", file: "Dienstgrad_Bundeswehr_Heer_001_Soldat.svg", localImage: "images/soldat-kanonier.svg", note: "Niedrigster Dienstgrad; in der Artillerietruppe Kanonier. Die hochrote Litze kennzeichnet die Truppengattung." },
   { name: "Gefreiter", group: "Mannschaften", code: "M", file: "Dienstgrad_Bundeswehr_Heer_011_Gefreiter.svg", note: "Dienstgrad der Mannschaften." },
   { name: "Obergefreiter", group: "Mannschaften", code: "M", file: "Dienstgrad_Bundeswehr_Heer_021_Obergefreiter.svg", note: "Dienstgrad der Mannschaften." },
   { name: "Hauptgefreiter", group: "Mannschaften", code: "M", file: "Dienstgrad_Bundeswehr_Heer_031_Hauptgefreiter.svg", note: "Dienstgrad der Mannschaften." },
@@ -1660,7 +1660,7 @@ function renderRanks() {
           <article class="rank-card${group === "Anwärterdienstgrade" ? " rank-card-candidate" : ""}">
             <div class="rank-image">
               <span class="rank-code">${rank.code}</span>
-              ${imageWithFallback(commonsFile(rank.file), `Dienstgradabzeichen Heer: ${rank.name}`)}
+              ${imageWithFallback(rank.localImage || commonsFile(rank.file), `Dienstgradabzeichen Heer: ${rank.name}`)}
             </div>
             <div class="rank-copy"><strong>${rank.name}</strong><small>${rank.subgroup ? `${rank.subgroup} · ` : ""}${rank.note}</small></div>
           </article>`).join("")}
@@ -1931,7 +1931,7 @@ function installRankLearningGame() {
           <span class="rank-game-direction">Abzeichen → Name</span>
           <h3>Wie heißt dieser Dienstgrad?</h3>
           <div class="rank-game-focus-insignia">
-            ${imageWithFallback(commonsFile(question.rank.file), "Zu bestimmendes Dienstgradabzeichen des Heeres")}
+            ${imageWithFallback(question.rank.localImage || commonsFile(question.rank.file), "Zu bestimmendes Dienstgradabzeichen des Heeres")}
           </div>
         </section>
         <div class="rank-game-options rank-game-name-options" role="group" aria-label="Dienstgrad auswählen">
@@ -1951,7 +1951,7 @@ function installRankLearningGame() {
           ${choices.map((choice, index) => `
             <button type="button" data-rank-game-choice="${choice.file}" aria-label="Abzeichen auswählen: Antwort ${String.fromCharCode(65 + index)}">
               <span class="rank-game-choice-letter" aria-hidden="true">${String.fromCharCode(65 + index)}</span>
-              ${imageWithFallback(commonsFile(choice.file), `Dienstgradabzeichen, Auswahl ${String.fromCharCode(65 + index)}`)}
+              ${imageWithFallback(choice.localImage || commonsFile(choice.file), `Dienstgradabzeichen, Auswahl ${String.fromCharCode(65 + index)}`)}
             </button>`).join("")}
         </div>`;
     }
