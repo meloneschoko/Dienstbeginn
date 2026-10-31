@@ -1,4 +1,4 @@
-const SHELL_CACHE = "dienstbeginn-shell-v184";
+const SHELL_CACHE = "dienstbeginn-shell-v185";
 // Keep downloaded media across text-only updates so offline images are retained.
 const MEDIA_CACHE = "dienstbeginn-media-v23";
 const SHELL_FILES = [
@@ -7,8 +7,8 @@ const SHELL_FILES = [
   "./images/knots/prusik.jpg",
   "./history/deutschlandflagge-reichstag.png",
   "./foto-filmverbot.png",
-  "./formal-reports-data.js?v=184",
-  "./formal-reports.js?v=184",
+  "./formal-reports-data.js?v=185",
+  "./formal-reports.js?v=185",
   "./formal-reports/grundstellung-vorn.webp",
   "./formal-reports/ruehrt-euch-hinten.webp",
   "./formal-reports/gruss.webp",
@@ -22,8 +22,8 @@ const SHELL_FILES = [
   "./artillery/wappen-375.png",
   "./artillery/wappen-schule.png",
   "./artillery/wappen-95-historisch.png",
-  "./artillery-data.js?v=184",
-  "./artillery.js?v=184",
+  "./artillery-data.js?v=185",
+  "./artillery.js?v=185",
   "./artillery/rch155.webp",
   "./artillery/boxer.webp",
   "./artillery/pzh2000.webp",
@@ -44,13 +44,13 @@ const SHELL_FILES = [
   "./packplan/rucksack-packplan-3.webp",
   "./vorgesetztenverordnung-tabelle-zuschnitt.png",
   "./images/soldat-kanonier.svg",
-  "./styles.css?v=184",
-  "./app.js?v=184",
-  "./military-order-config.js?v=184",
-  "./leaderboard-storage.js?v=184",
-  "./manifest.webmanifest?v=184",
-  "./icon.svg?v=184",
-  "./dienstbeginn-mark.svg?v=184",
+  "./styles.css?v=185",
+  "./app.js?v=185",
+  "./military-order-config.js?v=185",
+  "./leaderboard-storage.js?v=185",
+  "./manifest.webmanifest?v=185",
+  "./icon.svg?v=185",
+  "./dienstbeginn-mark.svg?v=185",
   "./nord-sued-gitterlinie.svg",
   "./krawatte-schritte-1-zug.jpg",
   "./knoten-und-bunde.jpg",
